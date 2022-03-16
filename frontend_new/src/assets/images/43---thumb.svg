@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="370px" height="278px" viewBox="0 0 370 278" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>4:3 - thumb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Images" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4:3---thumb">
+            <rect id="Rectangle" fill="#E6F2FF" x="0" y="0" width="370" height="278"></rect>
+            <g id="outline-photo_size_select_actual-24px" opacity="0.30078125" transform="translate(131.000000, 85.000000)">
+                <g id="Bounding_Boxes">
+                    <polygon id="Shape" points="0 0 108 0 108 108 0 108"></polygon>
+                </g>
+                <g id="Outline" transform="translate(4.500000, 13.500000)" fill="#096AD0" fill-rule="nonzero">
+                    <g id="Group">
+                        <path d="M90,0 L9,0 C4.5,0 0,4.5 0,9 L0,72 C0,76.95 4.05,81 9,81 L90,81 C94.5,81 99,76.5 99,72 L99,9 C99,4.5 94.5,0 90,0 Z M90,71.64 C89.91,71.775 89.73,71.91 89.64,72 L9,72 L9,9.36 C9.09,9.27 9.27,9.09 9.36,9 L89.595,9 C89.73,9.09 89.865,9.27 89.955,9.36 L89.955,71.64 L90,71.64 Z" id="Shape"></path>
+                        <polygon id="Shape" points="45 56.295 33.75 42.75 18 63 81 63 60.75 36"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>round-stars-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="round-stars-24px" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="#096AD0" stroke-width="2">
+            <g id="Rounded">
+                <path d="M27.972,0 C12.516,0 0,12.544 0,28 C0,43.456 12.516,56 27.972,56 C43.456,56 56,43.456 56,28 C56,12.544 43.456,0 27.972,0 Z M37.016,43.092 L28,37.66 L18.984,43.092 C17.92,43.736 16.604,42.784 16.884,41.58 L19.264,31.332 L11.34,24.472 C10.416,23.66 10.92,22.12 12.152,22.008 L22.624,21.112 L26.712,11.452 C27.188,10.304 28.812,10.304 29.288,11.452 L33.376,21.084 L43.848,21.98 C45.08,22.092 45.584,23.632 44.632,24.444 L36.708,31.304 L39.088,41.58 C39.368,42.784 38.08,43.736 37.016,43.092 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
