@@ -1,2 +1,362 @@
-/* You can add global styles to this file, and also import other style files */
-body {background-color: #444;}
+body {background-color: #444444;}
+
+
+
+
+p a[href] {
+    padding: 0;
+    position: relative;
+    color: black;
+  }
+  
+  p a[href]:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15%;
+      background-color: #E2EFFC;
+      z-index: -10;
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+  }
+  
+  p a[href]:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  p a[href]:hover:after {
+    background-color: #CFDAE6;
+  }
+  
+  p.noMargin {
+    margin: .1em;
+  }
+  
+  text.axis-text {
+    text-shadow: white -1px -1px 0px, white 1px -1px 0px, white -1px 1px 0px, white 1px 1px 0px;
+    fill: white;
+  }
+  
+  line {
+    stroke: rgb(153, 153, 153);
+    stroke-width: 1;
+    stroke-dasharray: 1, 1;
+    transform: rotate(-136.283deg, 239.3, -238.019);
+  }
+  
+  .tick text {
+    font: 14px Avenir;
+  }
+  text {
+    font: 14px Avenir;
+    font-weight: bold;
+  }
+  
+  .tooltip > div {
+    margin: 0;
+    padding: 0;
+    max-width: 320px;
+  }
+  
+  .tooltip {
+    font-family: "Lab Grotesque","LabGrotIns",sans-serif;
+    background: rgba(255,255,255,.9);
+    border-radius: .3rem;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: .2rem .4rem;
+    position: absolute;
+    max-width: 320px;
+    z-index: 300;
+    visibility: hidden;
+    border: 1px solid #333;
+    white-space: pre-wrap;
+  }
+  
+  body, select, option {
+    font-family: Avenir, Arial;
+    line-height: 1.5;
+    color: black;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family:Arial;
+  }
+  
+  select {
+    padding: 2px 5px;
+    font-size: 16px;
+    max-height: 100px;
+  }
+  
+  .center {
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .colorls3{
+  
+    fill:#FDE4AF !important;
+    /* fill:rgba(145, 21, 12, 0.8)!important; */
+    border-radius: 5px ;
+    
+  }
+  
+  .colorls6{
+  fill:#F3B966 !important
+  }
+  
+  .colorls10{
+    fill:#E79536 !important
+  }
+  
+  .default{
+  fill:#D6771F !important
+  }
+  
+  .spiral{
+    stroke: rgba(244, 244, 244, .4) !important;
+    fill:none;
+  }
+  
+  .spiral_text{
+        text-anchor: start;
+        font: 10px "avenir next";
+        fill: grey ;
+  }
+  
+  .tr_th_class{
+  
+    border-collapse: collapse;
+    border:2px black solid;
+    color:#CFDAE6
+  }
+  
+  .td_class{
+    border:1px green solid;
+    padding:5px;
+    color:#CFDAE6;
+  }
+  
+  .condegramtable{
+    display:block;
+  }
+  .chart_condegram{
+    padding-left:200px;
+  }
+
+
+  #bundling{
+    background-color: #333333;
+    align-content:center;
+  }
+  
+  .node {
+    font: 300 11px "Avenir Next", Arial, sans-serif;
+    padding:1px !important;
+    
+    /* fill: #FFFFFF; */
+  }
+  
+  
+  .node:hover {
+    /* fill: rgb(14, 217, 224); */
+    fill:#FFC885;
+    font-weight: 700px;
+    
+  }
+  
+  .link {
+    stroke: #FEECEC;
+    stroke-opacity: 0.15;
+    fill: none;
+    pointer-events: none;
+  }
+  
+  .node:hover,
+  .node--source,
+  .node--target {
+    font-weight: 700;
+    opacity: 1;
+   }
+  
+  /*.node--source {
+  
+    fill: #2ca02c;
+  }*/
+  
+  .node--target {
+    fill: #e07d21;
+    opacity: 1;
+  }
+  
+  
+  .link--source,
+  .link--target {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+  }
+  
+  .link--source {
+    stroke: #fcd788;
+  }
+
+  .link--target {
+    stroke: #e07d21;
+  }
+  
+  .node--target {
+    fill: #A91304;
+    /* stroke: #f4f4f4; */
+  }
+  
+  /*.color{
+    fill: darkgoldenrod !important;
+    font-size: large;
+  }*/
+
+  .container{
+    width:100% !important
+  } 
+
+  /* classes used for the nodes */
+
+  .creator{
+  fill:#FB6504;
+  opacity: 0.7;
+  }
+  
+  .events{
+  fill:#FFC885;
+  opacity: 0.7;
+  }
+
+  .creator:hover{
+    opacity:1;
+    fill: #e07d21
+  }
+
+  .events:hover{
+    opacity:1;
+    fill: #fcd788
+  }
+  /* map css starts here */
+
+
+  /* body {
+    margin: 0;
+    background-color: #333333;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 300;
+} */
+
+#svgcontainer {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 5px 50px 10px 50px;
+    /* background-color: whitesmoke; */
+}
+
+h1 {
+    font-weight: 800;
+    color: #5a7388;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin: 15px 0 10px 0;
+}
+
+svg {
+    /* background-color: #333333; */
+}
+.map{
+    background-color: #333333;
+    align-content:center;
+}
+.body{
+    background-color: #333333;
+    overflow: visible;
+    width:100%
+}
+.eventslst20{
+    fill:rgba(253, 228, 175, .3) !important
+}
+.eventslst40{
+    fill:rgba(243, 185, 102, .5) !important
+}
+.eventslst60{
+    fill:rgba(231, 149, 54, .3) !important
+}
+.eventslst80{
+    fill:rgba(231, 149, 54, .5) !important
+}
+.eventslst100{
+    fill:rgba(137, 48, 37, .5) !important
+}
+.default{
+    fill:rgba(137, 48, 37, .7) !important
+    }
+.provincesbg{
+    /* fill:rgb(240, 154, 93) !important */
+    fill:rgba(244, 244, 244, .2) !important
+}
+.statestext{
+    fill:#f4f4f4;
+}
+.td_style{
+    padding: 4px 10px 4px 40px;
+    background-color: #222121;
+    color: #fcd788;
+    font-size: 18px;
+    border-collapse: collapse;
+    border: 0px black solid;
+
+}
+
+.th_style{
+    padding: 20px;
+    background-color: #222121;
+    font-size: 24px;
+    font-family: Jost, sans-serif;
+    color: #ff8a1e;
+    border-collapse: collapse;
+    border: 0px black solid;
+    text-align: left;
+
+}
+
+.tablesorter-header {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    white-space: normal;
+    padding: 4px 20px 4px 4px;
+}
+.tablesorter-headerAsc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+}
+.tablesorter-headerDesc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+}
+.tablesorter .sorter-false {
+    background-image: none;
+    cursor: default;
+    padding: 4px;
+}

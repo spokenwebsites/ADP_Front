@@ -1,0 +1,454 @@
+[
+      {
+            "name": "Lieberman Moti",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Gulliver Roland",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Prevost Adele Elise",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Wint Brandon",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Ferrier Ian",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Yalaoui Malek ",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Martonfi Ilona",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "McCrum Rachel",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Pennock Tyler",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "Camlot Jason",
+            "type": "ind_creator",
+            "imports": []
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona",
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Verse Prose Song ",
+            "imports": [
+                  "Lieberman Moti"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series ft. Joy Priest Tina Zafreen Alam ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series ft. Jody Chan Eunice Andrada ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series Ft. Nisha Patel Naima Yael Tokunow ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series ft. Terese Mason Pierre Tatiana Johnson Boria ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series ft. Sanna Wani Em Dial ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series ft. Inam Kang Taylor Byas ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "TreeReadingSeries.Tree Reading Series Natasha Ramoutar Marianne Chan ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Lieberman Moti",
+                  "Prevost Adele Elise",
+                  "Martonfi Ilona"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Words Music Online this Sunday ",
+            "imports": [
+                  "Ferrier Ian",
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Words Music Online for the C r oolest Month ",
+            "imports": [
+                  "Ferrier Ian",
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Say Play and Dance at Words Music Online ",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Words Music Solstice Show Sunday online ",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Silvervest Barillaro Par and Mash at W M Show Sunday ",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Summer in September at W M Sunday ",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian",
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "WordsandMusic.International Poets and Performers Sunday ",
+            "imports": [
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona"
+            ]
+      },
+      {
+            "name": "WordsandMusic.Poets Music Video and Art on Sunday ",
+            "imports": [
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "WordsandMusic.SpokenWeb Words Music ",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "AtwaterPoetryProject.Atwater Poetry Project Online presents...Oana Avasilichioaei Margaret Christakos ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "AtwaterPoetryProject.Atwater Poetry Project Online presents Chantal Gibson ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "AtwaterPoetryProject.APP Online presents Ben Ladouceur K.B Thors ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "AtwaterPoetryProject.APP Online John Barton Molly Peacock ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "AtwaterPoetryProject.APP Online...Poem in Your Pocket Day Journ e du po me porter ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "VERSeOttawa.VerseFest 2020 Urban Legends ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona",
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona",
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona",
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona",
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "WordsFestLondonCanada.Reimagining Disability ",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "QuebecWritersFederation.Across the Platform An Open Mic with QWF Arts By The People ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "QuebecWritersFederation.Local Reads Book Club Dominoes at the Crossroads ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "QuebecWritersFederation.Local Reads Book Club Yasmeen Haddad Loves Joanasi Maqaittik ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "QuebecWritersFederation.Local Reads Book Club Montreal City of Secrets ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "QuebecWritersFederation.Writing in Challenging Times ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "QuebecWritersFederation.Chronicling the Days Dispatches from a Pandemic Book Launch ",
+            "imports": [
+                  "McCrum Rachel"
+            ]
+      },
+      {
+            "name": "PlanetEarthPoetry.Planet Earth Poetry Tyler Pennock ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "GladDayBookshop.Virtual Toronto Lit Up Bones ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "GladDayBookshop.Smut Peddlers An evening of LGBTQ erotica ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "GladDayBookshop.Panel INSTABILITY INSECURITY INSANITY Mental Health and the Writer ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Dominoes at the Crossroads ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Yasmeen Haddad Loves Joanasi Maqaittik ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Montreal City of Secrets ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Taximan ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "LibrairieDrawnQuarterly.Local Reads Book Club The Philistine ",
+            "imports": [
+                  "Yalaoui Malek "
+            ]
+      },
+      {
+            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "imports": [
+                  "Martonfi Ilona",
+                  "Lieberman Moti",
+                  "Prevost Adele Elise"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Downtime Ian Rankin ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Downtime Catherine Hernandez ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "WordVancouver.Virtual Toronto Lit Up Bones ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Toronto Lit Up Presents The Cyborg Anthology Virtual Launch ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.An Evening With Margaret Atwood ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.First Piece of the Puzzle Mark Billingham ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Waking from the American Dream Richard Ford ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Sleepwalking to Catastrophe Emily St. John Mandel ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Journeys of Self Discovery Billy Ray Belcourt Tyler Pennock ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Skin Hunger Tyler Pennock ",
+            "imports": [
+                  "Pennock Tyler"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Family Identity Future David A. Robertson Jesse Thistle ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Keep Your Enemies Close Ian Rankin s A Song for the Dark Times ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Burning Bright Andr Alexis on The Night Piece ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      },
+      {
+            "name": "TorontoInternationalFestivalofAuthors.Alexander McCall Smith How to Raise an Elephant ",
+            "imports": [
+                  "Gulliver Roland"
+            ]
+      }
+]

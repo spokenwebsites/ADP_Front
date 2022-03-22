@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    background-color: #333333;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 300;
+}
+
+#svgcontainer {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 5px 50px 10px 50px;
+    /* background-color: whitesmoke; */
+}
+
+h1 {
+    font-weight: 800;
+    color: #5a7388;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin: 15px 0 10px 0;
+}
+
+svg {
+    /* background-color: #333333; */
+}
+.map{
+    background-color: #333333;
+    align-content:center;
+}
+.body{
+    background-color: #333333;
+    overflow: visible;
+    width:100%
+}
+.eventslst20{
+    fill:rgba(253, 228, 175, .3) !important
+}
+.eventslst40{
+    fill:rgba(243, 185, 102, .5) !important
+}
+.eventslst60{
+    fill:rgba(231, 149, 54, .3) !important
+}
+.eventslst80{
+    fill:rgba(231, 149, 54, .5) !important
+}
+.eventslst100{
+    fill:rgba(137, 48, 37, .5) !important
+}
+.default{
+    fill:rgba(137, 48, 37, .7) !important
+    }
+.provincesbg{
+    /* fill:rgb(240, 154, 93) !important */
+    fill:rgba(244, 244, 244, .2) !important
+}
+.statestext{
+    fill:#f4f4f4;
+}
+.td_style{
+    padding: 4px 10px 4px 40px;
+    background-color: #222121;
+    color: #fcd788;
+    font-size: 18px;
+    border-collapse: collapse;
+    border: 0px black solid;
+
+}
+
+.th_style{
+    padding: 20px;
+    background-color: #222121;
+    font-size: 24px;
+    font-family: Jost, sans-serif;
+    color: #ff8a1e;
+    border-collapse: collapse;
+    border: 0px black solid;
+    text-align: left;
+
+}
+
+.tablesorter-header {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    white-space: normal;
+    padding: 4px 20px 4px 4px;
+}
+.tablesorter-headerAsc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+}
+.tablesorter-headerDesc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+}
+.tablesorter .sorter-false {
+    background-image: none;
+    cursor: default;
+    padding: 4px;
+}
