@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/Condegram_main.js",
+              "src/assets/js/map.js",
+              "src/assets/js/edge_bundling.js"]
           },
           "configurations": {
             "production": {
@@ -93,7 +96,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["Users/sukesh/Documents/ADP/Frontend/src/assets/js/d3.min.js"]
           }
         },
         "lint": {
