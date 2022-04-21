@@ -18,6 +18,8 @@ import { Viz3Component } from './viz3/viz3.component';
 import { DatalistComponent } from './datalist/datalist.component';
 import { DatacardComponent } from './datacard/datacard.component';
 import { DataviewComponent } from './dataview/dataview.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -43,6 +45,7 @@ const routes: Routes = [
     path: 'dash/:id',
     component: DataviewComponent,
   },
+  {path:'sidenav',component: SideNavComponent}
 ];
 
 @NgModule({
@@ -67,4 +70,4 @@ export const routingComponents = [
   Viz1Component, 
   Viz2Component, 
   Viz3Component,
-  DatacardComponent, ]
+  DatacardComponent, SideNavComponent]
