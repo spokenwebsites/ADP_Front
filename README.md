@@ -1,4 +1,6 @@
-# Strapi application
+# Frontend of the ADP
 
-A quick description of your strapi application
-# movie-api-strapi
+Pull Repository
+cd into frontend_new
+npm install
+ng build
