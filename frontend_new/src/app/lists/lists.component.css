@@ -10866,3 +10866,26 @@ a {
   }
 }
 
+ul {
+  -moz-column-count: 3;
+  -moz-column-gap: 30px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 30px;
+  column-count: 3;
+  column-gap: 120px;
+}
+
+.letter {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+ 
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}

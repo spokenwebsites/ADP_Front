@@ -30,6 +30,9 @@ import { Viz3Component } from './viz3/viz3.component';
 import { DatalistComponent } from './datalist/datalist.component';
 import { DatacardComponent } from './datacard/datacard.component';
 import { DataviewComponent } from './dataview/dataview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 
 @NgModule({
@@ -39,10 +42,13 @@ import { DataviewComponent } from './dataview/dataview.component';
     DatalistComponent,
     DataviewComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,DashComponent, SideNavComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule,MaterialModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+ 
+ 
+}
