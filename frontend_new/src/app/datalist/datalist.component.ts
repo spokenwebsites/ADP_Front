@@ -1,29 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { SideNavComponent } from '../side-nav/side-nav.component';
-import { MatButton } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
 import {
   Component,
-  EventEmitter,
   OnInit,
-  Output,
   TemplateRef,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 
-
 @Component({
   selector: 'app-datalist',
   template: `
-  
     <div class="movielist-cnt">
-    <app-side-nav></app-side-nav>
     <div class="dashboard_section wf-section">
     <div class="pagecontainer">
-    
       <div class="dashboard-container">
-      
         <div style="display:none;-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="filtermenu flextleft">
           <div class="filtermenu-closeicon"><img src="assets/images/Cancel.svg" loading="lazy" width="16" height="16" data-w-id="db626699-1d45-4075-b6f9-c8af013384a1" alt="" class="image-15"></div>
           <div class="row-4 w-row">
@@ -33,7 +23,6 @@ import {
               <div class="nametext leftnametext detailtext">Refine your search by:</div>
             </div>
           </div>
-         
           <div class="collapsible-left-menu-container">
             <div data-hover="" data-delay="0" data-w-id="94c10caf-8cfe-4474-d855-50ba61f6db22" style="height:80px" class="dropdownleftmenu leftmenulink accordion-item w-dropdown">
               <div class="dropdown-toggle w-dropdown-toggle">
@@ -254,9 +243,7 @@ import {
               </nav>
             </div>
           </div>
-          
         </div>
-       
         <div class="dashboard-card-section">
           <h1 class="dashboardh1">Searched for:</h1>
           <div class="search-term-card">
@@ -277,11 +264,8 @@ import {
             </div>
             <div data-w-id="002f4a77-50d2-a8ee-1f66-2b6654f1d147" class="dashboard-results-stats">
               <div class="dashboard-results-icon nomeetingsicon"></div>
-            
-            
               <div class="dashboard-stats-div">
-                <div class="dashboard-results-text">Peoples</div>
-                
+                <div class="dashboard-results-text">People</div>
                 <div class="dashboard-results-number">12</div>
               </div>
             </div>
@@ -341,33 +325,17 @@ import {
       .movielist-breadcrumb h2 {
         margin: 0;
       }
-      mat-sidenav-container{
-        height:100%;
-        }
-        mat-sidenav,mat-sidenav-content{
-          padding:16px;
-        }
-        mat-sidenav{
-          background-color: lightcoral;
-          width:200px;
-        }
     `,
   ],
 })
-export class DatalistComponent implements OnInit  {
-  title: string = "Dashboard";
-  @Output() sidenavToggle = new EventEmitter<void>();
+export class DatalistComponent implements OnInit {
   swallows = [];
   @ViewChild('modal') modal!: TemplateRef<any>;
   @ViewChild('vc', { read: ViewContainerRef }) vc!: ViewContainerRef;
   vRef: any = null;
 
-  constructor(private http: HttpClient ) {}
-  opened=false;
-  events: string[] = [];
-  log(state: any){
-    console.log(state)
-  }
+  constructor(private http: HttpClient) {}
+
   ngOnInit(): void {
     this.fetchDatas();
   }
@@ -390,9 +358,4 @@ export class DatalistComponent implements OnInit  {
   closeDialog() {
     this.vRef.clear();
   }
-
-  onToggleSidenav() {
-    this.sidenavToggle.emit();
-  }
-  
 }
