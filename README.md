@@ -4,7 +4,7 @@
 - website that was created for the UX process: https://sites.google.com/view/archiveofthedigitalpresent/home 
 - webflow prototype: https://adp-v12.webflow.io/
 
-## How to build locally from the source
+## How to build angular frontend locally from the source
 
 - Pull Repository  
 - cd into frontend_new  
