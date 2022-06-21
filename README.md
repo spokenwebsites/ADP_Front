@@ -11,5 +11,6 @@
 - npm install  
 - ng build  
 
-
+Use link: https://swallow.library.concordia.ca/Service/bycollection.php?id=131
+for strapi import
 
