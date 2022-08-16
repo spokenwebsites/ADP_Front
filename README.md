@@ -1,7 +1,7 @@
 # Frontend of the ADP
 
 ## User Experience Design
-- currently available at website: adp.spokenweb.ca
+- currently available at website: https://adp.spokenweb.ca
 - website that was created for the UX process: https://sites.google.com/view/archiveofthedigitalpresent/home 
 - webflow prototype: https://adp-v12.webflow.io/
 
