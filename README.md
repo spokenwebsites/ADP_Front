@@ -19,8 +19,10 @@
 - Use MySQL from command line: 
 >mysql -u sweb -p
 - Enter the password
-->use adpbase;
-->show tables;
-->select * from ...;
-->update ... SET published_at = now();
-
+- Select the right database, look at the tables, select them and change the publishtime to now
+```
+use adpbase;
+show tables;
+select * from ...;
+update ... SET published_at = now();
+```
