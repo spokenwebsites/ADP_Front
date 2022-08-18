@@ -6,9 +6,9 @@
 - webflow prototype: https://adp-v12.webflow.io/
 
 ## How to build angular frontend locally from Server
-- use SCP: 
+- use SCP to download the contents of the folder: 
 ```
-scp -r username@alt.spokenweb.ca ~/www/adp path/to/local/dir  
+scp -r username@alt.spokenweb.ca:~/www/adp path/to/local/dir  
 ```
 - cd into ADP_Front/frontend_new, install angular using npm, build the angular components
 ```
