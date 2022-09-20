@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@angular/animations": "~11.2.8",
     "@angular/common": "~11.2.8",
     "@angular/compiler": "~11.2.8",
@@ -19,6 +20,12 @@
     "@angular/platform-browser": "~11.2.8",
     "@angular/platform-browser-dynamic": "~11.2.8",
     "@angular/router": "~11.2.8",
+    "@meilisearch/instant-meilisearch": "^0.8.2",
+    "algoliasearch": "^4.14.2",
+    "algoliasearch-helper": "^3.11.0",
+    "angular-instantsearch": "^4.3.0",
+    "g": "^2.0.1",
+    "instantsearch.js": "^4.45.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -26,8 +33,9 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1102.19",
     "@angular-devkit/core": "^13.3.4",
-    "@angular/cli": "^11.2.7",
+    "@angular/cli": "^11.2.19",
     "@angular/compiler-cli": "~11.2.8",
+    "@types/algoliasearch-helper": "^3.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",

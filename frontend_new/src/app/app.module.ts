@@ -1,3 +1,4 @@
+import { NgAisModule } from 'angular-instantsearch'
 import { NgModule } from '@angular/core';
 import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ElementRef, Injectable} from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,8 +42,10 @@ import { DataviewComponent } from './dataview/dataview.component';
     HeaderComponent,
     FooterComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgAisModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}
+

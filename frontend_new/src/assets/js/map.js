@@ -2,18 +2,15 @@
 var importedcsv;
 var map_json;
 
-//This function retrieves the json data from the src/assets/js/Topten.json
-//get_edge_bund_json is called in /src/app/viz3/viz3.component.ts.
-//get_edge_bund_json has the json data.
+
 function send_json_to_map_js_file(json){
     globalThis.map_json=json;
 
 }
 
-//This retrieves the csv from the file src/app/js/final.csv
-//Calljsfile it's definition is called in /src/app/viz3/viz3.component.ts
 function Calljsfile(mapcsv,test_json) {
-
+console.log("in call js file");
+    console.log(test_json,mapcsv)
 //Width and height
 
 var w = 1200;
@@ -33,7 +30,7 @@ var zoom = d3.behavior.zoom()
                 .on("zoom", move);
 
 var states_color = d3.scale.ordinal()
-   
+    //.range(['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462','#b3de69','#fccde5','#d9d9d9']);
     .range(['#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4','#faf7d4']);
 
 // Util func to move map to back and circles to front
@@ -143,7 +140,24 @@ svg
     .attr("cx", function(d){ return projection([+d.homelon, +d.homelat])[0] })
     .attr("cy", function(d){ return projection([+d.homelon, +d.homelat])[1] })
     .attr("r", function(d){
-        
+        // if(d.n<20){
+        // 	return "12.2"
+        // }
+        // else if(d.n<40 && d.n>20){
+        // 	return "17.2"
+        // }
+        // else if(d.n<60 && d.n>40){
+        // 	return "22.2"
+        // }
+        // else if(d.n<80 && d.n>60){
+        // 	return "27.2"
+        // }
+        // else if(d.n<100 && d.n>80){
+        // 	return "30"
+        // }
+        // else {
+        // 	return "34"
+        // }
         console.log(size(+d.n +1) +2 ); return  size(+d.n +1) + 2 })
     .attr("class", function(d){
         console.log(d)
@@ -168,7 +182,15 @@ svg
 
     })
     
-   
+    // .attr("stroke", function(d){ if(d.n>2000){return "black"}else{return "none"}  })
+    // .attr("stroke-width", 1)
+    // .attr("fill-opacity", 0.6)
+    // .append("animate")
+    // .attr("attributeName","opacity")
+    // .attr("dur","1s")
+    // .attr("values","0;1;0")
+    // .attr("repeatCount","")
+    // .attr("begin","0.01")
     .on("click",function(d){
             alert(d);
     })
@@ -187,5 +209,61 @@ svg
     
     
     
-   
+    // d3.csv("final.csv", function(data) {
+    // //var parsedCSV = d3.csvParseRows(data);
+    
+    // function tabulate_map(data,columns){
+    //     var table = d3.select('.tablesorter').append('table')
+    //         var thead = table.append('thead')
+    //         var	tbody = table.append('tbody');
+    //     table.attr('class','tablesorter')	
+    //     // append the header row
+    //     thead.append('tr')
+    //     .selectAll('th')
+    //     .data(columns).enter()
+    //     .append('th')
+    //     .attr("class","th_style sort-by")
+    //     // .style("border-collapse", "collapse")
+    //     // .style("border", "2px black solid")
+    //     .text(function (column) {
+    //         if(column=='n'){return "Events"}
+    //          return "Locations"; });
+
+    //     var rows = tbody.selectAll('tr')
+    //         .data(data)
+    //         .enter()
+    //         .append('tr');
+
+    //     // create a cell in each row for each column
+    //     var cells = rows.selectAll('td')
+    //             .data(function (row) {
+    //                 return columns.map(
+    //                     function (column) 
+    //                     {
+    //                         if(column=="city"){ return {
+    //                             column:column,value:row[column]+","+row["state"]
+    //                         }}
+    //                         else{
+    //                         return {
+
+    //                             column: column, 
+    //                             value: row[column] };}
+    //             });
+    //     })
+    //     .enter()
+    //     .append('td')
+    //     .attr("class","td_style")
+    //     // .style("border", "1px green solid")
+    //     // .style("padding", "5px")
+    //     .style("color","#CFDAE6")
+    //     .text(function (d) { return d.value; });
+    //             //add sorting, provinces to the table.display count by province
+    // return table;
+
+    // }
+    // tabulate_map(data,['city','n'])
+    // $("table").tablesorter({ sortList: [[1,1]] });
+    
+     
+//});
     }

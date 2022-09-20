@@ -1,1 +1,16 @@
-<p>lists-x works!</p>
+<h1>Lists of Titles</h1>
+<p>8:42AM Tuesday 26</p>
+<p *ngIf = "events$ | async as events">event.schema</p>
+<table *ngIf="events$ | async as events">
+  <tr>
+    <th>Titles</th>
+    <th>Picture link</th>
+    <th>Schema </th>
+  </tr>
+  <tr *ngFor="let event of events">
+    <td>{{event.item_description}}</td>
+    <td><a href="{{event.material_description}}">Picture</a></td>
+    <td>{{event.schema}} </td>
+  </tr>
+</table>		
+<p>Does this list work?</p>

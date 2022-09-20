@@ -1,9 +1,4 @@
 try {
-
-//This function retrieves the json data from the src/assets/js/Topten.json
-//get_edge_bund_json is called in /src/app/viz2/viz2.component.ts.
-//get_edge_bund_json(json), param:json- has the json data.
-
       function get_edge_bund_json(json){
            var edgebundling_json=[];
            edgebundling_json=json;
@@ -65,7 +60,6 @@ try {
                   .data(root.leaves())
                   .enter().append("text")
                   .attr("class", function (d) {
-                       //This will add css classes based on creator and events
                         if (d.data.color == "Red") {
                               return "creator";
                         }
@@ -77,7 +71,14 @@ try {
                   .attr("transform", function (d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
                   .attr("text-anchor", function (d) { return d.x < 180 ? "start" : "end"; })
                   .text(function (d) { console.log(d.data.key); return d.data.key; })
-                  
+                  // .attr("fill", function (d) {
+                  //       if (d.data.color == "Red") {
+                  //             return d.data.color;
+                  //       }
+                  //       else {
+                  //             return "Green"
+                  //       }
+                  // })
                   .on("mouseover", mouseovered)
                   .on("mouseout", mouseouted)
                   .on("click", nodeclicked)

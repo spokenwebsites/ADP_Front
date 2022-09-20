@@ -11,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
       </div>
       <div class="event-card-div-vid-img">
         <div class="dashboard-card-vidpreview">
-        <div class="movie-card-img" style="background-image: url({{ swallows.Image }});"></div>
+        <div class="movie-card-img" style="background-image: url({{ swallows.material_description }});"></div>
         </div>
       </div>
       <div class="event-card-top-text-div">
@@ -21,10 +21,10 @@ import { Component, Input, OnInit } from '@angular/core';
           <div title="Genre: Reading" tooltipster="bottom-delay" class="details-icon icon reading"></div>
           <div tooltipster="bottom-delay" title="Duration: 2 hours +" class="details-icon icon duration2hoursplus"></div>
         </div>
-        <div class="eventtitle"> {{ swallows.Title }} </div>
+        <div class="eventtitle"> {{ swallows.item_description }} </div>
         <div class="event-date-title">
           <div class="datetitle">
-          {{ swallows.Date }}</div>
+          {{ swallows.notes }}</div>
           <div class="organizationtitle">
             <a href="http://www.treereadingseries.ca/" target="_blank" class="link-3">Tree Reading Series</a>
           </div>

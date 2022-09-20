@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwallowEntryService } from 'src/app/core/services/swallow-entry.service';
 
 @Component({
   selector: 'app-lists-x',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lists-x.component.css']
 })
 export class ListsXComponent implements OnInit {
-
-  constructor() { }
+  
+  events$ = this.eventService.getEvents(); 
+  constructor(private eventService: SwallowEntryService) { }
 
   ngOnInit(): void {
   }
