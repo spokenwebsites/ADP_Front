@@ -1,9 +1,4 @@
 import { Component } from '@angular/core'
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
-
-const searchClient = instantMeiliSearch(
-  "http://localhost:7700"
-)
 
 @Component({
   selector: 'app-root',
@@ -12,8 +7,4 @@ const searchClient = instantMeiliSearch(
 })
 export class AppComponent {
   title = 'AoDP'
-  config = {
-    indexName: 'movies',
-    searchClient,
-  }
 }

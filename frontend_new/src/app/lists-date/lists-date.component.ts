@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
+import { environment } from 'src/environments/environment';
 
 const searchClient = instantMeiliSearch(
-  "http://localhost:7700"
+  environment.searchUrl
 )
 
 @Component({
