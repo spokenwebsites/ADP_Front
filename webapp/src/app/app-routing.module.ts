@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DatacardComponent } from './datacard/datacard.component';
+import { DatalistComponent } from './datalist/datalist.component';
+import { DataviewComponent } from './dataview/dataview.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
-import { ListsComponent } from './lists/lists.component';
 import { ListsDateComponent } from './lists-date/lists-date.component';
 import { ListsHostsComponent } from './lists-hosts/lists-hosts.component';
 import { ListsLangComponent } from './lists-lang/lists-lang.component';
 import { ListsLocComponent } from './lists-loc/lists-loc.component';
 import { ListsOrgComponent } from './lists-org/lists-org.component';
 import { ListsXComponent } from './lists-x/lists-x.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { ListsComponent } from './lists/lists.component';
 import { Viz1Component } from './viz1/viz1.component';
 import { Viz2Component } from './viz2/viz2.component';
 import { Viz3Component } from './viz3/viz3.component';
-import { DatalistComponent } from './datalist/datalist.component';
-import { DatacardComponent } from './datacard/datacard.component';
-import { DataviewComponent } from './dataview/dataview.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -40,6 +41,10 @@ const routes: Routes = [
     component: DatalistComponent,
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
     path: 'dash/:id',
     component: DataviewComponent,
   },
@@ -49,22 +54,23 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
-export const routingComponents = [ 
-  AboutComponent, 
+export class AppRoutingModule { }
+export const routingComponents = [
   AboutComponent,
-  HelpComponent, 
-  HomeComponent, 
-  ListsComponent, 
-  ListsDateComponent, 
-  ListsHostsComponent, 
-  ListsLangComponent, 
-  ListsLocComponent, 
-  ListsOrgComponent, 
-  ListsXComponent, 
-  HeaderComponent, 
-  FooterComponent, 
-  Viz1Component, 
-  Viz2Component, 
+  AboutComponent,
+  HelpComponent,
+  HomeComponent,
+  ListsComponent,
+  ListsDateComponent,
+  DashboardComponent,
+  ListsHostsComponent,
+  ListsLangComponent,
+  ListsLocComponent,
+  ListsOrgComponent,
+  ListsXComponent,
+  HeaderComponent,
+  FooterComponent,
+  Viz1Component,
+  Viz2Component,
   Viz3Component,
-  DatacardComponent, ]
+  DatacardComponent,]
