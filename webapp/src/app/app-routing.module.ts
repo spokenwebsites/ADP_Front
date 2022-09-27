@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { PathConstants } from './constants';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DatacardComponent } from './datacard/datacard.component';
 import { DatalistComponent } from './datalist/datalist.component';
 import { DataviewComponent } from './dataview/dataview.component';
+import { EventViewComponent } from './event-view/event-view.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HelpComponent } from './help/help.component';
@@ -41,12 +43,16 @@ const routes: Routes = [
     component: DatalistComponent,
   },
   {
-    path: 'dashboard',
+    path: 'dash/:id',
+    component: DataviewComponent,
+  },
+  {
+    path: PathConstants.Dashboard,
     component: DashboardComponent,
   },
   {
-    path: 'dash/:id',
-    component: DataviewComponent,
+    path: `${PathConstants.Details}/:entryId`,
+    component: EventViewComponent,
   },
 ];
 
