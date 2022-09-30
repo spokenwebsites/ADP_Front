@@ -2,21 +2,26 @@
   <div class="topbarcontain">
     <div class="columns_header w-row">
       <div class="column_logo w-col w-col-3 w-col-medium-3 w-col-small-3 w-col-tiny-tiny-stack">
-        <a href="index.html" class="link-block-header w-inline-block"><img src="assets/images/ADP_logo2_gradient.svg" loading="lazy" data-w-id="d10f40dc-b8f1-41dc-4def-c363a33eaca2" alt="Archive of the Digital Present Logo" class="logo-image-svg">
+        <a href="index.html" class="link-block-header w-inline-block"><img src="assets/images/ADP_logo2_gradient.svg"
+            loading="lazy" data-w-id="d10f40dc-b8f1-41dc-4def-c363a33eaca2" alt="Archive of the Digital Present Logo"
+            class="logo-image-svg">
           <div class="logotextdesktop">ARCHIVE OF THE <br>DIGITAL PRESENT</div>
         </a>
       </div>
       <div class="column_search w-col w-col-6 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
         <div class="form-block-4 w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" class="form-3"><input type="text" class="searchbar w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search" id="Search-2">
-            <a href="/dashboard" class="link-block-6 w-inline-block">
+          <form id="email-form" name="email-form" data-name="Email Form" class="form-3" [formGroup]="searchGroup">
+            <input type="text" class="searchbar w-input" maxlength="256" name="Search-2" data-name="Search 2"
+              placeholder="Search" id="Search-2" [formControl]="queryInput" (keyup.enter)="searchEntry()"
+              autocomplete="off" />
+            <div class="link-block-6 w-inline-block" (click)="searchEntry()">
               <div data-delay="0" data-hover="false" class="button-search-go w-dropdown">
                 <div class="searchbutton w-dropdown-toggle">
                   <div class="text-block-6">Go</div>
                 </div>
                 <nav class="droplistsearch w-dropdown-list"></nav>
               </div>
-            </a>
+            </div>
           </form>
           <div class="successsearch w-form-done"></div>
           <div class="w-form-fail">
@@ -63,7 +68,8 @@
                   <div>Facebook</div>
                 </div>
               </a>
-              <a href="https://www.youtube.com/channel/UCK2hH-Xmr6SxSKbqyeagLkA" target="_blank" class="dropdownmenulink w-inline-block">
+              <a href="https://www.youtube.com/channel/UCK2hH-Xmr6SxSKbqyeagLkA" target="_blank"
+                class="dropdownmenulink w-inline-block">
                 <div class="dropdownmenuicon">
                   <div>Y</div>
                 </div>

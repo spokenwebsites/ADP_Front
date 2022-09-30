@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
-import { environment } from 'src/environments/environment'
+import { ActivatedRoute } from '@angular/router';
+import { MSSearchHits } from '../services/swallow-entry/ms';
+import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
-
-const searchClient = instantMeiliSearch(
-  environment.searchUrl
-)
 
 @Component({
   selector: 'app-dashboard',
@@ -14,27 +11,42 @@ const searchClient = instantMeiliSearch(
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  isLoading: boolean = true;
+  hits: SwallowEntry[] = [];
+  // Pagination
+  page: number = 0;
+  totalPages: number = 0;
+  limit: number = 20;
+  query: string = "";
 
-  constructor(private parserService: ParserService) { }
+  constructor(private parserService: ParserService,
+    private route: ActivatedRoute,
+    private swallowEntryService: SwallowEntryService) { }
 
   ngOnInit(): void {
-  }
-  config = {
-    indexName: environment.EntryIndex,
-    searchClient,
-  }
-
-  parse(hit: any) {
-    return this.parserService.parser(hit)
-  }
-
-  parseHits(hits: any[]){
-    let entries: SwallowEntry[] = []
-    for(let hit of hits){
-      let entry: (SwallowEntry | null) = this.parserService.parser(hit);
-      if(entry != null) entries.push(entry);
-    }
-    return entries;
+    this.route.queryParams.subscribe((params) => {
+      // extract query from the URL
+      this.query = params.q || "";
+      this.onPageChange(0);
+    },
+      (err) => {
+        // TODO: show errors?
+        this.isLoading = false;
+      })
   }
 
+  onPageChange(page: any): void {
+    this.isLoading = true;
+
+    this.swallowEntryService.searchEntry(this.query.trim(), page * this.limit, this.limit).subscribe((msHits: MSSearchHits<SwallowEntry>) => {
+      this.hits = msHits.hits;
+      this.totalPages = Math.ceil(msHits.estimatedTotalHits / this.limit);
+      this.page = page;
+      this.isLoading = false;
+    },
+      (err) => {
+        // TODO: show errors?
+        this.isLoading = false;
+      });
+  }
 }

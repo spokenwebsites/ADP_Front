@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgAisModule } from 'angular-instantsearch';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,6 +11,7 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { EventViewComponent } from './event-view/event-view.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -22,12 +23,19 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent,
     FooterComponent,
     EventCardComponent,
-    EventViewComponent
+    EventViewComponent,
+    PaginationComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgAisModule.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
 
-export class AppModule {}
+export class AppModule { }
 
