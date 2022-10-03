@@ -20,12 +20,18 @@ export class SwallowEntryService {
   }
 
   searchEntry(query: string, offset: number = 0, limit: number = 20): Observable<MSSearchHits<SwallowEntry>> {
-    return this.http.post<MSSearchHits<SwallowEntry>>(this.searchUrl + `/indexes/${this.EntryIndex}/search`, { q: query, offset: offset, limit: limit });
+    return this.http.post<MSSearchHits<SwallowEntry>>(this.searchUrl + `/indexes/${this.EntryIndex}/search`,
+      {
+        q: query,
+        offset: offset,
+        limit: limit,
+        facets: ['Item_Description.genre', 'Creators.name', 'Location.address', 'Dates.date', 'collection.source_collection']
+      });
   }
 
   getEntries(offset: number, limit: number): Observable<MSHits<SwallowEntry>> {
     // Setup query parameters
     const params = new HttpParams().set('offset', offset + "").set('limit', limit + "");
-    return this.http.get<MSHits<SwallowEntry>>(this.searchUrl + `/indexes/${this.EntryIndex}/documents`, { params: params });
+    return this.http.get<MSHits<SwallowEntry>>(this.searchUrl + `/indexes/${this.EntryIndex}/documents`, { params: params, });
   }
 }

@@ -12,7 +12,7 @@ export class PaginationComponent implements OnInit {
   @Output() change: EventEmitter<Number> = new EventEmitter();
 
   // How many pages to show on the view.
-  @Input() pageLength: number = 3;
+  @Input() pageLength: number = 20;
 
   constructor() { }
 

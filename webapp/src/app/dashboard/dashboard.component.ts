@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit {
   totalPages: number = 0;
   limit: number = 20;
   query: string = "";
+  sidenavOpened: boolean = false;
+  facetDistribution: any;
+  facetAttributes: any;
 
   constructor(private parserService: ParserService,
     private route: ActivatedRoute,
@@ -40,6 +43,23 @@ export class DashboardComponent implements OnInit {
 
     this.swallowEntryService.searchEntry(this.query.trim(), page * this.limit, this.limit).subscribe((msHits: MSSearchHits<SwallowEntry>) => {
       this.hits = msHits.hits;
+      this.facetDistribution = {
+        Organizations: msHits.facetDistribution["collection.source_collection"],
+        Events: msHits.facetDistribution["Item_Description.genre.value"],
+        Places: msHits.facetDistribution["Location.address"],
+        Recordings: [
+          { name: 'Yes', selected: false, disabled: false },
+          { name: 'No', selected: false, disabled: false },
+        ],
+        Dates: msHits.facetDistribution["Dates.date"],
+        People: msHits.facetDistribution["Creators.name"],
+      };
+
+      this.facetAttributes = {
+        Organizations: this.parseFacetDistributionByUnique(this.facetDistribution.Organizations),
+        People: this.parseFacetDistributionByUnique(this.facetDistribution.People),
+        Events: this.parseFacetDistribution(this.facetDistribution.Events),
+      }
       this.totalPages = Math.ceil(msHits.estimatedTotalHits / this.limit);
       this.page = page;
       this.isLoading = false;
@@ -48,5 +68,27 @@ export class DashboardComponent implements OnInit {
         // TODO: show errors?
         this.isLoading = false;
       });
+  }
+
+  onOpenFilterSideNav(): void {
+    this.sidenavOpened = !this.sidenavOpened;
+  }
+
+  parseFacetDistributionByUnique(facet: any): Number {
+    if (!facet) {
+      return 0;
+    }
+    return Object.keys(facet).length;
+  }
+
+  parseFacetDistribution(facet: any): Number {
+    if (!facet) {
+      return 0;
+    }
+    let count: Number = 0;
+    for (let obj in facet) {
+      count += facet[obj];
+    }
+    return count;
   }
 }

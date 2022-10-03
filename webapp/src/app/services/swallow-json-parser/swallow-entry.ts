@@ -137,4 +137,4 @@ export class SwallowEntry {
     Digital_File_Description!: digitalFileDescription[];
     Institution_and_Collection!: institutionAndCollection;
     Related_Works!: relatedWork[];
-}  
+} 

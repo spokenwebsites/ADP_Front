@@ -9,7 +9,7 @@
         </div>
         <div class="event-card-vid-img-container">
             <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
-                [src]="entry.Material_Description[0]!.image" />
+            [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image" />
         </div>
 
         <div class="event-card-top-text-div">
