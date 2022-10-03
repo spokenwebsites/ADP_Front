@@ -10,9 +10,9 @@
 ```
 scp -r username@alt.spokenweb.ca:~/www/adp path/to/local/dir  
 ```
-- cd into ADP_Front/frontend_new, install angular using npm, build the angular components
+- cd into ADP_Front/webapp, install angular using npm, build the angular components
 ```
- cd ADP_Front/frontend_new
+ cd ADP_Front/webapp
  npm install  
  ng build   
 ```
