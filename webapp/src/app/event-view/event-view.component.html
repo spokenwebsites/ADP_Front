@@ -1,0 +1,269 @@
+<div class="container" *ngIf="entry; else noEntry">
+    <div class="main-section-div">
+        <div class="wrapper">
+            <div class="list-container">
+                <div class="col lg-6">
+                    <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
+                        [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image"
+                        loading="lazy" alt="" class="details-poster-img" />
+                    <div class="event-details-socialmedia">
+                        <h6 class="heading-9">Find this event on social media:</h6>
+                        <div class="social-media-icons-contianer">
+                            <a href="https://twitter.com/nlpublibraries/status/1258449768310804480?lang=en"
+                                target="_blank" class="organizer-social-media w-inline-block"><img
+                                    src="/assets/images/Twitter_orange.svg" width="40" height="40" alt=""
+                                    class="social-media-icon"></a>
+                            <a href="https://m.facebook.com/events/377045833698221" target="_blank"
+                                class="organizer-social-media w-inline-block"><img
+                                    src="/assets/images/Facebook_orange.svg" width="40" height="40"
+                                    id="https-m.facebook.com-events-377045833698221" alt=""
+                                    class="social-media-icon"></a>
+                        </div>
+                        <a href="https://www.argobookshop.ca/" class="link-block-7 w-inline-block">
+                            <div class="organization-div"><img src="/assets/images/web_click_orange.svg" loading="lazy"
+                                    width="40" height="40" alt="" class="social-media-icon">
+                                <h6 class="heading-8">Argo Bookshop</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="event-map">
+                        <div class="w-embed w-iframe">
+                            <iframe [src]="parser.getMapLink(entry.Location)" width="400" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col lg-1 hidden-lg-down"></div>
+                <div class="col lg-6">
+                    <div data-w-id="b8ae716f-6f33-9645-e6f8-7d753b1c1fc3" class="margin-top margin-bottom">
+                        <h6 class="heading-6">Event&#x27;s Details</h6>
+                        <h1 class="heading-4">{{entry?.Item_Description!.title}}</h1>
+                        <h6 class="description">Description</h6>
+                        <p class="text-filter">
+                            <span *ngIf="entry?.Content">{{entry.Content.contents}}</span>
+                        </p>
+                        <div class="metadata-menu">
+                            <div class="metadata-accordion-wrapper">
+                                <div class="accordion-item">
+                                    <div class="accordion-metadata-heading">
+                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                loading="lazy" alt="" class="image-9"></div>
+                                        <div class="text-metadata">
+                                            <h4 class="heading-5">People</h4>
+                                        </div>
+                                    </div>
+                                    <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                            loading="lazy" alt="" class="image-8"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-accordion-content">
+                                <div class="metadata-accordion-item-block" *ngFor="let creator of entry.Creators">
+                                    <div class="metadata-item-line">
+                                        <div class="metadata-columns w-row">
+                                            <div class="metadata-field w-col w-col-4">
+                                                <div class="metadata-field-text">Name:</div>
+                                            </div>
+                                            <div class="metadata-field-content w-col w-col-8">
+                                                <div class="metadata-field-content-text">{{creator.name}}<br></div>
+                                                <a [href]="creator.url" class="viaf-link w-inline-block"><img
+                                                        src="/assets/images/VIAF_external-link-orange.svg"
+                                                        loading="lazy" width="40" height="20" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="metadata-item-line">
+                                        <div class="metadata-columns w-row">
+                                            <div class="metadata-field w-col w-col-4">
+                                                <div class="metadata-field-text">Role:</div>
+                                            </div>
+                                            <div class="metadata-field-content w-col w-col-8">
+                                                <div class="metadata-field-content-text">{{parser.getRoles(creator)}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metadata-menu">
+                            <div class="metadata-accordion-wrapper">
+                                <div class="accordion-item">
+                                    <div class="accordion-metadata-heading">
+                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                loading="lazy" alt="" class="image-9"></div>
+                                        <div class="text-metadata">
+                                            <h4 class="heading-5">Date</h4>
+                                        </div>
+                                    </div>
+                                    <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                            loading="lazy" alt="" class="image-8"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-accordion-content">
+                                <div class="metadata-item-line">
+                                    <div class="metadata-columns w-row">
+                                        <div class="metadata-field w-col w-col-4">
+                                            <div class="metadata-field-text">Date:</div>
+                                        </div>
+                                        <div class="metadata-field-content w-col w-col-8">
+                                            <div class="metadata-field-content-text">{{entry.Dates[0].date}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metadata-menu">
+                            <div class="metadata-accordion-wrapper">
+                                <div class="accordion-item">
+                                    <div class="accordion-metadata-heading">
+                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                loading="lazy" alt="" class="image-9"></div>
+                                        <div class="text-metadata">
+                                            <h4 class="heading-5">Type of Event</h4>
+                                        </div>
+                                    </div>
+                                    <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                            loading="lazy" alt="" class="image-8"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-accordion-content">
+                                <div class="metadata-item-line">
+                                    <div class="metadata-columns w-row">
+                                        <div class="metadata-field w-col w-col-4">
+                                            <div class="metadata-field-text">Genre:</div>
+                                        </div>
+                                        <div class="metadata-field-content w-col w-col-8">
+                                            <div class="metadata-field-content-text">
+                                                {{parser.getGenres(entry.Item_Description)}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metadata-menu">
+                            <div class="metadata-accordion-wrapper">
+                                <div class="accordion-item">
+                                    <div class="accordion-metadata-heading">
+                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                loading="lazy" alt="" class="image-9"></div>
+                                        <div class="text-metadata">
+                                            <h4 class="heading-5">Location</h4>
+                                        </div>
+                                    </div>
+                                    <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                            loading="lazy" alt="" class="image-8"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-accordion-content">
+                                <div class="metadata-item-line">
+                                    <div class="metadata-columns w-row">
+                                        <div class="metadata-field w-col w-col-4">
+                                            <div class="metadata-field-text">Location:</div>
+                                        </div>
+                                        <div class="metadata-field-content w-col w-col-8">
+                                            <div class="metadata-field-content-text">
+                                                {{entry.Location[0].address}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metadata-menu">
+                            <div class="metadata-menu">
+                                <div class="metadata-accordion-wrapper">
+                                    <div class="accordion-item">
+                                        <div class="accordion-metadata-heading">
+                                            <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                    loading="lazy" alt="" class="image-9"></div>
+                                            <div class="text-metadata">
+                                                <h4 class="heading-5">Online Platform</h4>
+                                            </div>
+                                        </div>
+                                        <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                                loading="lazy" alt="" class="image-8"></div>
+                                    </div>
+                                </div>
+                                <div class="metadata-accordion-content">
+                                    <div class="metadata-item-line">
+                                        <div class="metadata-columns w-row">
+                                            <div class="metadata-field w-col w-col-4">
+                                                <div class="metadata-field-text">Platform:</div>
+                                            </div>
+                                            <div class="metadata-field-content w-col w-col-8">
+                                                <div class="metadata-field-content-text">{{entry.Location[0].notes}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metadata-menu">
+                            <div class="metadata-accordion-wrapper">
+                                <div class="accordion-item">
+                                    <div class="accordion-metadata-heading">
+                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                loading="lazy" alt="" class="image-9"></div>
+                                        <div class="text-metadata">
+                                            <h4 class="heading-5">Related Images</h4>
+                                        </div>
+                                    </div>
+                                    <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                            loading="lazy" alt="" class="image-8"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-accordion-content">
+                                <div class="metadata-item-line">
+                                    <div class="metadata-columns w-row">
+                                        <div class="metadata-field w-col w-col-4">
+                                            <div class="metadata-field-text">Image:</div>
+                                        </div>
+                                        <div class="metadata-field-content w-col w-col-8"><img
+                                                [src]="entry.Material_Description[0].image" loading="lazy" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metadata-menu">
+                            <div class="metadata-accordion-wrapper">
+                                <div class="accordion-item">
+                                    <div class="accordion-metadata-heading">
+                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
+                                                loading="lazy" alt="" class="image-9"></div>
+                                        <div class="text-metadata">
+                                            <h4 class="heading-5">Related Works</h4>
+                                        </div>
+                                    </div>
+                                    <div class="plus-icon-metadata"><img src="/assets/images/Plus_orange.svg"
+                                            loading="lazy" alt="" class="image-8"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-accordion-content">
+                                <div class="metadata-item-line">
+                                    <div class="metadata-columns w-row">
+                                        <div class="metadata-field w-col w-col-4">
+                                            <div class="metadata-field-text">URL:</div>
+                                        </div>
+                                        <div class="metadata-field-content w-col w-col-8">
+                                            <div class="metadata-field-content-text"
+                                                *ngFor="let relatedwork of entry.Related_Works">
+                                                {{"citation: " +relatedwork.citation}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #noEntry>
+    No Entry found!
+</ng-template>

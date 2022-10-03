@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="tab control-btn" (click)="onFirstPage()"><span>&lt;&lt;</span></div>
+    <div class="tab control-btn" (click)="onPreviousPage()"><span>&lt;</span></div>
+    <div *ngFor="let pageNumber of rangePages();" class="page tab" (click)="onPageChange(pageNumber)">
+        {{pageNumber + 1}}
+    </div>
+    <div class="tab control-btn" (click)="onNextPage()"><span>&gt;</span></div>
+    <div class="tab control-btn" (click)="onLastPage()"><span>&gt;&gt;</span></div>
+    <div class="page tab" *ngIf="total">
+        ({{page + 1}} of {{total}})
+    </div>
+</div>

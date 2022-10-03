@@ -1,0 +1,58 @@
+<div class="event-card" *ngIf="entry">
+    <div class="event-card-top-div">
+        <div class="dashboard-select-div">
+            <div class="select-download-text">select to download</div>
+            <div class="dashboard-select-checkmark">
+                <img src="/assets/images/check-solid-white.svg" loading="lazy" width="20" height="20"
+                    data-w-id="72b90187-2f81-0d1c-9102-764ff8d845b0" alt="" class="card-select-icon">
+            </div>
+        </div>
+        <div class="event-card-vid-img-container">
+            <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
+            [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image" />
+        </div>
+
+        <div class="event-card-top-text-div">
+            <div class="event-icons-div">
+                <div tooltipster="bottom-delay" title="Recording available" class="details-icon icon recording">
+                </div>
+                <div tooltipster="bottom-delay" title="Language: English" class="details-icon icon english">
+                </div>
+                <div title="Genre: Reading" tooltipster="bottom-delay" class="details-icon icon reading">
+                </div>
+                <div tooltipster="bottom-delay" title="Duration: 2 hours +"
+                    class="details-icon icon duration2hoursplus">
+                </div>
+            </div>
+            <div class="eventtitle">
+                <a href="http://www.treereadingseries.ca/readings/laura-zacharin-jason-christie" target="_blank"
+                    class="link-2">{{entry?.Item_Description?.title}}</a>
+            </div>
+            <div class="event-date-title">
+                <div class="datetitle">{{entry?.Location && entry.Location.length > 0 ? entry.Location[0]!.venue + " " :
+                    ""}}{{entry?.Dates && entry.Dates.length > 0 ? entry.Dates[0]!.date : ""}}</div>
+                <div class="organizationtitle">
+                    <a href="http://www.treereadingseries.ca/" target="_blank"
+                        class="link-3">{{entry?.collection?.source_collection}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="event-card-mid-div">
+        <div class="event-details">
+            <div class="event-people">
+                <div *ngFor="let creator of entry.Creators | slice:0:2">
+                    <a [href]="creator.url" class="link-8">{{creator.name}}</a>
+                    <br />
+                </div>
+            </div>
+            <p class="paragraph-2"><span *ngIf="entry?.Content">{{entry.Content.contents | slice:0:90}}</span></p>
+        </div>
+    </div>
+
+    <div class="event-card-bottom-div">
+        <a (click)="onClickMore()" routerLinkActive="active" class="bottommorelink bottommoreright w-inline-block">
+            <div class="more_button_text">More</div>
+        </a>
+    </div>
+</div>

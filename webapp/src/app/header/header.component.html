@@ -1,0 +1,102 @@
+<div class="topbar wf-section">
+  <div class="topbarcontain">
+    <div class="columns_header w-row">
+      <div class="column_logo w-col w-col-3 w-col-medium-3 w-col-small-3 w-col-tiny-tiny-stack">
+        <a href="index.html" class="link-block-header w-inline-block"><img src="assets/images/ADP_logo2_gradient.svg"
+            loading="lazy" data-w-id="d10f40dc-b8f1-41dc-4def-c363a33eaca2" alt="Archive of the Digital Present Logo"
+            class="logo-image-svg">
+          <div class="logotextdesktop">ARCHIVE OF THE <br>DIGITAL PRESENT</div>
+        </a>
+      </div>
+      <div class="column_search w-col w-col-6 w-col-medium-6 w-col-small-6 w-col-tiny-tiny-stack">
+        <div class="form-block-4 w-form">
+          <form id="email-form" name="email-form" data-name="Email Form" class="form-3" [formGroup]="searchGroup">
+            <input type="text" class="searchbar w-input" maxlength="256" name="Search-2" data-name="Search 2"
+              placeholder="Search" id="Search-2" [formControl]="queryInput" (keyup.enter)="searchEntry()"
+              autocomplete="off" />
+            <div class="link-block-6 w-inline-block" (click)="searchEntry()">
+              <div data-delay="0" data-hover="false" class="button-search-go w-dropdown">
+                <div class="searchbutton w-dropdown-toggle">
+                  <div class="text-block-6">Go</div>
+                </div>
+                <nav class="droplistsearch w-dropdown-list"></nav>
+              </div>
+            </div>
+          </form>
+          <div class="successsearch w-form-done"></div>
+          <div class="w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+      <div class="column_plus w-col w-col-3 w-col-medium-3 w-col-small-3 w-col-tiny-tiny-stack">
+        <div class="div-block-6">
+          <div data-delay="0" data-hover="false" class="dropdown-3 w-dropdown">
+            <div class="topplusbutton w-dropdown-toggle">
+              <div class="text-block">+</div>
+            </div>
+            <nav class="profiledropdowncontain w-dropdown-list">
+              <a href="help.html" data-ix="new-interaction-2" class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>?</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Help</div>
+                </div>
+              </a>
+              <a href="#" class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>C</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Contact</div>
+                </div>
+              </a>
+              <a href="http://www.spokenweb.ca" target="_blank" class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>S</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Spokenweb</div>
+                </div>
+              </a>
+              <a href="https://www.facebook.com/SpokenWeb/" target="_blank" class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>F</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Facebook</div>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/channel/UCK2hH-Xmr6SxSKbqyeagLkA" target="_blank"
+                class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>Y</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Youtube</div>
+                </div>
+              </a>
+              <a href="https://twitter.com/SpokenWebCanada" target="_blank" class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>T</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Twitter</div>
+                </div>
+              </a>
+              <a href="https://www.instagram.com/spokenweb" target="_blank" class="dropdownmenulink w-inline-block">
+                <div class="dropdownmenuicon">
+                  <div>I</div>
+                </div>
+                <div class="dropdownmenutext">
+                  <div>Instagram</div>
+                </div>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
