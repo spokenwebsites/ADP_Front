@@ -1,35 +1,35 @@
-interface cataloguer {
+export interface cataloguer {
     name: string,
     lastname: string,
     email: string
 }
-interface collection {
+export interface collection {
     contributing_unit: string,
     source_collection: string,
     source_collection_description: string,
     source_collection_id: string
 }
-interface date {
+export interface date {
     id: string,
     date: string,
     type: string,
     notes: string,
     source: string
 }
-interface note {
+export interface note {
     id: string,
     note: string,
     type: string
 }
-interface content {
+export interface content {
     notes: string,
     contents: string
 }
-interface creatorRole {
+export interface creatorRole {
     id: string,
     value: string
 }
-interface creator {
+export interface creator {
     id: string,
     url: string,
     name: string,
@@ -37,7 +37,7 @@ interface creator {
     dates: string,
     notes: string
 }
-interface location {
+export interface location {
     id: string,
     url: string,
     notes: string,
@@ -46,14 +46,14 @@ interface location {
     latitude: string,
     longitude: string,
 }
-interface contributor {
+export interface contributor {
 
 }
-interface itemDescriptionGenre {
+export interface itemDescriptionGenre {
     id: string,
     value: string
 }
-interface itemDescription {
+export interface itemDescription {
     genre: itemDescriptionGenre[],
     title: string,
     language: string,
@@ -63,7 +63,7 @@ interface itemDescription {
     subseries_title: string,
     production_context: string,
 }
-interface materialDescription {
+export interface materialDescription {
     id: string,
     side: string,
     image: string,
@@ -86,7 +86,7 @@ interface materialDescription {
     accompanying_material: string,
     other_physical_description: string
 }
-interface digitalFileDescription {
+export interface digitalFileDescription {
     id: string,
     size: string,
     notes: string,
@@ -106,11 +106,11 @@ interface digitalFileDescription {
     content_type: string,
     channel_field: string,
 }
-interface institutionAndCollection {
+export interface institutionAndCollection {
     item_ID: string,
     persistent_URL: string
 }
-interface relatedWork {
+export interface relatedWork {
     id: string,
     URL: string,
     citation: string,

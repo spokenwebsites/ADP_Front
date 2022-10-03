@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   config = {
-    indexName: 'Entries',
+    indexName: environment.EntryIndex,
     searchClient,
   }
 
@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
       let entry: (SwallowEntry | null) = this.parserService.parser(hit);
       if(entry != null) entries.push(entry);
     }
-    return entries
+    return entries;
   }
 
 }

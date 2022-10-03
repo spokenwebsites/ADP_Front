@@ -41,16 +41,17 @@
     <div class="event-card-mid-div">
         <div class="event-details">
             <div class="event-people">
-                <a href="#" class="link-8">People 1<br>People 2<br></a>
+                <div *ngFor="let creator of entry.Creators | slice:0:2">
+                    <a [href]="creator.url" class="link-8">{{creator.name}}</a>
+                    <br />
+                </div>
             </div>
-            <p class="paragraph-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                varius enim
-                in eros elementum tristique...</p>
+            <p class="paragraph-2">{{entry.Content.contents | slice:0:90}}</p>
         </div>
     </div>
 
     <div class="event-card-bottom-div">
-        <a routerLink="/details0" routerLinkActive="active" class="bottommorelink bottommoreright w-inline-block">
+        <a (click)="onClickMore()" routerLinkActive="active" class="bottommorelink bottommoreright w-inline-block">
             <div class="more_button_text">More</div>
         </a>
     </div>

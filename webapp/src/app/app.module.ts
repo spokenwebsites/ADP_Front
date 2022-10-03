@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 
 import { DatalistComponent } from './datalist/datalist.component';
 import { DataviewComponent } from './dataview/dataview.component';
+import { EventCardComponent } from './event-card/event-card.component';
+import { EventViewComponent } from './event-view/event-view.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { EventCardComponent } from './event-card/event-card.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { EventCardComponent } from './event-card/event-card.component';
     DataviewComponent,
     HeaderComponent,
     FooterComponent,
-    EventCardComponent
+    EventCardComponent,
+    EventViewComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgAisModule.forRoot()],
   providers: [],
