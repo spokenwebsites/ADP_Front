@@ -2452,7 +2452,7 @@ a {
   align-items: center;
   border: 1px solid #fff;
   border-radius: 100px;
-  background-image: url('/webapp/src/assets/images/play.svg');
+  background-image: url('/assets/images/play.svg');
   background-position: 50% 50%;
   background-size: 30%;
   background-repeat: no-repeat;
@@ -3285,7 +3285,7 @@ a {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-image: url('/webapp/src/assets/images/Image.svg');
+  background-image: url('/assets/images/Image.svg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -3438,7 +3438,7 @@ a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url('/webapp/src/assets/images/Image.svg');
+  background-image: url('/assets/images/Image.svg');
   background-position: 50% 50%;
   background-size: cover;
   color: #2699fb;
@@ -3589,7 +3589,7 @@ a {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-image: url('/webapp/src/assets/images/Image.svg');
+  background-image: url('/assets/images/Image.svg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -3607,7 +3607,7 @@ a {
   min-height: 150px;
   border-radius: 100px;
   background-color: #f1f9ff;
-  background-image: url('/webapp/src/assets/images/Union-5.svg');
+  background-image: url('/assets/images/Union-5.svg');
   background-size: 30%;
   background-repeat: no-repeat;
 }
@@ -3670,7 +3670,7 @@ a {
   -ms-flex-align: center;
   align-items: center;
   background-color: #f1f9ff;
-  background-image: url('/webapp/src/assets/images/Union-5.svg');
+  background-image: url('/assets/images/Union-5.svg');
   background-position: 50% 50%;
   background-size: 30%;
   background-repeat: no-repeat;
@@ -3918,7 +3918,7 @@ a {
   padding: 30px 75px;
   border-radius: 5px;
   background-color: #f1f9ff;
-  background-image: url('/webapp/src/assets/images/Quote.svg');
+  background-image: url('/assets/images/Quote.svg');
   background-position: 25px 25px;
   background-size: 50px;
   background-repeat: no-repeat;
@@ -4228,7 +4228,7 @@ a {
 }
 
 .hero-section-with-background-image {
-  background-image: url('/webapp/src/assets/images/Image.svg');
+  background-image: url('/assets/images/Image.svg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -4994,7 +4994,7 @@ a {
   border: 1px solid #fff;
   border-radius: 20px;
   background-color: #333;
-  background-image: url('/webapp/src/assets/images/search.png');
+  background-image: url('/assets/images/search.png');
   background-position: 16px 50%;
   background-size: 15px;
   background-repeat: no-repeat;
@@ -5260,7 +5260,7 @@ a {
   padding-top: 25px;
   border-radius: 3px;
   background-color: #fff;
-  background-image: url('/webapp/src/assets/images/bookmark-tag.png');
+  background-image: url('/assets/images/bookmark-tag.png');
   background-position: 91% 0px;
   background-size: 20px;
   background-repeat: no-repeat;
@@ -5621,7 +5621,7 @@ a {
 }
 
 .dashboard-results-icon.cancelledmeetings {
-  background-image: url('/webapp/src/assets/images/group-1.png');
+  background-image: url('/assets/images/group-1.png');
   background-position: 50% 50%;
   background-size: 27px;
   background-repeat: no-repeat;
@@ -5629,7 +5629,7 @@ a {
 
 .dashboard-results-icon.nomeetingsicon {
   background-color: #6e6e6e;
-  background-image: url('/webapp/src/assets/images/user-1.png');
+  background-image: url('/assets/images/user-1.png');
   background-position: 50% 50%;
   background-size: 35px;
   background-repeat: no-repeat;
@@ -5671,7 +5671,7 @@ a {
   border: 1px none #fff;
   border-radius: 0%;
   background-color: transparent;
-  background-image: url('/webapp/src/assets/images/video-slash-solid.svg');
+  background-image: url('/assets/images/video-slash-solid.svg');
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -5680,43 +5680,43 @@ a {
 .details-icon.icon.no-recording {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/no_video_solid_orange.svg');
+  background-image: url('/assets/images/no_video_solid_orange.svg');
 }
 
 .details-icon.icon.conversation {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/Genre-01.svg');
+  background-image: url('/assets/images/Genre-01.svg');
 }
 
 .details-icon.icon.english {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/EN.svg');
+  background-image: url('/assets/images/EN.svg');
 }
 
 .details-icon.icon.duration2hoursplus {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/plus2hours-01.svg');
+  background-image: url('/assets/images/plus2hours-01.svg');
 }
 
 .details-icon.icon.recording {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/video-solid_orange.svg');
+  background-image: url('/assets/images/video-solid_orange.svg');
 }
 
 .details-icon.icon.reading {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/Genre-01.svg');
+  background-image: url('/assets/images/Genre-01.svg');
 }
 
 .details-icon.icon.english {
   width: 24px;
   height: 24px;
-  background-image: url('/webapp/src/assets/images/EN_1.svg');
+  background-image: url('/assets/images/EN_1.svg');
 }
 
 .event-card-mid-div {
@@ -7136,13 +7136,13 @@ a {
 }
 
 .event-card-div-vid-img.img-event-1 {
-  background-image: url('/webapp/src/assets/images/EvaCrocker_All_I_Ask.png');
+  background-image: url('/assets/images/EvaCrocker_All_I_Ask.png');
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .event-card-div-vid-img.img-event2 {
-  background-image: url('/webapp/src/assets/images/SkyIsBlue.png');
+  background-image: url('/assets/images/SkyIsBlue.png');
   background-position: 50% 50%;
 }
 
