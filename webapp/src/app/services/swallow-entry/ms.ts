@@ -12,4 +12,5 @@ export interface MSSearchHits<T> {
     offset: number;
     processingTimeMs: number;
     hits: T[]
+    facetDistribution: any;
 }

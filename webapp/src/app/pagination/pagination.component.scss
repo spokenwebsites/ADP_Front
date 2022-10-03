@@ -1,5 +1,10 @@
 .container {
     .tab {
         cursor: pointer;
+        padding: 10px;
+        color: #fcd788;
     }
+    .control-btn {
+    }
+    display: flex;
 }

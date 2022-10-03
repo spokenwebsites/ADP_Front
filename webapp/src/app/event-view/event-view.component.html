@@ -4,7 +4,8 @@
             <div class="list-container">
                 <div class="col lg-6">
                     <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
-                        [src]="entry.Material_Description[0]!.image" loading="lazy" alt="" class="details-poster-img" />
+                        [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image"
+                        loading="lazy" alt="" class="details-poster-img" />
                     <div class="event-details-socialmedia">
                         <h6 class="heading-9">Find this event on social media:</h6>
                         <div class="social-media-icons-contianer">
@@ -27,8 +28,8 @@
                     </div>
                     <div class="event-map">
                         <div class="w-embed w-iframe">
-                            <iframe [src]="parser.getMapLink(entry.Location)" width="400"
-                                height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe [src]="parser.getMapLink(entry.Location)" width="400" height="300" style="border:0;"
+                                allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -64,8 +65,7 @@
                                             </div>
                                             <div class="metadata-field-content w-col w-col-8">
                                                 <div class="metadata-field-content-text">{{creator.name}}<br></div>
-                                                <a [href]="creator.url"
-                                                    class="viaf-link w-inline-block"><img
+                                                <a [href]="creator.url" class="viaf-link w-inline-block"><img
                                                         src="/assets/images/VIAF_external-link-orange.svg"
                                                         loading="lazy" width="40" height="20" alt=""></a>
                                             </div>

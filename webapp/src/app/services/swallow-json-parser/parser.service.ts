@@ -20,10 +20,16 @@ export class ParserService {
   }
 
   getGenres(itemDescription: itemDescription): string {
+    if (!itemDescription || !itemDescription.genre) {
+      return ""
+    }
     return itemDescription.genre.map(g => g.value).join(", ")
   }
 
   getRoles(creator: creator): string {
+    if (!creator || !creator.role) {
+      return ""
+    }
     return creator.role.map(r => r.value).join(", ")
   }
 
