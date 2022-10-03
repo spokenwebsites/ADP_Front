@@ -305,12 +305,14 @@
         </div>
       </div>
       <div class="dashboard-card-section">
-        <h1 class="dashboardh1">Searched for:</h1>
-        <div class="searchtermcard_container">
-          <div class="search-term-card">
-            <div class="text-searched-term">2020</div>
-            <div class="search-term-close">
+        <div *ngIf="query">
+          <h1 class="dashboardh1">Searched for:</h1>
+          <div class="searchtermcard_container">
+            <div class="search-term-card">
+              <div class="text-searched-term">{{query}}</div>
+              <!-- <div class="search-term-close">
               <div class="search-card-x-icon">x</div>
+            </div> -->
             </div>
           </div>
         </div>
