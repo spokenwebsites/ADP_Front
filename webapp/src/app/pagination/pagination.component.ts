@@ -12,7 +12,7 @@ export class PaginationComponent implements OnInit {
   @Output() change: EventEmitter<Number> = new EventEmitter();
 
   // How many pages to show on the view.
-  @Input() pageLength: number = 20;
+  @Input() pageLength: number = 15;
 
   constructor() { }
 
@@ -21,8 +21,10 @@ export class PaginationComponent implements OnInit {
 
   rangePages(): number[] {
     const pageNumbers: number[] = [];
+    const start = Math.max(this.page, this.page - this.pageLength);
+    const end = Math.min(this.total, this.page + this.pageLength);
     // To keep the current page in the middle of the list of page numbers.
-    for (let index = Math.max(0, this.page - (this.pageLength / 2)); index < Math.min(this.total, this.page + (this.pageLength / 2)); index++) {
+    for (let index = start; index < end; index++) {
       pageNumbers.push(index);
     }
     return pageNumbers;

@@ -40,7 +40,7 @@
                         <h1 class="heading-4">{{entry?.Item_Description!.title}}</h1>
                         <h6 class="description">Description</h6>
                         <p class="text-filter">
-                            {{entry.Content.contents}}
+                            <span *ngIf="entry?.Content">{{entry.Content.contents}}</span>
                         </p>
                         <div class="metadata-menu">
                             <div class="metadata-accordion-wrapper">

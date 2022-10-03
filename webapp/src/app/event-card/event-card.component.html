@@ -46,7 +46,7 @@
                     <br />
                 </div>
             </div>
-            <p class="paragraph-2">{{entry.Content.contents | slice:0:90}}</p>
+            <p class="paragraph-2"><span *ngIf="entry?.Content">{{entry.Content.contents | slice:0:90}}</span></p>
         </div>
     </div>
 

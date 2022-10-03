@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   // Pagination
   page: number = 0;
   totalPages: number = 0;
-  limit: number = 20;
+  limit: number = 21;
   query: string = "";
   sidenavOpened: boolean = false;
   facetDistribution: any;
