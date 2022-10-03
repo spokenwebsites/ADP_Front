@@ -1,10 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
-import { environment } from 'src/environments/environment';
-
-const searchClient = instantMeiliSearch(
-  environment.searchUrl
-)
 
 @Component({
   selector: 'app-lists-date',
@@ -17,9 +11,4 @@ export class ListsDateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  config = {
-    indexName: 'Entries',
-    searchClient,
-  }
-
 }

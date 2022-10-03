@@ -362,24 +362,19 @@
           </div>
         </div>
         <div class="dashboard-card-container w-clearfix">
-          <ais-instantsearch [config]="config">
-            <ais-hits>
-              <ng-template let-hits="hits">
-                <div *ngIf="hits?.length > 0; else noHits" class="event-card-list">
-                  <app-event-card class="event-card" *ngFor="let hit of hits" [entry]="parse(hit)"></app-event-card>
-                </div>
+          <div *ngIf="hits != null && hits.length > 0; else noHits" class="event-card-list">
+            <app-event-card class="event-card" *ngFor="let hit of hits" [entry]="hit"></app-event-card>
+          </div>
 
-                <ng-template #noHits>
-                  <div>
-                    No results found matching <strong></strong>.
-                  </div>
-                </ng-template>
-              </ng-template>
-            </ais-hits>
-            <!-- <div class="pagination">
-              <ais-pagination></ais-pagination>
-            </div> -->
-          </ais-instantsearch>
+          <ng-template #noHits>
+            <div>
+              No results found matching <strong></strong>.
+            </div>
+          </ng-template>
+          <div class="pagination">
+            <app-pagination [page]="page" [total]="totalPages" (change)="onPageChange($event)">
+            </app-pagination>
+          </div>
         </div>
       </div>
     </div>
