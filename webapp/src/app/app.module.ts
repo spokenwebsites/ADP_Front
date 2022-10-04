@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material/material.module';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,13 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent],
 })
 

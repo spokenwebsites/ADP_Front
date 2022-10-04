@@ -24,8 +24,11 @@ export class InterceptorService implements HttpInterceptor {
 
     let headers = new HttpHeaders();
 
-    const contentType = 'application/json';
-    headers.set('Content-Type', contentType)
+    headers = headers.set(
+      'content-type', 'application/json'
+    );
+
+    headers = headers.set('accept', 'application/json');
 
     const clone = req.clone({
       headers
