@@ -23,10 +23,9 @@ export class EventViewComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       let entryId = params.get('entryId');
       if (entryId != null) {
-        this.service.getEntry(entryId).toPromise().then((entry) => {
+        this.service.getEntry(entryId).then((entry) => {
           this.loading = false;
           this.entry = entry;
-          console.log("entry", entry);
         }).catch((err) => {
           this.loading = false;
         })

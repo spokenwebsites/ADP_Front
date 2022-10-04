@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MSSearchHits } from '../services/swallow-entry/ms';
+import { SearchResponse } from 'meilisearch';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
@@ -41,19 +41,21 @@ export class DashboardComponent implements OnInit {
   onPageChange(page: any): void {
     this.isLoading = true;
 
-    this.swallowEntryService.searchEntry(this.query.trim(), page * this.limit, this.limit).subscribe((msHits: MSSearchHits<SwallowEntry>) => {
+    this.swallowEntryService.searchEntry(this.query.trim(), page * this.limit, this.limit).then((msHits: SearchResponse<SwallowEntry>) => {
       this.hits = msHits.hits;
-      this.facetDistribution = {
-        Organizations: msHits.facetDistribution["collection.source_collection"],
-        Events: msHits.facetDistribution["Item_Description.genre.value"],
-        Places: msHits.facetDistribution["Location.address"],
-        Recordings: [
-          { name: 'Yes', selected: false, disabled: false },
-          { name: 'No', selected: false, disabled: false },
-        ],
-        Dates: msHits.facetDistribution["Dates.date"],
-        People: msHits.facetDistribution["Creators.name"],
-      };
+      if (msHits.facetDistribution) {
+        this.facetDistribution = {
+          Organizations: msHits.facetDistribution["collection.source_collection"],
+          Events: msHits.facetDistribution["Item_Description.genre.value"],
+          Places: msHits.facetDistribution["Location.address"],
+          Recordings: [
+            { name: 'Yes', selected: false, disabled: false },
+            { name: 'No', selected: false, disabled: false },
+          ],
+          Dates: msHits.facetDistribution["Dates.date"],
+          People: msHits.facetDistribution["Creators.name"],
+        };
+      }
 
       this.facetAttributes = {
         Organizations: this.parseFacetDistributionByUnique(this.facetDistribution.Organizations),
@@ -63,11 +65,10 @@ export class DashboardComponent implements OnInit {
       this.totalPages = Math.ceil(msHits.estimatedTotalHits / this.limit);
       this.page = page;
       this.isLoading = false;
-    },
-      (err) => {
-        // TODO: show errors?
-        this.isLoading = false;
-      });
+    }).catch((err) => {
+      // TODO: show errors?
+      this.isLoading = false;
+    });
   }
 
   onOpenFilterSideNav(): void {
