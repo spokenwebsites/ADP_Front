@@ -39,9 +39,9 @@
                         </mat-panel-description>
 
                     </mat-expansion-panel-header>
-                    <section class="ngsection" *ngFor="let creator of facetDistribution.People | keyvalue">
+                    <section class="ngsection" *ngFor="let creator of facetDistribution.People">
                         <mat-checkbox class="matcheckbox" labelPosition="after">
-                            {{printable(creator)}}
+                            {{printableList(creator)}}
                         </mat-checkbox>
                     </section>
 
