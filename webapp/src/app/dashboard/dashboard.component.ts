@@ -53,7 +53,7 @@ export class DashboardComponent implements OnInit {
             { name: 'No', selected: false, disabled: false },
           ],
           Dates: msHits.facetDistribution["Dates.date"],
-          People: msHits.facetDistribution["Creators.name"],
+          People: this.sortByValue(msHits.facetDistribution["Creators.name"]), // Why here? To avoid sorting the values on every render.
         };
       }
 
@@ -91,5 +91,15 @@ export class DashboardComponent implements OnInit {
       count += facet[obj];
     }
     return count;
+  }
+
+  sortByValue(facet: any){
+    let sorted = [];
+    for (let obj in facet) {
+      sorted.push([obj, facet[obj]])
+    }
+    return sorted.sort(function(a, b) {
+      return b[1] - a[1];
+    });
   }
 }

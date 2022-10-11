@@ -18,4 +18,8 @@ export class SideNavComponent implements OnInit {
   printable(obj: {key: any, value: any}): string {
     return `${obj.key} (${obj.value})`
   }
+  
+  printableList(obj: any[]): string {
+    return `${obj[0]} (${obj[1]})`
+  }
 }
