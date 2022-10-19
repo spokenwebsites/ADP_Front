@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FilterType } from '../model';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,17 +9,25 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SideNavComponent implements OnInit {
   @Input() opened!: boolean;
   @Input() facetDistribution: any;
+  @Output() change: EventEmitter<any[]> = new EventEmitter();
+  public FilterType = FilterType;
 
   constructor() {
+
   }
   ngOnInit() {
   }
 
-  printable(obj: {key: any, value: any}): string {
-    return `${obj.key} (${obj.value})`
+  printable(obj: { name: any, frequency: any }): string {
+    return `${obj.name} (${obj.frequency})`
   }
-  
-  printableList(obj: any[]): string {
-    return `${obj[0]} (${obj[1]})`
+
+  handleChange(filter: FilterType) {
+    let selectedAttributes: any[] = this.facetDistribution[filter].filter((attribute: any) => attribute.selected);
+    let selectedObj: any = {};
+    for(let attribute of selectedAttributes){
+      selectedObj[attribute.name] = true;
+    }
+    this.change.emit([filter, selectedObj]);
   }
 }

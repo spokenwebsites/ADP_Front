@@ -20,8 +20,9 @@
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <section class="ngsection" *ngFor="let org of facetDistribution.Organizations | keyvalue">
-                    <mat-checkbox class="matcheckbox" labelPosition="after">
+                <section class="ngsection" *ngFor="let org of facetDistribution[FilterType.Organization]">
+                    <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="org.selected"
+                        [(ngModel)]="org.selected" (ngModelChange)="handleChange(FilterType.Organization)">
                         {{printable(org)}}
                     </mat-checkbox>
                 </section>
@@ -39,11 +40,12 @@
                         </mat-panel-description>
 
                     </mat-expansion-panel-header>
-                    <section class="ngsection" *ngFor="let creator of facetDistribution.People">
-                        <mat-checkbox class="matcheckbox" labelPosition="after">
-                            {{printableList(creator)}}
+                    <div class="ngsection" *ngFor="let creator of facetDistribution[FilterType.People]">
+                        <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="creator.selected"
+                            [(ngModel)]="creator.selected" (ngModelChange)="handleChange(FilterType.People)">
+                            {{printable(creator)}}
                         </mat-checkbox>
-                    </section>
+                    </div>
 
                 </mat-expansion-panel>
             </div>
@@ -58,8 +60,9 @@
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <section class="ngsection" *ngFor="let event of facetDistribution.Events | keyvalue">
-                    <mat-checkbox class="matcheckbox" labelPosition="after">
+                <section class="ngsection" *ngFor="let event of facetDistribution[FilterType.TypeOfEvent]">
+                    <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="event.selected"
+                        [(ngModel)]="event.selected" (ngModelChange)="handleChange(FilterType.TypeOfEvent)">
                         {{printable(event)}}
                     </mat-checkbox>
                 </section>
@@ -76,8 +79,9 @@
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <section class="ngsection" *ngFor="let place of facetDistribution.Places | keyvalue">
-                    <mat-checkbox class="matcheckbox" labelPosition="after">
+                <section class="ngsection" *ngFor="let place of facetDistribution[FilterType.Place]">
+                    <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="place.selected"
+                        [(ngModel)]="place.selected" (ngModelChange)="handleChange(FilterType.Place)">
                         {{printable(place)}}
                     </mat-checkbox>
                 </section>
@@ -94,9 +98,9 @@
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <section class="ngsection" *ngFor="let Recording of facetDistribution.Recordings">
+                <section class="ngsection" *ngFor="let recording of facetDistribution.Recordings">
                     <mat-checkbox class="matcheckbox" labelPosition="after">
-                        {{Recording.name}}
+                        {{recording}}
                     </mat-checkbox>
                 </section>
 
@@ -112,9 +116,10 @@
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <section class="ngsection" *ngFor="let date of facetDistribution.Dates | keyvalue">
-                    <mat-checkbox class="matcheckbox" labelPosition="after">
-                        {{printable(date)}}
+                <section class="ngsection" *ngFor="let date of facetDistribution[FilterType.Date]">
+                    <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="date.selected"
+                        [(ngModel)]="date.selected" (ngModelChange)="handleChange(FilterType.Date)">
+                        {{printable(date.name)}}
                     </mat-checkbox>
                 </section>
 
