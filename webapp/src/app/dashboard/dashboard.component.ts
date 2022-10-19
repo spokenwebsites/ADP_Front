@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchResponse } from 'meilisearch';
+import { FilterType } from '../model';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
@@ -21,6 +22,7 @@ export class DashboardComponent implements OnInit {
   sidenavOpened: boolean = false;
   facetDistribution: any;
   facetAttributes: any;
+  filterAttributes: any = {};
 
   constructor(private parserService: ParserService,
     private route: ActivatedRoute,
@@ -41,19 +43,20 @@ export class DashboardComponent implements OnInit {
   onPageChange(page: any): void {
     this.isLoading = true;
 
-    this.swallowEntryService.searchEntry(this.query.trim(), page * this.limit, this.limit).then((msHits: SearchResponse<SwallowEntry>) => {
+    this.swallowEntryService.searchEntry(this.query.trim(), page * this.limit, this.limit, this.filterAttributes).then((msHits: SearchResponse<SwallowEntry>) => {
+      console.log("msHits", msHits, this.filterAttributes)
       this.hits = msHits.hits;
       if (msHits.facetDistribution) {
         this.facetDistribution = {
-          Organizations: msHits.facetDistribution["collection.source_collection"],
-          Events: msHits.facetDistribution["Item_Description.genre.value"],
-          Places: msHits.facetDistribution["Location.address"],
+          [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
+          [FilterType.TypeOfEvent]: this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution),
+          [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
           Recordings: [
             { name: 'Yes', selected: false, disabled: false },
             { name: 'No', selected: false, disabled: false },
           ],
-          Dates: msHits.facetDistribution["Dates.date"],
-          People: this.sortByValue(msHits.facetDistribution["Creators.name"]), // Why here? To avoid sorting the values on every render.
+          [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
+          [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
         };
       }
 
@@ -93,13 +96,58 @@ export class DashboardComponent implements OnInit {
     return count;
   }
 
-  sortByValue(facet: any){
-    let sorted = [];
+  sortByValueWithFormControl(filterType: FilterType, facetAttributes: any) {
+    let facet = facetAttributes[filterType];
+    let items = [];
     for (let obj in facet) {
-      sorted.push([obj, facet[obj]])
+      items.push([obj, facet[obj]])
     }
-    return sorted.sort(function(a, b) {
+    const sorted = items.sort(function (a, b) {
       return b[1] - a[1];
     });
+    items = [];
+    for (let element of sorted) {
+      let selected = false;
+      if (this.filterAttributes[filterType]) {
+        selected = this.filterAttributes[filterType].hasOwnProperty(element[0])
+      }
+      items.push(
+        {
+          name: element[0],
+          frequency: element[1],
+          selected
+        });
+    }
+    return items;
+  }
+
+  withFormControl(filterType: FilterType, facetAttributes: any) {
+    let facet = facetAttributes[filterType];
+    let items = [];
+    for (let attribute in facet) {
+      let selected = false;
+      if (this.filterAttributes[filterType]) {
+        selected = this.filterAttributes[filterType].hasOwnProperty(attribute)
+      }
+      items.push(
+        {
+          name: attribute,
+          frequency: facet[attribute],
+          selected
+        });
+    }
+    return items;
+  }
+
+  handleFilterChange(event: any) {
+    let key = event[0];
+    let selectedAttributes = event[1];
+
+    if (!this.filterAttributes.hasOwnProperty(key)) {
+      this.filterAttributes[key] = {};
+    }
+    this.filterAttributes[key] = selectedAttributes;
+    console.log("key", key, selectedAttributes);
+    this.onPageChange(this.page);
   }
 }
