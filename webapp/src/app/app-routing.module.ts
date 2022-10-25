@@ -12,10 +12,12 @@ import { HeaderComponent } from './header/header.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
 import { ListsDateComponent } from './lists-date/lists-date.component';
+import { ListsEventsComponent } from './lists-events/lists-events.component';
 import { ListsHostsComponent } from './lists-hosts/lists-hosts.component';
 import { ListsLangComponent } from './lists-lang/lists-lang.component';
 import { ListsLocComponent } from './lists-loc/lists-loc.component';
 import { ListsOrgComponent } from './lists-org/lists-org.component';
+import { ListsPeopleComponent } from './lists-people/lists-people.component';
 import { ListsXComponent } from './lists-x/lists-x.component';
 import { ListsComponent } from './lists/lists.component';
 import { Viz1Component } from './viz1/viz1.component';
@@ -28,13 +30,13 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'help', component: HelpComponent },
   { path: '', component: HomeComponent },
-  { path: 'lists', component: ListsComponent },
-  { path: 'lists-date', component: ListsDateComponent },
-  { path: 'lists-hosts', component: ListsHostsComponent },
-  { path: 'lists-lang', component: ListsLangComponent },
-  { path: 'lists-loc', component: ListsLocComponent },
-  { path: 'lists-org', component: ListsOrgComponent },
-  { path: 'lists-x', component: ListsXComponent },
+  { path: PathConstants.TypeOfEvents, component: ListsEventsComponent },
+  { path: PathConstants.People, component: ListsPeopleComponent },
+  { path: PathConstants.Places, component: ListsEventsComponent },
+  { path: PathConstants.HostingPlatform, component: ListsEventsComponent },
+  { path: PathConstants.Languages, component: ListsEventsComponent },
+  { path: PathConstants.Date, component: ListsDateComponent },
+  { path: PathConstants.Organizers, component: ListsEventsComponent },
   { path: 'viz1', component: Viz1Component },
   { path: 'viz2', component: Viz2Component },
   { path: 'viz3', component: Viz3Component },

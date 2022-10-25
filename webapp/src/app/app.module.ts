@@ -12,10 +12,12 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { EventViewComponent } from './event-view/event-view.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { InterceptorService } from './interceptor.service';
+import { ListsEventsComponent } from './lists-events/lists-events.component';
+import { ListsPeopleComponent } from './lists-people/lists-people.component';
 import { MaterialModule } from './material/material.module';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { InterceptorService } from './interceptor.service';
     EventCardComponent,
     EventViewComponent,
     PaginationComponent,
-    SideNavComponent
+    SideNavComponent,
+    ListsEventsComponent,
+    ListsPeopleComponent
   ],
   imports: [
     BrowserModule,

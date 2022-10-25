@@ -26,7 +26,7 @@ export class SwallowEntryService {
     return this.index.getDocument(document_id);
   }
 
-  searchEntry(query: string, offset: number = 0, limit: number = 20, filterAttributes: any): Promise<SearchResponse<SwallowEntry>> {
+  searchEntry(query: string, offset: number = 0, limit: number = 20, filterAttributes: any, facets: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
     let filter = "";
     let i = 0;
     for (let filterAttribute in filterAttributes) {
@@ -49,15 +49,14 @@ export class SwallowEntryService {
       q: query,
       offset: offset,
       limit: limit,
-      facets: [
-        FilterType.Organization,
-        FilterType.Date,
-        FilterType.People,
-        FilterType.Place,
-        FilterType.TypeOfEvent
-      ],
+      facets: facets,
       filter: filter,
     };
     return this.index.search(query, params);
+  }
+
+  // Efficient way to get the metadata of the particular facet.
+  getFacetsMetadata(facets: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
+    return this.searchEntry("", 0, 0, null, facets);
   }
 }
