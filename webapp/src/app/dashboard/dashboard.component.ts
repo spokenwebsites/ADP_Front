@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { SearchResponse } from 'meilisearch';
 import { FilterType } from '../model';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
-import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 
 @Component({
@@ -23,10 +22,9 @@ export class DashboardComponent implements OnInit {
   facetDistribution: any;
   facetAttributes: any;
   filterAttributes: any = {};
-  // filter!: string;
+  filterSearchOn: boolean = false;
 
-  constructor(private parserService: ParserService,
-    private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
     private swallowEntryService: SwallowEntryService) { }
 
   ngOnInit(): void {
@@ -61,7 +59,8 @@ export class DashboardComponent implements OnInit {
         FilterType.TypeOfEvent
       ]).then((msHits: SearchResponse<SwallowEntry>) => {
         this.hits = msHits.hits;
-        if (msHits.facetDistribution) {
+        // We don't update the facetDistribution if user is changing the filters at the side-nav component.
+        if (msHits.facetDistribution && !this.filterSearchOn) {
           this.facetDistribution = {
             [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
             [FilterType.TypeOfEvent]: this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution),
@@ -74,15 +73,15 @@ export class DashboardComponent implements OnInit {
             [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
           };
         }
-
         this.facetAttributes = {
-          Organizations: this.parseFacetDistributionByUnique(this.facetDistribution.Organizations),
-          People: this.parseFacetDistributionByUnique(this.facetDistribution.People),
-          Events: this.parseFacetDistribution(this.facetDistribution.Events),
+          Organizations: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.Organization]),
+          People: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.People]),
+          Events: this.parseFacetDistribution(this.facetDistribution[FilterType.TypeOfEvent]),
         }
         this.totalPages = Math.ceil(msHits.estimatedTotalHits / this.limit);
         this.page = page;
         this.isLoading = false;
+        this.filterSearchOn = true;
       }).catch((err) => {
         // TODO: show errors?
         this.isLoading = false;
@@ -106,7 +105,7 @@ export class DashboardComponent implements OnInit {
     }
     let count: Number = 0;
     for (let obj in facet) {
-      count += facet[obj];
+      count += facet[obj].frequency;
     }
     return count;
   }
@@ -157,9 +156,8 @@ export class DashboardComponent implements OnInit {
   handleFilterChange(event: any) {
     let key = event[0];
     let selectedAttributes = event[1];
-
-    if (!this.filterAttributes.hasOwnProperty(key)) {
-      this.filterAttributes[key] = {};
+    if (!selectedAttributes || Object.keys(selectedAttributes).length) {
+      delete this.filterAttributes[key];
     }
     this.filterAttributes[key] = selectedAttributes;
     this.onPageChange(this.page);
