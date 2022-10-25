@@ -2,7 +2,7 @@
     <div class="main-section-div">
         <div class="wrapper">
             <div class="list-container">
-                <div class="col lg-6">
+                <div class="col lg-6 left">
                     <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
                         [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image"
                         loading="lazy" alt="" class="details-poster-img" />
@@ -42,7 +42,7 @@
                         <p class="text-filter">
                             <span *ngIf="entry?.Content">{{entry.Content.contents}}</span>
                         </p>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu" *ngIf="entry.Creators">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu" *ngIf="entry.Dates && entry.Dates.length && entry.Dates[0].date">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
@@ -113,7 +113,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu" *ngIf="entry.Item_Description">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu" *ngIf="entry.Location && entry.Location.length && entry.Location[0].address">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu" *ngIf="entry.Location && entry.Location.length && entry.Location[0].notes">
                             <div class="metadata-menu">
                                 <div class="metadata-accordion-wrapper">
                                     <div class="accordion-item">
@@ -201,7 +201,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu"
+                            *ngIf="entry.Material_Description && entry.Material_Description.length && entry.Material_Description[0].image">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
@@ -221,14 +222,14 @@
                                         <div class="metadata-field w-col w-col-4">
                                             <div class="metadata-field-text">Image:</div>
                                         </div>
-                                        <div class="metadata-field-content w-col w-col-8"><img
-                                                [src]="entry.Material_Description[0].image" loading="lazy" alt="">
+                                        <div class="metadata-field-content w-col w-col-8">
+                                            <img [src]="entry.Material_Description[0].image" loading="lazy" [alt]="entry?.Item_Description!.title" height="100px" width="100px">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu">
+                        <div class="metadata-menu" *ngIf="entry.Related_Works">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
