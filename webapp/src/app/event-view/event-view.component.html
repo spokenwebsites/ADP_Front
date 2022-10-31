@@ -6,6 +6,9 @@
                     <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
                         [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image"
                         loading="lazy" alt="" class="details-poster-img" />
+                    <div *ngIf="recordingAvailable">
+                        <a [href]="recordingURL" target="_blank">{{recordingURL}}</a>
+                    </div>
                     <div class="event-details-socialmedia">
                         <h6 class="heading-9">Find this event on social media:</h6>
                         <div class="social-media-icons-contianer">
@@ -142,7 +145,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu" *ngIf="entry.Location && entry.Location.length && entry.Location[0].address">
+                        <div class="metadata-menu"
+                            *ngIf="entry.Location && entry.Location.length && entry.Location[0].address">
                             <div class="metadata-accordion-wrapper">
                                 <div class="accordion-item">
                                     <div class="accordion-metadata-heading">
@@ -223,7 +227,8 @@
                                             <div class="metadata-field-text">Image:</div>
                                         </div>
                                         <div class="metadata-field-content w-col w-col-8">
-                                            <img [src]="entry.Material_Description[0].image" loading="lazy" [alt]="entry?.Item_Description!.title" height="100px" width="100px">
+                                            <img [src]="entry.Material_Description[0].image" loading="lazy"
+                                                [alt]="entry?.Item_Description!.title" height="100px" width="100px">
                                         </div>
                                     </div>
                                 </div>

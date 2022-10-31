@@ -12,7 +12,7 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
   styleUrls: ['./lists-date.component.scss']
 })
 export class ListsDateComponent implements OnInit {
-  listOfAttributes: { [key: number]: { [key: string]: string[] } } = {};
+  listOfAttributes: { [key: number]: { [key: string]: any[] } } = {};
   categories: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   selectedYear!: number;
   selectedMonth!: string;
@@ -44,7 +44,11 @@ export class ListsDateComponent implements OnInit {
               if (!this.listOfAttributes[year][month]) {
                 this.listOfAttributes[year][month] = [];
               }
-              this.listOfAttributes[year][month].push(attribute);
+              let mAttr = {
+                name: attribute,
+                frequency: msHits.facetDistribution[FilterType.Date][attribute]
+              }
+              this.listOfAttributes[year][month].push(mAttr);
             }
           }
         }

@@ -9,15 +9,29 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
   styleUrls: ['./event-card.component.scss']
 })
 export class EventCardComponent implements OnInit {
-
+  recordingAvailable: boolean = false;
+  recordingURL!: string;
   @Input() entry!: SwallowEntry | null;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if (this.entry) {
+      for (let digital of this.entry.Digital_File_Description) {
+        if (digital.content_type == 'Video Recording') {
+          this.recordingAvailable = true;
+          this.recordingURL = digital.file_url;
+          break;
+        }
+      }
+    }
   }
 
   onClickMore(): void {
     this.router.navigate([PathConstants.Details, this.entry?.swallow_id])
+  }
+
+  onOpenVideoURL(): void {
+    window.open(this.recordingURL, "_blank");
   }
 }

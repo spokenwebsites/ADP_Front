@@ -30,7 +30,11 @@ export class ListsPeopleComponent implements OnInit {
           if (!this.listOfAttributes[attribute[0].toUpperCase()]) {
             this.listOfAttributes[attribute[0].toUpperCase()] = [];
           }
-          this.listOfAttributes[attribute[0].toUpperCase()].push(attribute);
+          let mAttr = {
+            name: attribute,
+            frequency: msHits.facetDistribution[FilterType.People][attribute]
+          }
+          this.listOfAttributes[attribute[0].toUpperCase()].push(mAttr);
         }
       }
     }).catch((err) => {

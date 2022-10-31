@@ -24,8 +24,8 @@
               <!-- <div class="w-col w-col-4"> -->
               <ul role="list" class="w-list-unstyled">
                 <li *ngFor="let attribute of listOfAttributes[selectedYear][selectedMonth]" class="list-item">
-                  <a (click)="onClickAttribute(attribute)" class="link-block-4 w-inline-block">
-                    <p class="paragraph-small no-bottom-margins">{{attribute}}</p>
+                  <a (click)="onClickAttribute(attribute.name)" class="link-block-4 w-inline-block">
+                    <p class="paragraph-small no-bottom-margins">{{attribute.name + " ("+attribute.frequency+")"}}</p>
                   </a>
                 </li>
               </ul>

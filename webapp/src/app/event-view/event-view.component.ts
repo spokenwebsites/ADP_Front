@@ -13,6 +13,8 @@ export class EventViewComponent implements OnInit {
   loading: boolean = false;
   entry!: SwallowEntry;
   locations: string[] = [];
+  recordingAvailable: boolean = false;
+  recordingURL!: string;
 
   constructor(private route: ActivatedRoute,
     private service: SwallowEntryService,
@@ -27,6 +29,13 @@ export class EventViewComponent implements OnInit {
         this.service.getEntry(entryId).then((entry) => {
           this.loading = false;
           this.entry = entry;
+          for (let digital of this.entry.Digital_File_Description) {
+            if (digital.content_type == 'Video Recording') {
+              this.recordingAvailable = true;
+              this.recordingURL = digital.file_url;
+              break;
+            }
+          }
           this.locations = [];
           for (let location of entry.Location) {
             let startingOfPlatforms = location.notes.indexOf(":");
@@ -61,5 +70,9 @@ export class EventViewComponent implements OnInit {
       return locations;
     }
     return "";
+  }
+
+  onOpenVideoURL(): void {
+    window.open(this.recordingURL, "_blank");
   }
 }

@@ -19,6 +19,7 @@ import { MaterialModule } from './material/material.module';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ListsGenericComponent } from './lists-generic/lists-generic.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ListsGenericComponent } from './lists-generic/lists-generic.component';
     SideNavComponent,
     ListsEventsComponent,
     ListsPeopleComponent,
-    ListsGenericComponent
+    ListsGenericComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

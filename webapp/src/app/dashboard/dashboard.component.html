@@ -65,9 +65,13 @@
               <a href="#" class="download-button w-button">Download</a>
             </div>
           </div>
-          <div class="dashboard-card-container w-clearfix">
+          <div class="dashboard-card-container w-clearfix" *ngIf="!isLoading; else loading">
             <div *ngIf="hits != null && hits.length > 0; else noHits" class="event-card-list">
               <app-event-card class="event-card" *ngFor="let hit of hits" [entry]="hit"></app-event-card>
+            </div>
+            <div class="pagination" *ngIf="hits != null && hits.length > 0">
+              <app-pagination [page]="page" [total]="totalPages" (change)="onPageChange($event)">
+              </app-pagination>
             </div>
 
             <ng-template #noHits>
@@ -75,11 +79,13 @@
                 No results found matching <strong></strong>.
               </div>
             </ng-template>
-            <div class="pagination">
-              <app-pagination [page]="page" [total]="totalPages" (change)="onPageChange($event)">
-              </app-pagination>
-            </div>
           </div>
+          <ng-template #loading>
+            <app-loading class="loading">
+              Loading
+            </app-loading>
+          </ng-template>
+
         </div>
       </div>
     </div>
