@@ -57,6 +57,20 @@ export class SwallowEntryService {
 
   // Efficient way to get the metadata of the particular facet.
   getFacetsMetadata(facets: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
-    return this.searchEntry("", 0, 0, null, facets);
+    const params = {
+      offset: 0,
+      limit: 0,
+      facets: facets
+    };
+    return this.index.search("", params);
+  }
+
+  // Efficient way to get the metadata of the particular facet.
+  getAttributes(attributes: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
+    const params = {
+      attributesToRetrieve: attributes,
+      limit: 20000 /* Better approach? */
+    };
+    return this.index.search("", params);
   }
 }

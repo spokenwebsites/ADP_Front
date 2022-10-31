@@ -1,0 +1,486 @@
+<div class="main-section-list">
+  <div class="main-section-div">
+    <div class="wrapper">
+      <div class="list-container" *ngIf="typeOfListsPage != FilterType.NULL && FilterTypeObject[typeOfListsPage]">
+        <div data-w-id="09af4d71-2428-9613-bd17-31be680618a4" class="col lg-6 md-4">
+          <img src="/assets/images/HomePage_Illustration_v3.gif" data-w-id="4c75f133-7805-8e7b-7fbb-d9d7049917d3" alt=""
+            class="home-img">
+        </div>
+        <div class="col lg-1 hidden-lg-down"></div>
+        <div class="col lg-6">
+          <div data-w-id="b8ae716f-6f33-9645-e6f8-7d753b1c1fc3" class="margin-top margin-bottom">
+            <h2>{{FilterTypeObject[typeOfListsPage].title}}</h2>
+            <p class="text-filter">Filter by:</p>
+            <p class="filter-buttons-container">
+              <a *ngFor="let attribute of listOfAttributes" (click)="onClickAttribute(attribute)" class="button-filter w-button">{{attribute}}</a>
+            </p>
+            <!-- <div class="w-row">
+              <div class="w-col w-col-4">
+                <ul role="list" class="w-list-unstyled">
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-col w-col-4">
+                <ul role="list" class="w-list-unstyled">
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-col w-col-4">
+                <ul role="list" class="w-list-unstyled">
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                  <li class="list-item">
+                    <a href="details " class="link-block-4 w-inline-block">
+                      <p class="paragraph-small no-bottom-margins">List item</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

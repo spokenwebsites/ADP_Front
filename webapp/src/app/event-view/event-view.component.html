@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="metadata-menu" *ngIf="entry.Location && entry.Location.length && entry.Location[0].notes">
+                        <div class="metadata-menu" *ngIf="locations && locations.length">
                             <div class="metadata-menu">
                                 <div class="metadata-accordion-wrapper">
                                     <div class="accordion-item">
@@ -193,7 +193,7 @@
                                                 <div class="metadata-field-text">Platform:</div>
                                             </div>
                                             <div class="metadata-field-content w-col w-col-8">
-                                                <div class="metadata-field-content-text">{{entry.Location[0].notes}}
+                                                <div class="metadata-field-content-text">{{getLocations()}}
                                                 </div>
                                             </div>
                                         </div>

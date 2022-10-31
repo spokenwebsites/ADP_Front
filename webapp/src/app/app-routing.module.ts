@@ -13,6 +13,7 @@ import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
 import { ListsDateComponent } from './lists-date/lists-date.component';
 import { ListsEventsComponent } from './lists-events/lists-events.component';
+import { ListsGenericComponent } from './lists-generic/lists-generic.component';
 import { ListsHostsComponent } from './lists-hosts/lists-hosts.component';
 import { ListsLangComponent } from './lists-lang/lists-lang.component';
 import { ListsLocComponent } from './lists-loc/lists-loc.component';
@@ -32,11 +33,11 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: PathConstants.TypeOfEvents, component: ListsEventsComponent },
   { path: PathConstants.People, component: ListsPeopleComponent },
-  { path: PathConstants.Places, component: ListsEventsComponent },
-  { path: PathConstants.HostingPlatform, component: ListsEventsComponent },
-  { path: PathConstants.Languages, component: ListsEventsComponent },
+  { path: PathConstants.Places, component: ListsGenericComponent },
+  { path: PathConstants.HostingPlatform, component: ListsHostsComponent },
+  { path: PathConstants.Languages, component: ListsLangComponent },
   { path: PathConstants.Date, component: ListsDateComponent },
-  { path: PathConstants.Organizers, component: ListsEventsComponent },
+  { path: PathConstants.Organizers, component: ListsGenericComponent },
   { path: 'viz1', component: Viz1Component },
   { path: 'viz2', component: Viz2Component },
   { path: 'viz3', component: Viz3Component },
