@@ -1,11 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import MeiliSearch, { SearchResponse } from 'meilisearch';
-import { Observable } from 'rxjs';
 import { FilterType } from 'src/app/model';
 import { environment } from 'src/environments/environment';
 import { SwallowEntry } from '../swallow-json-parser/swallow-entry';
-import { MSHits, MSSearchHits } from './ms';
 
 const client = new MeiliSearch({
   host: environment.searchUrl,

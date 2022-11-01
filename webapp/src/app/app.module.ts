@@ -14,12 +14,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { InterceptorService } from './interceptor.service';
 import { ListsEventsComponent } from './lists-events/lists-events.component';
+import { ListsGenericComponent } from './lists-generic/lists-generic.component';
 import { ListsPeopleComponent } from './lists-people/lists-people.component';
+import { LoadingComponent } from './loading/loading.component';
 import { MaterialModule } from './material/material.module';
 import { PaginationComponent } from './pagination/pagination.component';
+import { SwallowEntryService } from './services/swallow-entry/swallow-entry.service';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { ListsGenericComponent } from './lists-generic/lists-generic.component';
-import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { LoadingComponent } from './loading/loading.component';
       useClass: InterceptorService,
       multi: true
     },
+    SwallowEntryService
   ],
   bootstrap: [AppComponent],
 })
