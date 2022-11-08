@@ -4,16 +4,18 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 400;
 }
 
 mat-sidenav {
   padding: 16px;
-}
-
-mat-sidenav {
   /* background-color: #333333; */
   background-color: #202020F2;
   width: 350px;
+}
+
+.mat-drawer.mat-drawer-side {
+  z-index: 400;
 }
 
 .matcontent-nobg {
@@ -76,7 +78,8 @@ matcontent-nobg {
   background-color: #005691 !important;
 }
 
-::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: #005691;
 }
 
@@ -84,4 +87,25 @@ matcontent-nobg {
   background-color: #fff;
   margin-right: 10px;
 
+}
+
+.close-button {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  mat-sidenav {
+    width: 100% !important;
+  }
+
+  .close-button {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .sidenav-header {
+    position: relative;
+  }
 }

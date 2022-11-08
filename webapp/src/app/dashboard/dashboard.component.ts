@@ -162,4 +162,8 @@ export class DashboardComponent implements OnInit {
     this.filterAttributes[key] = selectedAttributes;
     this.onPageChange(this.page);
   }
+
+  handleSideNavToggle(event: boolean) {
+    this.sidenavOpened = event;
+  }
 }

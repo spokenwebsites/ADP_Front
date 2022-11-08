@@ -1,4 +1,5 @@
-<app-side-nav [opened]="sidenavOpened" [facetDistribution]="facetDistribution" (change)="handleFilterChange($event)">
+<app-side-nav [opened]="sidenavOpened" [facetDistribution]="facetDistribution" (change)="handleFilterChange($event)"
+  (sidenavToggle)="handleSideNavToggle($event)">
   <div class="dashboard_section wf-section">
     <div class="pagecontainer">
       <div class="dashboard-container">

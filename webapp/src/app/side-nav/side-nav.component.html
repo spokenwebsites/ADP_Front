@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" [(opened)]="opened" *ngIf="facetDistribution">
-        <div class="row-4 w-row" style=" padding-top: 20px;padding-right: 19px; padding-left: 0px;">
+        <div class="row-4 w-row sidenav-header" style=" padding-top: 20px;padding-right: 19px; padding-left: 0px;">
             <div class="column-25 w-col w-col-2">
                 <img src="../../assets/images/ADP_logo2_256x256PX-01.jpg" loading="lazy" width="35"
                     alt="Archive of the Digital Present Logo" class="image-5">
@@ -8,6 +8,9 @@
             <div class="w-col w-col-10">
                 <div class="nametext-title">Welcome to the Archive of the Digital Present</div>
                 <div class="detailtext">Refine your search by:</div>
+            </div>
+            <div class="close-button">
+                <button (click)="onClose()">X</button>
             </div>
         </div>
         <mat-accordion [multi]="true" #accordion="matAccordion">
