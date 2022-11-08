@@ -187,6 +187,7 @@
     width: 24px;
     height: 24px;
     background-image: url('/assets/images/video-solid_orange.svg');
+    cursor: pointer;
 }
 
 .details-icon.icon.reading {
@@ -472,7 +473,6 @@
 @media screen and (max-width: 767px) {
     .event-card {
         margin-bottom: 25px;
-        width: 48%;
     }
 
     .event-card-mid-div {

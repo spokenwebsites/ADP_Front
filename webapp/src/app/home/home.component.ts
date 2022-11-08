@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { PathConstants } from '../constants';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +12,9 @@ export class HomeComponent implements OnInit {
   name = 'Set iframe source';
   url: string = "https://angular.io/api/router/RouterLink";
   urlSafe: SafeResourceUrl | undefined;
+  PathConstants = PathConstants;
 
-  constructor(public sanitizer: DomSanitizer) { }
+  constructor(public sanitizer: DomSanitizer, private router: Router) { }
 
   ngOnInit() {
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
@@ -25,6 +28,10 @@ export class HomeComponent implements OnInit {
     viz1 : false,
     viz2 : false,
     viz3 : false
+  }
+
+  onClickTypeOfEvents(): void {
+    this.router.navigate([PathConstants.TypeOfEvents])
   }
 
 }

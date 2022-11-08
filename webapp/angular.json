@@ -33,7 +33,11 @@
             "scripts": [
               "src/assets/js/Condegram_main.js",
               "src/assets/js/map.js",
-              "src/assets/js/edge_bundling.js"]
+              "src/assets/js/edge_bundling.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "meilisearch"
+            ]
           },
           "configurations": {
             "production": {

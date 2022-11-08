@@ -7,22 +7,27 @@ import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.ser
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 
 @Component({
-  selector: 'app-lists-lang',
-  templateUrl: './lists-lang.component.html',
-  styleUrls: ['./lists-lang.component.scss']
+  selector: 'app-lists-events',
+  templateUrl: './lists-events.component.html',
+  styleUrls: ['./lists-events.component.scss']
 })
-export class ListsLangComponent implements OnInit {
-  listOfAttributes: any[] = [];
+export class ListsEventsComponent implements OnInit {
+  // listOfAttributes: { [key: string]: boolean } = {};
+  listOfAttributes: string[] = [];
 
   constructor(private swallowEntryService: SwallowEntryService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.swallowEntryService.getFacetsMetadata([
-      FilterType.Language
+      FilterType.TypeOfEvent
     ]).then((msHits: SearchResponse<SwallowEntry>) => {
       if (msHits.facetDistribution) {
-        for (let attribute in msHits.facetDistribution[FilterType.Language]) {
+        this.listOfAttributes = [];
+        for (let attribute in msHits.facetDistribution[FilterType.TypeOfEvent]) {
+          if (attribute.trim() == "-1") {
+            continue;
+          }
           this.listOfAttributes.push(attribute);
         }
       }
@@ -33,6 +38,6 @@ export class ListsLangComponent implements OnInit {
   }
 
   onClickAttribute(attribute: string): void {
-    this.router.navigate([PathConstants.Dashboard], { queryParams: { filter: attribute, type: FilterType.Language } })
+    this.router.navigate([PathConstants.Dashboard], { queryParams: { filter: attribute, type: FilterType.TypeOfEvent } })
   }
 }

@@ -1,11 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import MeiliSearch, { SearchResponse } from 'meilisearch';
-import { Observable } from 'rxjs';
 import { FilterType } from 'src/app/model';
 import { environment } from 'src/environments/environment';
 import { SwallowEntry } from '../swallow-json-parser/swallow-entry';
-import { MSHits, MSSearchHits } from './ms';
 
 const client = new MeiliSearch({
   host: environment.searchUrl,
@@ -26,7 +23,7 @@ export class SwallowEntryService {
     return this.index.getDocument(document_id);
   }
 
-  searchEntry(query: string, offset: number = 0, limit: number = 20, filterAttributes: any): Promise<SearchResponse<SwallowEntry>> {
+  searchEntry(query: string, offset: number = 0, limit: number = 20, filterAttributes: any, facets: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
     let filter = "";
     let i = 0;
     for (let filterAttribute in filterAttributes) {
@@ -49,15 +46,28 @@ export class SwallowEntryService {
       q: query,
       offset: offset,
       limit: limit,
-      facets: [
-        FilterType.Organization,
-        FilterType.Date,
-        FilterType.People,
-        FilterType.Place,
-        FilterType.TypeOfEvent
-      ],
+      facets: facets,
       filter: filter,
     };
     return this.index.search(query, params);
+  }
+
+  // Efficient way to get the metadata of the particular facet.
+  getFacetsMetadata(facets: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
+    const params = {
+      offset: 0,
+      limit: 0,
+      facets: facets
+    };
+    return this.index.search("", params);
+  }
+
+  // Efficient way to get the metadata of the particular facet.
+  getAttributes(attributes: FilterType[]): Promise<SearchResponse<SwallowEntry>> {
+    const params = {
+      attributesToRetrieve: attributes,
+      limit: 20000 /* Better approach? */
+    };
+    return this.index.search("", params);
   }
 }
