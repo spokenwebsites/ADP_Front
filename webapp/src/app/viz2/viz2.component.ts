@@ -38,13 +38,6 @@ export class Viz2Component implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadJsFile("https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js");
-    this.loadJsFile("https://d3js.org/d3.v4.js")
-    this.loadJsFile("assets/js/d3.min.js");
-    this.loadJsFile("assets/js/d3.v4.js")
-
-    //this.loadJsFile("assets/js/Topten.json")
-    //  console.log(this.Events)
   }
 
   public loadJsFile(url: string) {

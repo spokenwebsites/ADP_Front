@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
   PathConstants = PathConstants;
 
   constructor(public sanitizer: DomSanitizer, private router: Router) { }
-
   ngOnInit() {
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+    this.showDiv.viz1=true;
   }
   isShow = false;
  

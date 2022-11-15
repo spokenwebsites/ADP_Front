@@ -31,6 +31,8 @@
               "src/styles.scss"
             ],
             "scripts": [
+              "src/assets/js/d3.min.js",
+              "src/assets/js/d3.v4.js",
               "src/assets/js/Condegram_main.js",
               "src/assets/js/map.js",
               "src/assets/js/edge_bundling.js"
@@ -101,7 +103,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "Users/sukesh/Documents/ADP/Frontend/src/assets/js/d3.min.js"
+              "src/assets/js/d3.min.js"
             ]
           }
         },

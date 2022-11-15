@@ -23,14 +23,8 @@ export class Viz3Component implements OnInit {
 
 
   ngOnInit(): void {
-    // this.loadJsFile("https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js");
-
-    this.loadJsFile("assets/js/d3.min.js");
-    this.loadJsFile("assets/js/d3.v4.js")
     this.loadJsFile("assets/js/d3-geo-projection.v2.min.js")
     this.loadJsFile("assets/js/d3-scale-chromatic.v1.min.js")
-    //this.loadJsFile("assets/js/map.js");
-
   }
 
 
