@@ -48,6 +48,6 @@ export class ListsPeopleComponent implements OnInit {
   }
 
   onClickAttribute(attribute: string): void {
-    this.router.navigate([PathConstants.Dashboard], { queryParams: { filter: attribute, type: FilterType.People } })
+    this.router.navigate([PathConstants.Dashboard], { queryParams: { filter: attribute.trim(), type: FilterType.People } })
   }
 }

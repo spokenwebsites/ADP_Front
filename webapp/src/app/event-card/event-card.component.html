@@ -26,9 +26,8 @@
                     class="details-icon icon duration2hoursplus">
                 </div>
             </div>
-            <div class="eventtitle">
-                <a href="http://www.treereadingseries.ca/readings/laura-zacharin-jason-christie" target="_blank"
-                    class="link-2">{{entry?.Item_Description?.title}}</a>
+            <div class="eventtitle ellipsis">
+                <span class="link-2">{{entry?.Item_Description?.title}}</span>
             </div>
             <div class="event-date-title">
                 <div class="datetitle">{{entry?.Location && entry.Location.length > 0 ? entry.Location[0]!.venue + " " :

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FilterType } from '../model';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
@@ -14,7 +15,7 @@ export class EventViewComponent implements OnInit {
   entry!: SwallowEntry;
   locations: string[] = [];
   recordingAvailable: boolean = false;
-  recordingURL!: string;
+  recordingURL!: URL;
 
   constructor(private route: ActivatedRoute,
     private service: SwallowEntryService,
@@ -23,6 +24,21 @@ export class EventViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // VideoURL = "Digital_File_Description.file_url"
+    // let urls: any[] = [];
+    // this.service.getAttributes([FilterType.VideoURL]).then((records) => {
+    //   console.log("records", records)
+    //   records.hits.forEach((record) => {
+    //     if (record.Digital_File_Description) {
+
+    //       record.Digital_File_Description.forEach((digitalFile) => {
+    //         if (digitalFile.file_url)
+    //           urls.push(digitalFile.file_url);
+    //       })
+    //     }
+    //   });
+    //   console.log("urls", urls);
+    // })
     this.route.paramMap.subscribe(params => {
       let entryId = params.get('entryId');
       if (entryId != null) {
@@ -32,7 +48,7 @@ export class EventViewComponent implements OnInit {
           for (let digital of this.entry.Digital_File_Description) {
             if (digital.content_type == 'Video Recording') {
               this.recordingAvailable = true;
-              this.recordingURL = digital.file_url;
+              this.recordingURL = new URL(digital.file_url);
               break;
             }
           }
@@ -73,6 +89,6 @@ export class EventViewComponent implements OnInit {
   }
 
   onOpenVideoURL(): void {
-    window.open(this.recordingURL, "_blank");
+    window.open(this.recordingURL.toString(), "_blank");
   }
 }

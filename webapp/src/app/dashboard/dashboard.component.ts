@@ -63,6 +63,23 @@ export class DashboardComponent implements OnInit {
         if (msHits.facetDistribution && !this.filterSearchOn) {
           this.facetDistribution = {
             [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
+            [FilterType.TypeOfEvent]: this.preprocess(this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution)),
+            [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
+            Recordings: [
+              { name: 'Yes', selected: false, disabled: false },
+              { name: 'No', selected: false, disabled: false },
+            ],
+            [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
+            [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
+          };
+          this.facetAttributes = {
+            Organizations: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.Organization]),
+            People: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.People]),
+            Events: this.parseFacetDistribution(this.facetDistribution[FilterType.TypeOfEvent]),
+          }
+        } else {
+          let facetDistribution = {
+            [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
             [FilterType.TypeOfEvent]: this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution),
             [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
             Recordings: [
@@ -72,12 +89,13 @@ export class DashboardComponent implements OnInit {
             [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
             [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
           };
+          this.facetAttributes = {
+            Organizations: this.parseFacetDistributionByUnique(facetDistribution[FilterType.Organization]),
+            People: this.parseFacetDistributionByUnique(facetDistribution[FilterType.People]),
+            Events: this.parseFacetDistribution(facetDistribution[FilterType.TypeOfEvent]),
+          }
         }
-        this.facetAttributes = {
-          Organizations: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.Organization]),
-          People: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.People]),
-          Events: this.parseFacetDistribution(this.facetDistribution[FilterType.TypeOfEvent]),
-        }
+
         this.totalPages = Math.ceil(msHits.estimatedTotalHits / this.limit);
         this.page = page;
         this.isLoading = false;
@@ -153,17 +171,30 @@ export class DashboardComponent implements OnInit {
     return items;
   }
 
+  preprocess(items: any[]): any[] {
+    return items.filter(item => item.name !== '-1');
+  }
+
   handleFilterChange(event: any) {
     let key = event[0];
     let selectedAttributes = event[1];
-    if (!selectedAttributes || Object.keys(selectedAttributes).length) {
+    if (!selectedAttributes || !Object.keys(selectedAttributes).length) {
       delete this.filterAttributes[key];
+    } else {
+      this.filterAttributes[key] = selectedAttributes;
     }
-    this.filterAttributes[key] = selectedAttributes;
     this.onPageChange(this.page);
   }
 
   handleSideNavToggle(event: boolean) {
     this.sidenavOpened = event;
+  }
+
+  handleFilterClear(): void {
+    if (Object.keys(this.filterAttributes).length > 0) {
+      this.filterAttributes = {};
+      this.filterSearchOn = false;
+      this.onPageChange(this.page);
+    }
   }
 }

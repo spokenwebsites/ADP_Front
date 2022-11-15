@@ -7,7 +7,10 @@
             </div>
             <div class="w-col w-col-10">
                 <div class="nametext-title">Welcome to the Archive of the Digital Present</div>
-                <div class="detailtext">Refine your search by:</div>
+                <div class="detailtext-container">
+                    <div class="detailtext">Refine your search by:</div>
+                    <div class="clear-btn" (click)="onClear()"><button>Clear</button></div>
+                </div>
             </div>
             <div class="close-button">
                 <button (click)="onClose()">X</button>

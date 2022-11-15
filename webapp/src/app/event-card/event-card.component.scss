@@ -248,6 +248,15 @@
     padding: 15px 15px 5px;
 }
 
+.ellipsis span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
 .event-card-mid-div {
     display: -webkit-box;
     display: -webkit-flex;

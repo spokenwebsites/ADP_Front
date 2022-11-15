@@ -12,6 +12,7 @@ export class SideNavComponent implements OnInit {
   @Input() facetDistribution: any;
   @Output() sidenavToggle: EventEmitter<any> = new EventEmitter();
   @Output() change: EventEmitter<any[]> = new EventEmitter();
+  @Output() clear: EventEmitter<any[]> = new EventEmitter();
   public FilterType = FilterType;
   @ViewChild('sidenav') public sidenav!: MatSidenav;
 
@@ -32,6 +33,19 @@ export class SideNavComponent implements OnInit {
       selectedObj[attribute.name] = true;
     }
     this.change.emit([filter, selectedObj]);
+  }
+
+  onClear(): void {
+    if (this.clear) {
+      const filters = Object.keys(this.facetDistribution);
+      filters.forEach((filter) => {
+        this.facetDistribution[filter].forEach((attribute: any) => {
+          attribute.selected = false;
+        });
+      });
+
+      this.clear.emit();
+    }
   }
 
   onClose(): void {
