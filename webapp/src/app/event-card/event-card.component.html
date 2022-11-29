@@ -18,11 +18,12 @@
                     [ngClass]="{'recording': recordingAvailable, 'no-recording': !recordingAvailable}"
                     (click)="onOpenVideoURL()">
                 </div>
-                <div tooltipster="bottom-delay" title="Language: English" class="details-icon icon english">
+                <div tooltipster="bottom-delay" [title]="'Language: '+entry?.Item_Description?.language"
+                    class="details-icon icon english">
                 </div>
-                <div title="Genre: Reading" tooltipster="bottom-delay" class="details-icon icon reading">
+                <div tooltipster="bottom-delay" [title]="'Genre: '+genre" class="details-icon icon reading">
                 </div>
-                <div tooltipster="bottom-delay" title="Duration: 2 hours +"
+                <div tooltipster="bottom-delay" [title]="'Duration: '+duration"
                     class="details-icon icon duration2hoursplus">
                 </div>
             </div>
