@@ -12,22 +12,32 @@
                     <div class="event-details-socialmedia">
                         <h6 class="heading-9">Find this event on social media:</h6>
                         <div class="social-media-icons-contianer">
-                            <a href="https://twitter.com/nlpublibraries/status/1258449768310804480?lang=en"
-                                target="_blank" class="organizer-social-media w-inline-block"><img
+                            <a *ngIf="sourceCollectionDescription?.Twitter"
+                                [href]="sourceCollectionDescription.Twitter" target="_blank"
+                                class="organizer-social-media w-inline-block"><img
                                     src="/assets/images/Twitter_orange.svg" width="40" height="40" alt=""
                                     class="social-media-icon"></a>
-                            <a href="https://m.facebook.com/events/377045833698221" target="_blank"
+                            <a *ngIf="sourceCollectionDescription?.Facebook"
+                                [href]="sourceCollectionDescription.Facebook" target="_blank"
                                 class="organizer-social-media w-inline-block"><img
                                     src="/assets/images/Facebook_orange.svg" width="40" height="40"
                                     id="https-m.facebook.com-events-377045833698221" alt=""
                                     class="social-media-icon"></a>
                         </div>
-                        <a href="https://www.argobookshop.ca/" class="link-block-7 w-inline-block">
+                        <a *ngIf="sourceCollectionDescription && sourceCollectionDescription['Organization Website']; else noWebsite"
+                            [href]="sourceCollectionDescription['Organization Website']"
+                            class="link-block-7 w-inline-block">
                             <div class="organization-div"><img src="/assets/images/web_click_orange.svg" loading="lazy"
                                     width="40" height="40" alt="" class="social-media-icon">
-                                <h6 class="heading-8">Argo Bookshop</h6>
+                                <h6 class="heading-8">{{entry?.collection?.source_collection}}</h6>
                             </div>
                         </a>
+
+                        <ng-template #noWebsite>
+                            <div class="organization-div">
+                                <h6 class="heading-8">{{entry?.collection?.source_collection}}</h6>
+                            </div>
+                        </ng-template>
                     </div>
                     <div class="event-map">
                         <div class="w-embed w-iframe">
