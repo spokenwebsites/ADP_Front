@@ -4,7 +4,51 @@
         padding: 10px;
         color: #fcd788;
     }
-    .control-btn {
-    }
+
+    .control-btn {}
+
     display: flex;
+
+    .page-number {
+        /* Font & Text */
+        font-family: Lato, Arial;
+        font-size: 20px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        letter-spacing: normal;
+        line-height: 26px;
+        text-decoration: none solid rgba(252, 215, 136, 0.75);
+        text-align: start;
+        text-indent: 0px;
+        text-transform: none;
+        vertical-align: baseline;
+        white-space: normal;
+        word-spacing: 0px;
+
+        /* Effects */
+        transform: none;
+        transition: all 0.2s ease 0.2s;
+        outline-offset: 0px;
+        box-sizing: content-box;
+        resize: none;
+        text-shadow: none;
+        text-overflow: clip;
+        word-wrap: normal;
+        box-shadow: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .page-number:hover {
+        color: rgba(252, 215, 136, 0.8);
+        text-decoration: underline overline
+    }
+
+    .page-number:active {
+        color: rgba(252, 215, 136, 1);
+        text-shadow: #ff8a1e 1px 0 10px;
+    }
 }

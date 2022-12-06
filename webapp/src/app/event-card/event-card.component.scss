@@ -234,8 +234,7 @@
     text-align: left;
 }
 
-
-.event-card {
+.event-card-container {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -243,8 +242,15 @@
     border: 2px none #fff;
     border-radius: 10px;
     background-color: #333;
-
     height: 100%;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+
     padding: 15px 15px 5px;
 }
 
@@ -316,9 +322,16 @@
 }
 
 .event-details {
-    height: 120px;
     padding-top: 5px;
     color: #bebebe;
+    padding: 0px 15px 5px;
+    height: 40px;
+    // background-image: linear-gradient(to bottom, transparent, #69636aad);
+    overflow: hidden;
+}
+
+.event-details-empty {
+    height: 40px;
 }
 
 .event-card-vid-img-container {
@@ -419,11 +432,46 @@
     background-color: rgba(255, 138, 30, 0.6);
 }
 
+.creator-link {
+    text-decoration: underline;
+}
+
+.creator-link:hover {
+    cursor: pointer;
+}
+
+.description-container {
+    color: #bebebe;
+    max-height: 170px;
+    position: relative;
+    overflow: hidden;
+
+    border: 2px none #fff;
+    border-radius: 10px;
+    padding: 5px 15px 5px;
+}
+
+.description-container .paragraph-2 {
+    height: 100%;
+}
+
+.description-container .read-more-button {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    background-image: linear-gradient(to bottom, transparent, #000000bd);
+}
+
 @media screen and (max-width: 991px) {
     .event-card {
         margin-bottom: 5px;
         box-shadow: 0 0 12px 0 hsla(0, 0%, 62.7%, 0.19);
-        height: 640px;
+        // height: 640px;
         margin-right: 4px;
         margin-left: 2px;
     }
@@ -481,7 +529,7 @@
 
 @media screen and (max-width: 767px) {
     .event-card {
-        margin-bottom: 25px;
+        // margin-bottom: 25px;
     }
 
     .event-card-mid-div {
@@ -505,7 +553,7 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        height: 100%;
+        // height: 100%;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
@@ -571,7 +619,7 @@
     }
 
     .bottommorelink.bottommoreright {
-        width: 100%;
+        // width: 100%;
         border-radius: 40px;
     }
 }

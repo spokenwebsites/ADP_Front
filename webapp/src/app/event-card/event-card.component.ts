@@ -13,7 +13,8 @@ export class EventCardComponent implements OnInit {
   recordingAvailable: boolean = false;
   recordingURL!: string;
   @Input() entry!: SwallowEntry | null;
-  duration: string = "";
+  durationToDisplay: string = "";
+  duration: number = 0;
   genre: string = "";
 
   constructor(private router: Router, public parser: ParserService) { }
@@ -28,7 +29,7 @@ export class EventCardComponent implements OnInit {
         }
       }
     }
-    this.duration = this.getDuration();
+    this.calculateDuration();
     this.genre = this.getGenre();
   }
 
@@ -40,9 +41,9 @@ export class EventCardComponent implements OnInit {
     window.open(this.recordingURL, "_blank");
   }
 
-  getDuration(): string {
+  calculateDuration(): void {
     if (!this.entry) {
-      return "";
+      return;
     }
     const durations = this.entry.Digital_File_Description.map((fileDesc) => {
       return fileDesc.duration;
@@ -61,12 +62,9 @@ export class EventCardComponent implements OnInit {
     let minutes = Math.floor((maxDuration % 3600) / 60);
     let seconds = Math.floor(maxDuration % 3600 % 60);
 
-    if (hours > 0) {
-      return hours + (hours > 1 ? " hours +" : " hour +");
-    } else if (minutes > 0) {
-      return minutes + (minutes > 1 ? " minutes +" : " minute +");
-    }
-    return seconds + (seconds > 1 ? " seconds +" : " second +");
+    this.durationToDisplay = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+
+    this.duration = maxDuration;
   }
 
   durationToSeconds(duration: string): number {
@@ -92,5 +90,9 @@ export class EventCardComponent implements OnInit {
       return "";
     }
     return this.parser.getGenres(this.entry.Item_Description);
+  }
+
+  onCreatorLinkClick(creatorName: string): void {
+    this.router.navigate([PathConstants.Dashboard], { queryParams: { q: creatorName } })
   }
 }

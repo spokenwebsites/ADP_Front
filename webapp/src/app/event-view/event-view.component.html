@@ -12,9 +12,8 @@
                     <div class="event-details-socialmedia">
                         <h6 class="heading-9">Find this event on social media:</h6>
                         <div class="social-media-icons-contianer">
-                            <a *ngIf="sourceCollectionDescription?.Twitter"
-                                [href]="sourceCollectionDescription.Twitter" target="_blank"
-                                class="organizer-social-media w-inline-block"><img
+                            <a *ngIf="sourceCollectionDescription?.Twitter" [href]="sourceCollectionDescription.Twitter"
+                                target="_blank" class="organizer-social-media w-inline-block"><img
                                     src="/assets/images/Twitter_orange.svg" width="40" height="40" alt=""
                                     class="social-media-icon"></a>
                             <a *ngIf="sourceCollectionDescription?.Facebook"
@@ -25,7 +24,7 @@
                                     class="social-media-icon"></a>
                         </div>
                         <a *ngIf="sourceCollectionDescription && sourceCollectionDescription['Organization Website']; else noWebsite"
-                            [href]="sourceCollectionDescription['Organization Website']"
+                            [href]="sourceCollectionDescription['Organization Website']" target="_blank"
                             class="link-block-7 w-inline-block">
                             <div class="organization-div"><img src="/assets/images/web_click_orange.svg" loading="lazy"
                                     width="40" height="40" alt="" class="social-media-icon">

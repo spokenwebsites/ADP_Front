@@ -9,7 +9,7 @@
                 <div class="nametext-title">Welcome to the Archive of the Digital Present</div>
                 <div class="detailtext-container">
                     <div class="detailtext">Refine your search by:</div>
-                    <div class="clear-btn" (click)="onClear()"><button>Clear</button></div>
+                    <div *ngIf="clearVisibility" class="clear-btn" (click)="onClear()"><button>Clear</button></div>
                 </div>
             </div>
             <div class="close-button">
