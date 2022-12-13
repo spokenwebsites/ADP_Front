@@ -5108,6 +5108,8 @@ a {
 }
 
 .margin-top.margin-bottom {
+    min-width: 540px;
+    max-width: 720px;
     width: auto;
     margin-top: 0px;
     padding-right: 10px;

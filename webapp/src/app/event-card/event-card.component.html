@@ -15,14 +15,16 @@
 
             <div class="event-card-top-text-div">
                 <div class="event-icons-div">
-                    <div tooltipster="bottom-delay" [title]="recordingAvailable? 'Recording available' : 'Recording not available'" class="details-icon icon"
+                    <div tooltipster="bottom-delay"
+                        [title]="recordingAvailable? 'Recording available' : 'Recording not available'"
+                        class="details-icon icon"
                         [ngClass]="{'recording': recordingAvailable, 'no-recording': !recordingAvailable}"
                         (click)="onOpenVideoURL()">
                     </div>
                     <div tooltipster="bottom-delay" [title]="'Language: '+entry?.Item_Description?.language"
                         class="details-icon icon english">
                     </div>
-                    <div tooltipster="bottom-delay" [title]="'Genre: '+genre" class="details-icon icon reading">
+                    <div tooltipster="bottom-delay" *ngIf="genre" [title]="'Genre: '+genre" class="details-icon icon reading">
                     </div>
                     <div *ngIf="duration > 0" tooltipster="bottom-delay" [title]="'Duration: '+durationToDisplay"
                         class="details-icon icon duration2hoursplus">
@@ -43,17 +45,12 @@
             </div>
         </div>
     </div>
-    <div class="event-details" *ngIf="entry.Creators && entry.Creators.length; else noCreators">
-        <div class="event-people">
-            <div *ngFor="let creator of entry.Creators">
-                <a class="link-8 creator-link" (click)="onCreatorLinkClick(creator.name)">{{creator.name}}</a>
-                <br />
-            </div>
+    <div class="event-details">
+        <div class="event-people" *ngIf="entry.Creators && entry.Creators.length">
+            <span *ngFor="let creator of entry.Creators; let i = index;"><a class="link-8 creator-link"
+                    (click)="onCreatorLinkClick(creator.name)">{{creator.name}}</a><span *ngIf="i < entry.Creators.length - 1">, </span></span>
         </div>
     </div>
-    <ng-template #noCreators>
-        <div class="event-details-empty"></div>
-    </ng-template>
     <div class="description-container">
         <p class="paragraph-2">{{entry.Content.contents}}</p>
         <p class="read-more-button">

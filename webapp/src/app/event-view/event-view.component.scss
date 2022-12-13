@@ -6524,6 +6524,9 @@ a {
   display: flex;
   width: 100%;
   height: 80px;
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
   padding-right: 10px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -6541,8 +6544,17 @@ a {
   border-style: none none none solid;
   border-width: 1px 1px 1px 4px;
   border-color: #ff8a1e #ff8a1e #ff8a1e #fcd788;
-  background-color: #444;
+  background-color: #444 !important;
   cursor: pointer;
+}
+
+::ng-deep .mat-expansion-panel-header.mat-expanded:focus,
+.mat-expansion-panel-header.mat-expanded:hover {
+  background-color: #444 !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0 !important;
 }
 
 .metadata-accordion-wrapper:hover {
@@ -6652,6 +6664,22 @@ a {
   align-items: center;
 }
 
+.plus-icon-metadata img {
+  transition: transform 0.20s linear;
+  -moz-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+.plus-icon-metadata img.opened {
+  transition: transform 0.20s linear;
+  -moz-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+  -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
 .text-metadata {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6662,7 +6690,6 @@ a {
 .metadata-accordion-content {
   overflow: hidden;
   width: 100%;
-  margin-bottom: 10px;
   background-color: transparent;
 }
 
@@ -6693,6 +6720,7 @@ a {
   color: #bebebe;
   -o-object-fit: contain;
   object-fit: contain;
+  font-size: 16px;
 }
 
 .metadata-field-text {
@@ -6747,6 +6775,7 @@ a {
   font-family: Jost, sans-serif;
   color: #ff8a1e;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .metadata-item-line {
@@ -10977,10 +11006,6 @@ a {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
   }
 
   .metadata-field {
@@ -11005,12 +11030,12 @@ a {
   .metadata-field-text {
     display: block;
     width: 100%;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .metadata-field-content-text {
     width: 100%;
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .metadata-columns {

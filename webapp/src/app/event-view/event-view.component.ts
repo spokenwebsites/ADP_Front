@@ -17,6 +17,17 @@ export class EventViewComponent implements OnInit {
   recordingAvailable: boolean = false;
   recordingURL!: URL;
   sourceCollectionDescription: any;
+  genre: string = "";
+  platforms: string = "";
+  expansionPanelState: any = {
+    people: false,
+    date: false,
+    typeOfEvent: false,
+    location: false,
+    platforms: false,
+    relatedImages: false,
+    relatedWorks: false
+  }
 
   constructor(private route: ActivatedRoute,
     private service: SwallowEntryService,
@@ -55,6 +66,8 @@ export class EventViewComponent implements OnInit {
   }
 
   onLoaded(): void {
+    this.genre = this.parser.getGenres(this.entry.Item_Description);
+    this.platforms = this.getLocations();
     for (let digital of this.entry.Digital_File_Description) {
       if (digital.content_type == 'Video Recording') {
         this.recordingAvailable = true;

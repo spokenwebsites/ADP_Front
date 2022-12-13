@@ -1,15 +1,8 @@
 .container {
     .tab {
-        cursor: pointer;
         padding: 10px;
         color: #fcd788;
-    }
 
-    .control-btn {}
-
-    display: flex;
-
-    .page-number {
         /* Font & Text */
         font-family: Lato, Arial;
         font-size: 20px;
@@ -25,7 +18,13 @@
         vertical-align: baseline;
         white-space: normal;
         word-spacing: 0px;
+    }
 
+    .control-btn {}
+
+    display: flex;
+
+    .page-number {
         /* Effects */
         transform: none;
         transition: all 0.2s ease 0.2s;
@@ -43,8 +42,13 @@
     }
 
     .page-number:hover {
+        cursor: pointer;
         color: rgba(252, 215, 136, 0.8);
         text-decoration: underline overline
+    }
+
+    .control-btn:hover {
+        cursor: pointer;
     }
 
     .page-number:active {

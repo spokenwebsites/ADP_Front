@@ -9,8 +9,7 @@
 
 mat-sidenav {
   padding: 16px;
-  /* background-color: #333333; */
-  background-color: #202020F2;
+  background-color: #212121;
   width: 350px;
 }
 
@@ -45,20 +44,24 @@ matcontent-nobg {
   padding: 5px !important;
 }
 
+.sidenav-header {
+  padding-top: 20px;
+  padding-right: 19px;
+  padding-left: 4px;
+}
+
 .nametext-title {
-  margin-top: 0px;
-  margin-left: 20px;
+  margin: 0;
   font-family: Jost, sans-serif;
   color: #fff;
-  font-size: 18px
+  font-size: 18px;
+  padding-bottom: 4px;
 }
 
 .detailtext-container {
   display: flex;
   position: relative;
   align-items: center;
-  padding-left: 20px;
-  padding-top: 10px;
 }
 
 .detailtext {
@@ -77,6 +80,13 @@ matcontent-nobg {
 .detailtext-container .clear-btn button {
   border: 0;
   cursor: pointer;
+  font-family: Lato, Avenir, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #fafafa;
+  background-color: #6e6e6e;
+  padding: 8px;
+  border-radius: 16px;
+  line-height: 10px;
 }
 
 ::ng-deep .matexpansionpanelheader>.mat-expansion-indicator:after {
@@ -103,9 +113,15 @@ matcontent-nobg {
 }
 
 ::ng-deep .mat-checkbox-inner-container {
-  background-color: #fff;
-  margin-right: 10px;
-
+  display: flex !important;
+  background-color: #212121;
+  color: #f8d487;
+  border-radius: 10px;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
 }
 
 .close-button {

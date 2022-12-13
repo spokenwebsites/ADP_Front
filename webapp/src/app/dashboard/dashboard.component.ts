@@ -59,7 +59,6 @@ export class DashboardComponent implements OnInit {
         FilterType.TypeOfEvent
       ]).then((msHits: SearchResponse<SwallowEntry>) => {
         this.hits = msHits.hits;
-        console.log("msHits", msHits);
         // We don't update the facetDistribution if user is changing the filters at the side-nav component.
         if (msHits.facetDistribution && !this.filterSearchOn) {
           this.facetDistribution = {

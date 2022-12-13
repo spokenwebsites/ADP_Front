@@ -180,7 +180,7 @@
 .details-icon.icon.duration2hoursplus {
     width: 24px;
     height: 24px;
-    background-image: url('/assets/images/plus2hours-01.svg');
+    background-image: url('/assets/images/duration.svg');
 }
 
 .details-icon.icon.recording {
@@ -223,14 +223,18 @@
 }
 
 .event-people {
-    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
     width: 100%;
     margin-top: 0px;
     padding-left: 0px;
     font-family: Lato, sans-serif;
     color: #bebebe;
     font-size: 14px;
-    line-height: 130%;
     text-align: left;
 }
 
@@ -325,13 +329,9 @@
     padding-top: 5px;
     color: #bebebe;
     padding: 0px 15px 5px;
-    height: 40px;
+    height: 60px;
     // background-image: linear-gradient(to bottom, transparent, #69636aad);
     overflow: hidden;
-}
-
-.event-details-empty {
-    height: 40px;
 }
 
 .event-card-vid-img-container {
@@ -442,7 +442,7 @@
 
 .description-container {
     color: #bebebe;
-    max-height: 170px;
+    height: 170px;
     position: relative;
     overflow: hidden;
 
