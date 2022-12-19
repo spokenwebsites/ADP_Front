@@ -3,7 +3,7 @@ export enum FilterType {
   People = "Creators.name",
   Organization = "collection.source_collection",
   TypeOfEvent = "Item_Description.genre.value",
-  Place = "Location.address",
+  Place = "Location.city",
   // Recording = "recording",
   Date = "Dates.date",
   Language = "Item_Description.language",
