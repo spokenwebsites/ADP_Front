@@ -8,9 +8,9 @@ describe('ListsOrgComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListsOrgComponent ]
+      declarations: [ListsOrgComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

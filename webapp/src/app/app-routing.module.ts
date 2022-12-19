@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: PathConstants.HostingPlatform, component: ListsHostsComponent },
   { path: PathConstants.Languages, component: ListsLangComponent },
   { path: PathConstants.Date, component: ListsDateComponent },
-  { path: PathConstants.Organizers, component: ListsGenericComponent },
+  { path: PathConstants.Organizers, component: ListsOrgComponent },
   { path: 'viz1', component: Viz1Component },
   { path: 'viz2', component: Viz2Component },
   { path: 'viz3', component: Viz3Component },

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PathConstants } from '../constants';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
@@ -38,6 +38,7 @@ export class EventCardComponent implements OnInit {
   }
 
   onOpenVideoURL(): void {
+    if (!this.recordingURL) return;
     window.open(this.recordingURL, "_blank");
   }
 

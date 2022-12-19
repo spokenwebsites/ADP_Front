@@ -15,19 +15,19 @@
 
             <div class="event-card-top-text-div">
                 <div class="event-icons-div">
-                    <div tooltipster="bottom-delay"
-                        [title]="recordingAvailable? 'Recording available' : 'Recording not available'"
-                        class="details-icon icon"
+                    <div [attr.data-tooltip]="recordingAvailable? 'Recording available' : 'Recording not available'"
+                        direction="bottom" class="details-icon icon tooltip-right tooltip-mobile"
                         [ngClass]="{'recording': recordingAvailable, 'no-recording': !recordingAvailable}"
                         (click)="onOpenVideoURL()">
                     </div>
-                    <div tooltipster="bottom-delay" [title]="'Language: '+entry?.Item_Description?.language"
-                        class="details-icon icon english">
+                    <div [attr.data-tooltip]="'Language: '+entry?.Item_Description?.language" direction="bottom"
+                        class="details-icon icon english tooltip-right tooltip-mobile">
                     </div>
-                    <div tooltipster="bottom-delay" *ngIf="genre" [title]="'Genre: '+genre" class="details-icon icon reading">
+                    <div *ngIf="genre" [attr.data-tooltip]="'Genre: '+genre" direction="bottom"
+                        class="details-icon icon reading tooltip-right tooltip-mobile">
                     </div>
-                    <div *ngIf="duration > 0" tooltipster="bottom-delay" [title]="'Duration: '+durationToDisplay"
-                        class="details-icon icon duration2hoursplus">
+                    <div *ngIf="duration > 0" [attr.data-tooltip]="'Duration: '+durationToDisplay" direction="bottom"
+                        class="details-icon icon duration2hoursplus tooltip-right tooltip-mobile">
                     </div>
                 </div>
                 <div class="eventtitle ellipsis">
@@ -48,7 +48,8 @@
     <div class="event-details">
         <div class="event-people" *ngIf="entry.Creators && entry.Creators.length">
             <span *ngFor="let creator of entry.Creators; let i = index;"><a class="link-8 creator-link"
-                    (click)="onCreatorLinkClick(creator.name)">{{creator.name}}</a><span *ngIf="i < entry.Creators.length - 1">, </span></span>
+                    (click)="onCreatorLinkClick(creator.name)">{{creator.name}}</a><span
+                    *ngIf="i < entry.Creators.length - 1">, </span></span>
         </div>
     </div>
     <div class="description-container">

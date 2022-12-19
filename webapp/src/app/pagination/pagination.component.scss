@@ -1,4 +1,8 @@
 .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
     .tab {
         padding: 10px;
         color: #fcd788;
@@ -21,8 +25,6 @@
     }
 
     .control-btn {}
-
-    display: flex;
 
     .page-number {
         /* Effects */

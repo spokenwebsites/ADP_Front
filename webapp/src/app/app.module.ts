@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { InterceptorService } from './interceptor.service';
 import { ListsEventsComponent } from './lists-events/lists-events.component';
 import { ListsGenericComponent } from './lists-generic/lists-generic.component';
+import { ListsOrgComponent } from './lists-org/lists-org.component';
 import { ListsPeopleComponent } from './lists-people/lists-people.component';
 import { LoadingComponent } from './loading/loading.component';
 import { MaterialModule } from './material/material.module';
@@ -37,7 +38,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     ListsEventsComponent,
     ListsPeopleComponent,
     ListsGenericComponent,
-    LoadingComponent
+    LoadingComponent,
+    ListsOrgComponent
   ],
   imports: [
     BrowserModule,

@@ -4802,7 +4802,7 @@ a {
 }
 
 .list-container .left {
-  max-height: calc(100vh - 40px);
+  height: fit-content;
 }
 
 .wrapper {

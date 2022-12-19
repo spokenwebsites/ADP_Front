@@ -32,7 +32,7 @@ export class ListsGenericComponent implements OnInit {
       title: "Places"
     },
     [FilterType.Organization]: {
-      title: "Organizers"
+      title: "EXPECTED: This should not work"
     },
     [FilterType.Language]: {
       title: "EXPECTED: This should not work"
@@ -72,6 +72,10 @@ export class ListsGenericComponent implements OnInit {
           this.listOfAttributes = [];
           for (let attribute in msHits.facetDistribution[this.typeOfListsPage]) {
             this.listOfAttributes.push(attribute);
+          }
+
+          if (this.typeOfListsPage === FilterType.Organization) {
+            this.listOfAttributes.map(attr => attr.toLowerCase()).sort()
           }
         }
       }).catch((err) => {
