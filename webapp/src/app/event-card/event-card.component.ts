@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PathConstants } from '../constants';
+import { LanguageIconType } from '../models/languages.model';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 
@@ -16,6 +17,8 @@ export class EventCardComponent implements OnInit {
   durationToDisplay: string = "";
   duration: number = 0;
   genre: string = "";
+  LanguageIconType = LanguageIconType;
+  languageIconType: any = LanguageIconType.Null;
 
   constructor(private router: Router, public parser: ParserService) { }
 
@@ -31,6 +34,28 @@ export class EventCardComponent implements OnInit {
     }
     this.calculateDuration();
     this.genre = this.getGenre();
+    const languages = this.entry?.Item_Description?.language.toLowerCase().trim().split(",");
+    if (languages) {
+      for (let i = 0; i < languages.length; i++) {
+        languages[i] = languages[i].trim();
+        if (languages[i] == LanguageIconType.English) {
+          languages[i] = LanguageIconType.English;
+        } else if (languages[i] == LanguageIconType.French) {
+          languages[i] = LanguageIconType.French;
+        }
+      }
+      this.languageIconType = LanguageIconType.Null;
+      if (languages.indexOf(LanguageIconType.English) != -1) {
+        this.languageIconType = LanguageIconType.English;
+      }
+      if (languages.indexOf(LanguageIconType.French) != -1) {
+        if (this.languageIconType == LanguageIconType.English) {
+          this.languageIconType = LanguageIconType.Multi;
+        } else {
+          this.languageIconType = LanguageIconType.French;
+        }
+      }
+    }
   }
 
   onClickMore(): void {

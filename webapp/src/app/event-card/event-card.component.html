@@ -20,8 +20,9 @@
                         [ngClass]="{'recording': recordingAvailable, 'no-recording': !recordingAvailable}"
                         (click)="onOpenVideoURL()">
                     </div>
-                    <div [attr.data-tooltip]="'Language: '+entry?.Item_Description?.language" direction="bottom"
-                        class="details-icon icon english tooltip-right tooltip-mobile">
+                    <div *ngIf="languageIconType" [attr.data-tooltip]="'Language: '+entry?.Item_Description?.language" direction="bottom"
+                        class="details-icon icon tooltip-right tooltip-mobile"
+                        [ngClass]="{'english': languageIconType == LanguageIconType.English, 'french': languageIconType == LanguageIconType.French, 'multi': languageIconType == LanguageIconType.Multi}">
                     </div>
                     <div *ngIf="genre" [attr.data-tooltip]="'Genre: '+genre" direction="bottom"
                         class="details-icon icon reading tooltip-right tooltip-mobile">
