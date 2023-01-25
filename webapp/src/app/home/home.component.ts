@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
   onClickTypeOfEvents(): void {
     this.router.navigate([PathConstants.TypeOfEvents])
   }
-
 }
 
 function showCrtl($scope: { showCon: (con: any) => void; clickOn: any; }){

@@ -4097,12 +4097,16 @@ a {
   font-size: 12px;
 }
 
+.footer-column-space {
+  width: 20%;
+}
+
 .footer-column {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 25%;
+  width: 40%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -4137,6 +4141,10 @@ a {
   font-size: 16px;
   line-height: 160%;
   text-decoration: none;
+}
+
+.footer-link:hover {
+  cursor: pointer;
 }
 
 .footer-link.w--current {

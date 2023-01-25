@@ -36,7 +36,11 @@ export class SwallowEntryService {
         if (j != 0) {
           subQuery += " OR "
         }
-        subQuery += `${filterAttribute} = \"${value}\"`;
+        if (filterAttributes[filterAttribute][value]) {
+          subQuery += `${filterAttribute} = \"${value}\"`;
+        } else {
+          subQuery += `NOT ${filterAttribute} = \"${value}\"`;
+        }
         j++;
       }
       filter += subQuery;

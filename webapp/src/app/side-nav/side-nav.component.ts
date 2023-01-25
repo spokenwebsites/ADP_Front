@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { VideoRecordingContentType } from '../constants/recordings';
 import { FilterType } from '../model';
 
 @Component({
@@ -42,6 +43,19 @@ export class SideNavComponent implements OnInit {
       }).length > 0;
     }
     this.change.emit([filter, selectedObj]);
+  }
+
+  handleRecordingsChange() {
+    let selectedAttributes: any[] = this.facetDistribution[FilterType.Recordings.toString()].filter((attribute: any) => attribute.selected);
+    let selectedObj: any = {}; // in case of: both recording options selected or neither of the recording options not selected
+    if (selectedAttributes.length == 1) {
+      if (selectedAttributes[0].value) {
+        selectedObj[VideoRecordingContentType] = true; // with recording option selected
+      } else {
+        selectedObj[VideoRecordingContentType] = false;  // without recording option selected
+      }
+    }
+    this.change.emit([FilterType.Recordings, selectedObj]);
   }
 
   onClear(): void {

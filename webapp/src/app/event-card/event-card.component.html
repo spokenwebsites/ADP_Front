@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="description-container">
-        <p class="paragraph-2">{{entry.Content.contents}}</p>
+        <p *ngIf="entry.Content" class="paragraph-2">{{entry.Content.contents}}</p>
         <p class="read-more-button">
             <a (click)="onClickMore()" routerLinkActive="active" class="bottommorelink bottommoreright w-inline-block">
                 More

@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home.component';
+import { InterviewPageComponent } from './interview-page/interview-page.component';
+import { InterviewsComponent } from './interviews/interviews.component';
 import { ListsDateComponent } from './lists-date/lists-date.component';
 import { ListsEventsComponent } from './lists-events/lists-events.component';
 import { ListsGenericComponent } from './lists-generic/lists-generic.component';
@@ -52,6 +54,14 @@ const routes: Routes = [
   {
     path: PathConstants.Dashboard,
     component: DashboardComponent,
+  },
+  {
+    path: PathConstants.Interviews,
+    component: InterviewsComponent,
+  },
+  {
+    path: PathConstants.Interview,
+    component: InterviewPageComponent,
   },
   {
     path: `${PathConstants.Details}/:entryId`,

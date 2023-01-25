@@ -104,9 +104,10 @@
                     </mat-panel-description>
 
                 </mat-expansion-panel-header>
-                <section class="ngsection" *ngFor="let recording of facetDistribution.Recordings">
-                    <mat-checkbox class="matcheckbox" labelPosition="after">
-                        {{recording}}
+                <section class="ngsection" *ngFor="let recording of facetDistribution[FilterType.Recordings]">
+                    <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="recording.selected"
+                    [(ngModel)]="recording.selected" (ngModelChange)="handleRecordingsChange()">
+                        {{recording.name}}
                     </mat-checkbox>
                 </section>
 
@@ -125,7 +126,7 @@
                 <section class="ngsection" *ngFor="let date of facetDistribution[FilterType.Date]">
                     <mat-checkbox class="matcheckbox" labelPosition="after" [checked]="date.selected"
                         [(ngModel)]="date.selected" (ngModelChange)="handleChange(FilterType.Date)">
-                        {{printable(date.name)}}
+                        {{printable(date)}}
                     </mat-checkbox>
                 </section>
 

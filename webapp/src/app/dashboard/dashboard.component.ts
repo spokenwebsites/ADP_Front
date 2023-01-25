@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchResponse } from 'meilisearch';
+import { PredefinedRecordingOptions } from '../constants/recordings';
 import { FilterType } from '../model';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -56,7 +56,8 @@ export class DashboardComponent implements OnInit {
         FilterType.Date,
         FilterType.People,
         FilterType.Place,
-        FilterType.TypeOfEvent
+        FilterType.TypeOfEvent,
+        FilterType.Recordings
       ]).then((msHits: SearchResponse<SwallowEntry>) => {
         this.hits = msHits.hits;
         // We don't update the facetDistribution if user is changing the filters at the side-nav component.
@@ -65,10 +66,7 @@ export class DashboardComponent implements OnInit {
             [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
             [FilterType.TypeOfEvent]: this.preprocess(this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution)),
             [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
-            Recordings: [
-              { name: 'Yes', selected: false, disabled: false },
-              { name: 'No', selected: false, disabled: false },
-            ],
+            [FilterType.Recordings]: PredefinedRecordingOptions,
             [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
             [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
           };
@@ -82,10 +80,7 @@ export class DashboardComponent implements OnInit {
             [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
             [FilterType.TypeOfEvent]: this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution),
             [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
-            Recordings: [
-              { name: 'Yes', selected: false, disabled: false },
-              { name: 'No', selected: false, disabled: false },
-            ],
+            [FilterType.Recordings]: PredefinedRecordingOptions,
             [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
             [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
           };

@@ -22,6 +22,8 @@ import { MaterialModule } from './material/material.module';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SwallowEntryService } from './services/swallow-entry/swallow-entry.service';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { InterviewsComponent } from './interviews/interviews.component';
+import { InterviewPageComponent } from './interview-page/interview-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     ListsPeopleComponent,
     ListsGenericComponent,
     LoadingComponent,
-    ListsOrgComponent
+    ListsOrgComponent,
+    InterviewsComponent,
+    InterviewPageComponent
   ],
   imports: [
     BrowserModule,

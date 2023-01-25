@@ -39,6 +39,9 @@ export class ListsGenericComponent implements OnInit {
     },
     [FilterType.HostingPlatform]: {
       title: "EXPECTED: This should not work"
+    },
+    [FilterType.Recordings]: {
+      title: "EXPECTED: This should not work"
     }
   }
 

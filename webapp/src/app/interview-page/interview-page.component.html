@@ -1,0 +1,8 @@
+<div *ngIf="content; else notFound">
+    <div class="interview-page" [innerHTML]="content"></div>
+</div>
+<ng-template #notFound>
+    <div class="interview-page not-found">
+        Interview not found!
+    </div>
+</ng-template>

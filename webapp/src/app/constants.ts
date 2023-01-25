@@ -8,4 +8,6 @@ export class PathConstants {
     public static Languages = 'languages';
     public static Date = 'date';
     public static Organizers = 'organizers';
+    public static Interviews = 'interviews';
+    public static Interview = 'interview';
 }

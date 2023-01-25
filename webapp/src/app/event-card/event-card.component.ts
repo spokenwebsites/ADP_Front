@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PathConstants } from '../constants';
+import { VideoRecordingContentType } from '../constants/recordings';
 import { LanguageIconType } from '../models/languages.model';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
@@ -25,7 +26,7 @@ export class EventCardComponent implements OnInit {
   ngOnInit(): void {
     if (this.entry) {
       for (let digital of this.entry.Digital_File_Description) {
-        if (digital.content_type == 'Video Recording') {
+        if (digital.content_type == VideoRecordingContentType) {
           this.recordingAvailable = true;
           this.recordingURL = digital.file_url;
           break;
