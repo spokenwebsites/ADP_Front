@@ -138,6 +138,16 @@ matcontent-nobg {
   position: absolute;
   top: 1%;
   right: 1%;
+
+  div {
+    color: white;
+    font-weight: bold;
+    padding-right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {

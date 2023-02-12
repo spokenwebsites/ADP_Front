@@ -7685,6 +7685,11 @@ a {
   font-size: 16px;
   line-height: 100%;
   text-align: center;
+  padding: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .buttons-container {

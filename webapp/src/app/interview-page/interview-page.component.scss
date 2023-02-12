@@ -1088,11 +1088,31 @@ textarea.w-select {
 }
 
 .interview-page {
-  background: white;
+  // background: white;
   font-family: "Calibri", sans-serif;
   margin-left: 10%;
   margin-right: 10%;
   padding: 50px;
+  color: #fcd788;
+  .title {
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+  }
+  .title,.metadata .bold,.question-list .question {
+    color: #ff8a1e !important;
+  }
+  .question-list .question {
+    font-size: 1.1rem;
+  }
+  .question-list .answer {
+    font-size: 1rem;
+  }
+  .metadata {
+    padding-bottom: 15px;
+    .bold {
+      padding-right: 5px;
+    }
+  }
 }
 
 .not-found {
@@ -5174,9 +5194,8 @@ a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
-  padding-right: 8px;
-  padding-left: 64px;
   color: #9096a4;
 }
 
@@ -5216,7 +5235,6 @@ a {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  width: 800px;
   max-width: 100%;
   margin-bottom: 24px;
   padding: 20px 32px;

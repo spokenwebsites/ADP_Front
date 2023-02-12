@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SearchResponse } from 'meilisearch';
+import { PathConstants } from '../constants';
 import { PredefinedRecordingOptions } from '../constants/recordings';
 import { FilterType } from '../model';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
@@ -23,20 +24,24 @@ export class DashboardComponent implements OnInit {
   facetAttributes: any;
   filterAttributes: any = {};
   filterSearchOn: boolean = false;
+  filter!: string;
+  filterType!: string;
 
   constructor(private route: ActivatedRoute,
-    private swallowEntryService: SwallowEntryService) { }
+    private swallowEntryService: SwallowEntryService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       // extract query from the URL
       this.query = params.q || "";
       // Add Filterable Attributes
-      let filter = params.filter || "";
-      let filterType = params.type || FilterType.NULL;
-      if (filterType) {
-        this.filterAttributes[filterType] = {
-          [filter]: true
+      this.filter = params.filter || "";
+      this.filterType = params.type || FilterType.NULL;
+
+      if (this.filterType) {
+        this.filterAttributes[this.filterType] = {
+          [this.filter]: true
         };
       }
       this.onPageChange(0);
@@ -60,37 +65,19 @@ export class DashboardComponent implements OnInit {
         FilterType.Recordings
       ]).then((msHits: SearchResponse<SwallowEntry>) => {
         this.hits = msHits.hits;
-        // We don't update the facetDistribution if user is changing the filters at the side-nav component.
-        if (msHits.facetDistribution && !this.filterSearchOn) {
-          this.facetDistribution = {
-            [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
-            [FilterType.TypeOfEvent]: this.preprocess(this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution)),
-            [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
-            [FilterType.Recordings]: PredefinedRecordingOptions,
-            [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
-            [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
-          };
-          this.facetAttributes = {
-            Organizations: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.Organization]),
-            People: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.People]),
-            Events: msHits.estimatedTotalHits,
-          }
-        } else {
-          let facetDistribution = {
-            [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
-            [FilterType.TypeOfEvent]: this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution),
-            [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
-            [FilterType.Recordings]: PredefinedRecordingOptions,
-            [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
-            [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
-          };
-          this.facetAttributes = {
-            Organizations: this.parseFacetDistributionByUnique(facetDistribution[FilterType.Organization]),
-            People: this.parseFacetDistributionByUnique(facetDistribution[FilterType.People]),
-            Events: msHits.estimatedTotalHits,
-          }
+        this.facetDistribution = {
+          [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
+          [FilterType.TypeOfEvent]: this.preprocess(this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution)),
+          [FilterType.Place]: this.withFormControl(FilterType.Place, msHits.facetDistribution),
+          [FilterType.Recordings]: PredefinedRecordingOptions,
+          [FilterType.Date]: this.withFormControl(FilterType.Date, msHits.facetDistribution),
+          [FilterType.People]: this.sortByValueWithFormControl(FilterType.People, msHits.facetDistribution), // Why here? To avoid sorting the values on every render.
+        };
+        this.facetAttributes = {
+          Organizations: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.Organization]),
+          People: this.parseFacetDistributionByUnique(this.facetDistribution[FilterType.People]),
+          Events: msHits.estimatedTotalHits,
         }
-
         this.totalPages = Math.ceil(msHits.estimatedTotalHits / this.limit);
         this.page = page;
         this.isLoading = false;
@@ -127,7 +114,10 @@ export class DashboardComponent implements OnInit {
     let facet = facetAttributes[filterType];
     let items = [];
     for (let obj in facet) {
-      items.push([obj, facet[obj]])
+      const matches = obj.match(/"(.*?)"/);
+      let parsedObj = matches ? matches[1] : obj;
+      parsedObj = parsedObj.trim();
+      items.push([parsedObj, facet[obj]])
     }
     const sorted = items.sort(function (a, b) {
       return b[1] - a[1];
@@ -136,11 +126,11 @@ export class DashboardComponent implements OnInit {
     for (let element of sorted) {
       let selected = false;
       if (this.filterAttributes[filterType]) {
-        selected = this.filterAttributes[filterType].hasOwnProperty(element[0])
+        selected = this.filterAttributes[filterType][element[0]] || false;
       }
       items.push(
         {
-          name: element[0],
+          name: element[0].trim(),
           frequency: element[1],
           selected
         });
@@ -152,9 +142,10 @@ export class DashboardComponent implements OnInit {
     let facet = facetAttributes[filterType];
     let items = [];
     for (let attribute in facet) {
+      attribute = attribute.trim();
       let selected = false;
       if (this.filterAttributes[filterType]) {
-        selected = this.filterAttributes[filterType].hasOwnProperty(attribute)
+        selected = this.filterAttributes[filterType][attribute] || false;
       }
       items.push(
         {
@@ -191,5 +182,9 @@ export class DashboardComponent implements OnInit {
       this.filterSearchOn = false;
       this.onPageChange(this.page);
     }
+  }
+
+  clearSearch(): void {
+    this.router.navigate([PathConstants.Dashboard, { filter: this.filter, type: this.filterType }]);
   }
 }
