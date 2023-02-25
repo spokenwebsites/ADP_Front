@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { VideoRecordingContentType } from '../constants/recordings';
 import { FilterType } from '../model';
@@ -8,7 +8,7 @@ import { FilterType } from '../model';
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.scss']
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent implements OnInit, OnChanges {
   @Input() opened!: boolean;
   @Input() facetDistribution: { [key: string]: any[] } = {};
   @Output() sidenavToggle: EventEmitter<any> = new EventEmitter();
@@ -24,11 +24,18 @@ export class SideNavComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.facetDistribution) {
+      this.onCheckClearVisibility();
+    }
+  }
+
   printable(obj: { name: any, frequency: any }): string {
     return `${obj.name} (${obj.frequency})`
   }
 
   handleChange(filter: FilterType) {
+    if (!filter) return;
     let selectedAttributes: any[] = this.facetDistribution[filter.toString()].filter((attribute: any) => attribute.selected);
     let selectedObj: any = {};
     for (let attribute of selectedAttributes) {
@@ -38,11 +45,15 @@ export class SideNavComponent implements OnInit {
     if (selectedAttributes.length > 0) {
       this.clearVisibility = true;
     } else {
-      this.clearVisibility = Object.keys(this.facetDistribution).filter((filter) => {
-        return this.facetDistribution[filter].filter((attribute: any) => attribute.selected).length > 0;
-      }).length > 0;
+      this.onCheckClearVisibility();
     }
     this.change.emit([filter, selectedObj]);
+  }
+
+  onCheckClearVisibility() {
+    this.clearVisibility = Object.keys(this.facetDistribution).filter((filter) => {
+      return this.facetDistribution[filter].filter((attribute: any) => attribute.selected).length > 0;
+    }).length > 0;
   }
 
   handleRecordingsChange() {

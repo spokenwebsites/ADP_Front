@@ -13,7 +13,6 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 export class EventViewComponent implements OnInit {
   loading: boolean = false;
   entry!: SwallowEntry;
-  locations: string[] = [];
   recordingAvailable: boolean = false;
   recordingURL!: URL;
   sourceCollectionDescription: any;
@@ -36,21 +35,6 @@ export class EventViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // VideoURL = "Digital_File_Description.file_url"
-    // let urls: any[] = [];
-    // this.service.getAttributes([FilterType.VideoURL]).then((records) => {
-    //   console.log("records", records)
-    //   records.hits.forEach((record) => {
-    //     if (record.Digital_File_Description) {
-
-    //       record.Digital_File_Description.forEach((digitalFile) => {
-    //         if (digitalFile.file_url)
-    //           urls.push(digitalFile.file_url);
-    //       })
-    //     }
-    //   });
-    //   console.log("urls", urls);
-    // })
     this.route.paramMap.subscribe(params => {
       let entryId = params.get('entryId');
       if (entryId != null) {
@@ -67,7 +51,6 @@ export class EventViewComponent implements OnInit {
 
   onLoaded(): void {
     this.genre = this.parser.getGenres(this.entry.Item_Description);
-    this.platforms = this.getLocations();
     for (let digital of this.entry.Digital_File_Description) {
       if (digital.content_type == 'Video Recording') {
         this.recordingAvailable = true;
@@ -75,25 +58,7 @@ export class EventViewComponent implements OnInit {
         break;
       }
     }
-    this.locations = [];
-    for (let location of this.entry.Location) {
-      let startingOfPlatforms = location.notes.indexOf(":");
-      let platforms = location.notes.substring(startingOfPlatforms + 1).trim();
-      if (platforms) {
-        const re = /\s*\"([^"]+)"/g;
-        let matches;
-        do {
-          matches = re.exec(platforms);
-          if (matches && matches.length > 1) {
-            let match = matches[1].trim();
-            if (match.length) {
-              this.locations.push(match);
-            }
-          }
-        } while (matches);
-      }
-    }
-
+    this.platforms = this.getLocations();
     // parse source_collection_description to extract twitter and facebook details.
 
     try {
@@ -136,12 +101,30 @@ export class EventViewComponent implements OnInit {
   }
 
   getLocations(): string {
-    if (this.locations.length) {
-      let locations = this.locations[0];
-      for (let i = 1; i < this.locations.length; i++) {
-        locations += ", " + this.locations[i];
+    const locations: any[] = [];
+    for (let location of this.entry.Location) {
+      let startingOfPlatforms = location.notes.indexOf(":");
+      let platforms = location.notes.substring(startingOfPlatforms + 1).trim();
+      if (platforms) {
+        const re = /\s*\"([^"]+)"/g;
+        let matches;
+        do {
+          matches = re.exec(platforms);
+          if (matches && matches.length > 1) {
+            let match = matches[1].trim();
+            if (match.length) {
+              locations.push(match);
+            }
+          }
+        } while (matches);
       }
-      return locations;
+    }
+    if (locations.length) {
+      let location: string = locations[0];
+      for (let i = 1; i < locations.length; i++) {
+        location += ", " + locations[i];
+      }
+      return location;
     }
     return "";
   }

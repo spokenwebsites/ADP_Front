@@ -1,13 +1,13 @@
 <div class="event-card-container" *ngIf="entry">
     <div class="event-card">
         <div class="event-card-top-div">
-            <div class="dashboard-select-div">
+            <!-- <div class="dashboard-select-div">
                 <div class="select-download-text">select to download</div>
                 <div class="dashboard-select-checkmark">
                     <img src="/assets/images/check-solid-white.svg" loading="lazy" width="20" height="20"
                         data-w-id="72b90187-2f81-0d1c-9102-764ff8d845b0" alt="" class="card-select-icon">
                 </div>
-            </div>
+            </div> -->
             <div class="event-card-vid-img-container">
                 <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
                     [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image" />
