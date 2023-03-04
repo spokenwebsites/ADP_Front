@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:1337/',
   searchUrl: "http://localhost:7700",
-  EntryIndex: "Entries"
+  EntryIndex: "Entries",
+  InterviewEndpoint: "https://swallow.library.concordia.ca/v2/Service/Custom/interview.php"
 };
 
 /*

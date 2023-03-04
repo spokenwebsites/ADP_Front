@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "https://swallow.library.concordia.ca/v2/Service/Custom/interview.php",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

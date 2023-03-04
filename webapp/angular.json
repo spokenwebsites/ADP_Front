@@ -74,7 +74,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "movie-strapi:build"
+            "browserTarget": "movie-strapi:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

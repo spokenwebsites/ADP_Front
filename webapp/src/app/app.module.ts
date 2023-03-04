@@ -1,4 +1,4 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +12,8 @@ import { EventCardComponent } from './event-card/event-card.component';
 import { EventViewComponent } from './event-view/event-view.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { InterceptorService } from './interceptor.service';
+import { InterviewPageComponent } from './interview-page/interview-page.component';
+import { InterviewsComponent } from './interviews/interviews.component';
 import { ListsEventsComponent } from './lists-events/lists-events.component';
 import { ListsGenericComponent } from './lists-generic/lists-generic.component';
 import { ListsOrgComponent } from './lists-org/lists-org.component';
@@ -20,10 +21,9 @@ import { ListsPeopleComponent } from './lists-people/lists-people.component';
 import { LoadingComponent } from './loading/loading.component';
 import { MaterialModule } from './material/material.module';
 import { PaginationComponent } from './pagination/pagination.component';
+import { InterviewService } from './services/interview-service/interview.service';
 import { SwallowEntryService } from './services/swallow-entry/swallow-entry.service';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { InterviewsComponent } from './interviews/interviews.component';
-import { InterviewPageComponent } from './interview-page/interview-page.component';
 
 @NgModule({
   declarations: [
@@ -55,12 +55,8 @@ import { InterviewPageComponent } from './interview-page/interview-page.componen
     MaterialModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi: true
-    },
-    SwallowEntryService
+    SwallowEntryService,
+    InterviewService
   ],
   bootstrap: [AppComponent],
 })

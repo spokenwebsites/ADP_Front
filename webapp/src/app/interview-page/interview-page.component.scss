@@ -1094,33 +1094,48 @@ textarea.w-select {
   margin-right: 10%;
   padding: 50px;
   color: #fcd788;
+
   .title {
     font-size: 1.5rem;
     padding-bottom: 15px;
   }
-  .title,.metadata .bold,.question-list .question {
+
+  .title,
+  .metadata .bold,
+  .question-list .question {
     color: #ff8a1e !important;
   }
+
   .question-list .question {
     font-size: 1.1rem;
   }
+
   .question-list .answer {
     font-size: 1rem;
   }
+
   .citation {
     .bold {
       color: #ff8a1e;
     }
   }
+
   .metadata {
     padding-bottom: 15px;
+
     .bold {
       padding-right: 5px;
     }
   }
 }
 
-.not-found {
+.interview-page.loading {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.interview-page.not-found {
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
