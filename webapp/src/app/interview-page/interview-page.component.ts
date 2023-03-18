@@ -35,4 +35,8 @@ export class InterviewPageComponent implements OnInit {
       this.isLoading = false;
     })
   }
+
+  onBack(): void {
+    window.history.back();
+  }
 }

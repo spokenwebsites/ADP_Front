@@ -1127,6 +1127,20 @@ textarea.w-select {
       padding-right: 5px;
     }
   }
+
+  .back-btn {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    button {
+      background: none;
+      border-style: solid;
+      border-color: #ff8a1e;
+      background-color: transparent;
+      font-family: Jost, sans-serif;
+      font-weight: 400;
+    }
+  }
 }
 
 .interview-page.loading {

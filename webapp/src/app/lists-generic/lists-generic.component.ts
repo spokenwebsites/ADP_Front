@@ -42,6 +42,9 @@ export class ListsGenericComponent implements OnInit {
     },
     [FilterType.Recordings]: {
       title: "EXPECTED: This should not work"
+    },
+    [FilterType.IsRecordingAvailable]: {
+      title: "EXPECTED: This should not work"
     }
   }
 

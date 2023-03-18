@@ -61,12 +61,12 @@ export class SideNavComponent implements OnInit, OnChanges {
     let selectedObj: any = {}; // in case of: both recording options selected or neither of the recording options not selected
     if (selectedAttributes.length == 1) {
       if (selectedAttributes[0].value) {
-        selectedObj[VideoRecordingContentType] = true; // with recording option selected
+        selectedObj[1] = true; // with recording option selected
       } else {
-        selectedObj[VideoRecordingContentType] = false;  // without recording option selected
+        selectedObj[0] = true;  // without recording option selected
       }
     }
-    this.change.emit([FilterType.Recordings, selectedObj]);
+    this.change.emit([FilterType.IsRecordingAvailable, selectedObj]);
   }
 
   onClear(): void {

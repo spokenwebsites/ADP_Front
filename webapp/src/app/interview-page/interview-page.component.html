@@ -1,6 +1,7 @@
 <div *ngIf="!isLoading; else loading">
-    <div *ngIf="content && content.Item_Description; else notFound">
-        <div class="interview-page">
+    <div *ngIf="content && content.Item_Description; else notFound" class="interview-page">
+        <div class="back-btn"><button class="button" (click)="onBack()"><</button></div>
+        <div>
             <div class="title">
                 {{content.Item_Description.title}}
             </div>
@@ -17,7 +18,10 @@
                     <span class="bold">Interviewee:</span>
                     <span>{{content.Item_Description.interviewee}}</span>
                 </div>
-                <div>Interview conducted with {{content.Item_Description.interviewer}}</div>
+                <div>
+                    <span class="bold">Interviewer:</span>
+                    <span>{{content.Item_Description.interviewer}}</span>
+                </div>
             </div>
 
             <div [innerHTML]="content.Item_Description.text"></div>

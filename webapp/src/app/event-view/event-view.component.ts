@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FilterType } from '../model';
+import { VideoRecordingContentType } from '../constants/recordings';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { ParserService } from '../services/swallow-json-parser/parser.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
@@ -39,6 +39,7 @@ export class EventViewComponent implements OnInit {
       let entryId = params.get('entryId');
       if (entryId != null) {
         this.service.getEntry(entryId).then((entry) => {
+          console.log("entry", entry);
           this.loading = false;
           this.entry = entry;
           this.onLoaded();
@@ -52,7 +53,7 @@ export class EventViewComponent implements OnInit {
   onLoaded(): void {
     this.genre = this.parser.getGenres(this.entry.Item_Description);
     for (let digital of this.entry.Digital_File_Description) {
-      if (digital.content_type == 'Video Recording') {
+      if (digital.content_type == VideoRecordingContentType) {
         this.recordingAvailable = true;
         this.recordingURL = new URL(digital.file_url);
         break;

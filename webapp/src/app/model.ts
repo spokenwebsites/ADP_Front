@@ -7,6 +7,7 @@ export enum FilterType {
   TypeOfEvent = "Item_Description.genre.value",
   Place = "Location.city",
   Recordings = "Digital_File_Description.content_type",
+  IsRecordingAvailable = "is_video_available",
   Date = "Dates.date",
   Language = "Item_Description.language",
   HostingPlatform = "Location.notes"

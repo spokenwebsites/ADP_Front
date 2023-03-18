@@ -28,7 +28,7 @@ export class SwallowEntryService {
     let i = 0;
     for (let filterAttribute in filterAttributes) {
       if (i != 0) {
-        filter += "AND";
+        filter += " AND ";
       }
       let subQuery = "";
       let j = 0;
@@ -37,12 +37,13 @@ export class SwallowEntryService {
           subQuery += " OR "
         }
         if (filterAttributes[filterAttribute][value]) {
-          subQuery += `${filterAttribute} = \"${value}\"`;
+          subQuery += ` ${filterAttribute} = \"${value}\" `;
         } else {
-          subQuery += `NOT ${filterAttribute} = \"${value}\"`;
+          subQuery += ` NOT ${filterAttribute} = \"${value}\" `;
         }
         j++;
       }
+
       filter += subQuery;
       i++;
     }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchResponse } from 'meilisearch';
 import { PathConstants } from '../constants';
-import { PredefinedRecordingOptions } from '../constants/recordings';
+import { PredefinedRecordingOptions, VideoRecordingContentType } from '../constants/recordings';
 import { FilterType } from '../model';
 import { SwallowEntryService } from '../services/swallow-entry/swallow-entry.service';
 import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
