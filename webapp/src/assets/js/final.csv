@@ -1,17 +1,66 @@
 city,homelat,homelon,homecontinent,state,n
-Montréal,45.49253,-73.58068,Canada,Québec,192
-Ottawa,45.4211060,-75.6903080,Canada,Ontario,37
-Toronto,43.666170,-79.400360,Canada,Ontario,263
-Vancouver,49.269860,-123.134220,Canada,British Columbia,60
-Westmount, 45.488682,-73.584259,Canada,Québec,29
-Windsor,42.325140,-82.943060,Canada,Ontario,9
-Calgary,51.04457,-114.069241,Canada,Alberta,6
-Moncton,46.088630,-64.778500,Canada,New Brunswick / Nouveau-Brunswick,10
-Victoria,48.425930,-123.364320,Canada,British Columbia,55
+Montréal,45.49253,-73.58068,Canada,Québec,294
+Ottawa,45.4211060,-75.6903080,Canada,Ontario,116
+Toronto,43.666170,-79.400360,Canada,Ontario,600
+Vancouver,49.269860,-123.134220,Canada,British Columbia,163
+Westmount, 45.488682,-73.584259,Canada,Québec,37
+Windsor,42.325140,-82.943060,Canada,Ontario,33
+Calgary,51.04457,-114.069241,Canada,Alberta,112
+Moncton,46.088630,-64.778500,Canada,New Brunswick / Nouveau-Brunswick,30
+London,42.98429,-81.24606,Canada,Ontario,49
+Victoria,48.425930,-123.364320,Canada,British Columbia,103
 呼伦贝尔市, 48.425930,123.364320,中国,内蒙古自治区,1
-Halifax,44.646020,-63.573690,Canada,Nova Scotia,1
-Area F (Alberni Highway),49.332280,-124.493850,Canada,British Columbia,17
-Kingston,44.22146,-76.51031,Canada,Ontario,7
+Halifax,44.646020,-63.573690,Canada,Nova Scotia,62
+Area F (Alberni Highway),49.332280,-124.493850,Canada,British Columbia,21
+Kingston,44.22146,-76.51031,Canada,Ontario,60
 Thunder Bay,48.37159,-89.27975,Canada,Ontario,30
 St-Eustache,45.5573,-73.8954,Canada,Québec,10
-Regina,50.4558491,-104.6244141,Canada,Saskatchewan,9
+Regina,50.4558491,-104.6244141,Canada,Saskatchewan,42
+Edmonton,53.52171,-113.51237,Canada,Alberta,69
+Winnipeg,49.8686,-97.1869,Canada,Manitoba,13
+Greater Sudbury,46.49267,-80.99895,Canada,Ontario,6
+Guelph/Eramosa,43.57734,-80.14599,Canada,Ontario,30
+North Perth,43.57734,-80.99895,Canada,Ontario,2
+Hamilton,43.26372,-79.86583,Canada,Ontario,106
+Moose Jaw,50.39227,-105.53472,Canada,Saskatchewan,5
+Scugog,44.10506,-78.94449,Canada,Ontario,1
+Fredericton,45.95466,-66.64828,Canada,New Brunswick / Nouveau-Brunswick,30
+City of Saint John,45.27321,-66.06472,Canada,New Brunswick / Nouveau-Brunswick,3
+Antigonish,45.61677,-62.00142,Canada,Nova Scotia,1
+Sussex,45.72376,-65.51042,Canada,New Brunswick / Nouveau-Brunswick,1
+Sydney,46.13560,-60.19342,Canada,Nova Scotia,1
+Okotoks,50.71229,-113.98496,Canada,Alberta,6
+Area A (Baynes Sound),49.53321,-124.66571,Canada,British Columbia,1
+St. Albert,53.63291,-113.62745,Canada,Alberta,24
+Wolfville,45.0958,-64.3473,Canada,Nova Scotia,4
+Banff,51.17239,-115.56209,Canada,Alberta,7
+Electoral Area A,49.26945,-123.25928,Canada,British Columbia,2
+Area A (Egmont/Pender Harbour),49.61578,-124.05059,Canada,British Columbia,23
+Lac-Brome,45.21741,-72.51001,Canada,Québec,12
+Eagle Creek No. 376,52.154,-107.309,Canada,Saskatchewan,4
+Saskatoon,52.12655,-106.68684,Canada,Saskatchewan,3
+La Ronge,55.10864,-105.28508,Canada,Saskatchewan,1
+Swift Current,50.28696,-107.79366,Canada,Saskatchewan,1
+Big River,53.8323,-107.0357,Canada,Saskatchewan,1
+Bridgetown,44.84168,-65.29065,Canada,Nova Scotia,2
+Guelph,43.52948,-80.23988,Canada,Ontario,5
+Whitehorse,60.72450,-135.05270,Canada,Yukon,7
+Sherbrooke,45.3609,-71.8515,Canada,Québec,28
+Redwater,53.95222,-113.10704,Canada,Alberta,1
+Town of Carstairs,51.55603,-114.10405,Canada,Alberta,1
+Canmore,51.08915,-115.35097,Canada,Alberta,1
+Camrose,53.02206,-112.82140,Canada,Alberta,1
+Abbotsford,49.03491,-122.33607,Canada,British Columbia,2
+Steinbach,49.55169,-96.68692,Canada,Manitoba,2
+Rural Municipality of Stuartburn,49.016,-96.773,Canada,Manitoba,1
+Wilmot,43.4215,-80.7358,Canada,Ontario,33
+Whistler Resort Municipality,50.11878,-122.94770,Canada,British Columbia,3
+Gatineau,45.4839,-75.6816,Canada,Québec,19
+Stony Plain,53.52513,-114.00892,Canada,Alberta,1
+Area G (Salmo Valley),49.19465,-117.27900,Canada,British Columbia,2
+Dryden,49.78327,-92.83659,Canada,Ontario,5
+Montréal-Ouest,45.4527,-73.6443,Canada,Québec,2
+Meaford,44.60667,-80.59144,Canada,Ontario,1
+Gibsons,49.4004,-123.5084,Canada,British Columbia,1
+Courtenay,49.6892,-124.9963,Canada,British Columbia,45
+Yellowknife,62.45180,-114.36606,Canada,Northwest Territories,7

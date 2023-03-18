@@ -28,14 +28,15 @@ class CondeGram:
     json_obj=[]
 
     for vdate in Events_withcount:
-
+      try:
         formatted_date = datetime.strptime(vdate, '%Y-%m-%d')
         updateformat=datetime.strftime(formatted_date,'%m-%d-%Y')
         json_obj.append({
-            
-            'date':updateformat,
-            'value':Events_withcount[vdate]
+          'date': updateformat,
+          'value': Events_withcount[vdate]
         })
+      except:
+        pass
       
     # the json file where the output must be stored 
     out_file = open("webapp/src/assets/js/Spiralcondegram_final.json", "w") 

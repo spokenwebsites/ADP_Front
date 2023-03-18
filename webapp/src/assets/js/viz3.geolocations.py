@@ -33,6 +33,7 @@ def createcsvwithcoordinates():
     writer = csv.writer(f)
     writer.writerow(header)
     for i in range(len(deserialised_json)):
+      try:
           if "Location" in deserialised_json[i]:
                   if "address" in deserialised_json[i]["Location"][0]:
                     if "latitude" in deserialised_json[i]["Location"][0]:
@@ -42,6 +43,8 @@ def createcsvwithcoordinates():
                                 lat=deserialised_json[i]["Location"][0]["latitude"]
                                 long=deserialised_json[i]["Location"][0]["longitude"]
                                 location = geolocator.reverse(lat+","+long)
+                                if not location or not location.raw:
+                                    continue
                                 address = location.raw['address']
                                 if address.get('city', '')!="":
                                     city = address.get('city','')
@@ -59,6 +62,8 @@ def createcsvwithcoordinates():
                                 if city is not empty and state is not empty and country is not empty:
                                     row = (city,lat,long,country,state)
                                     writer.writerow(row)
+      except:
+        pass
 
 # This function is used to get the cities count from draft.csv, replace then merge the count to a new csv with lat,long,state, and n
 #
@@ -70,7 +75,7 @@ def getcitiescount():
   arr_finaldata=[]
   with open('webapp/src/assets/js/Draft.csv', 'r', newline='') as file:
       header = ['city','homelat','homelon','homecontinent','state','n']
-      with open('webapp/src/assets/js/final1.csv', 'w', encoding='UTF8', newline='') as f:
+      with open('webapp/src/assets/js/final.csv', 'w', encoding='UTF8', newline='') as f:
           writer = csv.writer(f)
           writer.writerow(header)
           myreader = csv.reader(file, delimiter=',')
