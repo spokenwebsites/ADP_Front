@@ -3,6 +3,7 @@
 
 This document will help how to run the Visualizations python scripts which will read the JSON file from swallow end point and process it.
 
+## Note: Visualization scripts to run from the root of the project. That is 'ADP_FRONT' or where 'webapp' resides.
 
 ## Visualization -1: Spiral Condegram
 

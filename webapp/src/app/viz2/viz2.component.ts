@@ -1,35 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
 import { PathConstants } from '../constants';
-import { FilterType } from '../model';
-// import { stat } from 'fs';
 
 declare function get_edge_bund_json(json: any, onClick: Function): any;
-
-interface RootObject {
-  name: string;
-  type: string;
-  imports: string[];
-}
-
+declare const EDGE_BOUNDING_SVG_DIAMETER: number;
 @Component({
   selector: 'app-viz2',
   templateUrl: './viz2.component.html',
   styleUrls: ['./viz2.component.css']
 })
-
-
-
 export class Viz2Component implements OnInit {
+  @ViewChild('container') container!: ElementRef;
+
   public events: Array<object> = [];
   constructor(private http: HttpClient, private router: Router) {
     this.http.get<any>('assets/js/Topten.json')
       .subscribe(
         data => {
-          const onClick = this.onClick.bind(this);
-          get_edge_bund_json(data, onClick);
+          get_edge_bund_json(data,  this.onClick.bind(this));
+          setTimeout(()=>{
+            // try to focus scrollbar on the center of SVG.
+            this.container.nativeElement.scrollTo(EDGE_BOUNDING_SVG_DIAMETER / 2, EDGE_BOUNDING_SVG_DIAMETER / 2);
+          });
         },
         error => {
           console.log(error);
@@ -40,14 +34,7 @@ export class Viz2Component implements OnInit {
   ngOnInit(): void {
   }
 
-  public loadJsFile(url: string) {
-    let node = document.createElement('script');
-    node.src = url;
-    node.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(node);
-  }
-
-  onClick(creator: string): void {
-    this.router.navigate([PathConstants.Dashboard], { queryParams: { q: creator } })
+  onClick(creator: string, organization: string): void {
+    this.router.navigate([PathConstants.Dashboard], { queryParams: { q: creator, org: organization } })
   }
 }

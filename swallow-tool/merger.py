@@ -4,7 +4,7 @@ from utils import valid
 from logger import Logger
 from fileutil import FileUtil
 
-swallow_id_col = 'swallow_id'
+swallow_id_col = 'n'
 
 class SwallowMerger():
     def __init__(self, mainfile: str, childfile: str, logger:Logger):

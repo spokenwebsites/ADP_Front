@@ -12,7 +12,7 @@ if __name__ == "__main__":
     parser.add_argument('-m', '--mainfile', default=None,
                         help='Swallow EXPORTED JSON',  required=True)
     parser.add_argument('-c', '--childfile', default=None,
-                        help='New CSV file',  required=True)
+                        help='New CSV file (cities file)',  required=True)
     parser.add_argument('-o', '--output', default=None,
                         help='output file',  required=True)
 

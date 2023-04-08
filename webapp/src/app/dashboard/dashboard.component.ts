@@ -36,13 +36,19 @@ export class DashboardComponent implements OnInit {
       // extract query from the URL
       this.query = params.q || "";
       // Add Filterable Attributes
-      this.filter = params.filter || "";
-      this.filterType = params.type || FilterType.NULL;
-
-      if (this.filterType) {
-        this.filterAttributes[this.filterType] = {
-          [this.filter]: true
+      if (params.org) {
+        this.filterAttributes[FilterType.Organization] = {
+          [params.org]: true
         };
+      } else {
+        this.filter = params.filter || "";
+        this.filterType = params.type || FilterType.NULL;
+
+        if (this.filterType) {
+          this.filterAttributes[this.filterType] = {
+            [this.filter]: true
+          };
+        }
       }
       this.onPageChange(0);
     },
@@ -65,6 +71,7 @@ export class DashboardComponent implements OnInit {
         FilterType.Recordings
       ]).then((msHits: SearchResponse<SwallowEntry>) => {
         this.hits = msHits.hits;
+        console.log("msHits", msHits);
         this.facetDistribution = {
           [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
           [FilterType.TypeOfEvent]: this.preprocess(this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution)),
@@ -96,7 +103,11 @@ export class DashboardComponent implements OnInit {
     if (!facet) {
       return 0;
     }
-    return Object.keys(facet).length;
+    let uniqueSet: any = {};
+    for(let i = 0; i < facet.length; i++){
+      uniqueSet[facet[i].name] = true;
+    }
+    return Object.keys(uniqueSet).length;
   }
 
   parseFacetDistribution(facet: any): Number {

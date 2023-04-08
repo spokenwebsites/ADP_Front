@@ -9,7 +9,7 @@ from numpy import empty, number
 import operator
 import itertools
 import reverse_geocoder as rg 
-import pprint 
+import os
 import pandas as pd
 from geopy.geocoders import Nominatim
 
@@ -19,6 +19,7 @@ json_file= open(file_path,'r',encoding="utf-8")
 data=json_file.read()
 deserialised_json=json.loads(data)
 json_file.close()
+draftCSV = 'webapp/src/assets/js/Draft.csv'
 
 """
 This function creates a csv file with city,lat,lon,continent,state,no of events
@@ -28,7 +29,7 @@ def createcsvwithcoordinates():
   #Nomainatim is used as user_agent to get address of the location, passing inputs as lat,lon 
   geolocator = Nominatim(user_agent="Nominatim")
   #Firstly a draft file is created with city,homelat,homelon,homecontinent,state
-  with open('webapp/src/assets/js/Draft.csv', 'w', encoding='UTF8', newline='') as f:
+  with open(draftCSV, 'w', encoding='UTF8', newline='') as f:
     header = ['city','homelat','homelon','homecontinent','state']
     writer = csv.writer(f)
     writer.writerow(header)
@@ -68,12 +69,12 @@ def createcsvwithcoordinates():
 # This function is used to get the cities count from draft.csv, replace then merge the count to a new csv with lat,long,state, and n
 #
 def getcitiescount():
-  df=pd.read_csv("webapp/src/assets/js/Draft.csv")
+  df=pd.read_csv(draftCSV)
   df=pd.DataFrame(df, columns= ['city','homelat','homelon','homecontinent','state'])
   getcitycount = df.pivot_table(columns=['city'], aggfunc='size')
   data=getcitycount.to_dict()
   arr_finaldata=[]
-  with open('webapp/src/assets/js/Draft.csv', 'r', newline='') as file:
+  with open(draftCSV, 'r', newline='') as file:
       header = ['city','homelat','homelon','homecontinent','state','n']
       with open('webapp/src/assets/js/final.csv', 'w', encoding='UTF8', newline='') as f:
           writer = csv.writer(f)
@@ -92,8 +93,7 @@ def getcitiescount():
 createcsvwithcoordinates()
 getcitiescount()
 
-
-
-
+# remove unnecessary draft csv file.
+os.remove(draftCSV)
 
 

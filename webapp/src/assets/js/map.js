@@ -174,11 +174,16 @@ function Calljsfile(mapcsv, test_json, onClick) {
             event.stopPropagation();
             event.preventDefault();
             onClick(d);
+            // hide tooltip if shown on the mouse click.
+            if (tooltip)
+                return tooltip.style("visibility", "hidden");
         })
         .on("mouseover", function () {
+            console.log("mouseover")
             return tooltip.style("visibility", "visible");
         })
         .on("mousemove", function (d) {
+            console.log("mousemove")
             tooltip.text(d.city + ' (' + d.n + ' Events)');
             return tooltip.style("top",
                 (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");

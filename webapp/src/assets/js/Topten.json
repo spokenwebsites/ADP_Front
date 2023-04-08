@@ -1,454 +1,779 @@
 [
       {
-            "name": "Lieberman Moti",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Gulliver Roland",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Prevost Adele Elise",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Wint Brandon",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Ferrier Ian",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Yalaoui Malek ",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Martonfi Ilona",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "McCrum Rachel",
-            "type": "Red",
-            "imports": []
-      },
-      {
-            "name": "Pennock Tyler",
-            "type": "Red",
+            "name": "DiRaddo Christopher",
+            "color": "Red",
             "imports": []
       },
       {
             "name": "Camlot Jason",
-            "type": "Red",
+            "color": "Red",
             "imports": []
       },
       {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Martonfi Ilona",
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
-            ]
+            "name": "Wint Brandon",
+            "color": "Red",
+            "imports": []
       },
       {
-            "name": "ArgoBooks.Argo Zoom Reading Verse Prose Song ",
-            "imports": [
-                  "Lieberman Moti"
-            ]
+            "name": "Ferrier Ian",
+            "color": "Red",
+            "imports": []
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series ft. Joy Priest Tina Zafreen Alam ",
-            "imports": [
-                  "Wint Brandon"
-            ]
+            "name": "Coyote Ivan",
+            "color": "Red",
+            "imports": []
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series ft. Jody Chan Eunice Andrada ",
+            "name": "Tree Reading Series ft. Joy Priest & Tina Zafreen Alam",
+            "org": "Tree Reading Series",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series Ft. Nisha Patel Naima Yael Tokunow ",
+            "name": "Tree Reading Series ft. Jody Chan & Eunice Andrada\n",
+            "org": "Tree Reading Series",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series ft. Terese Mason Pierre Tatiana Johnson Boria ",
+            "name": "Tree Reading Series Ft. Nisha Patel & Naima Yael Tokunow",
+            "org": "Tree Reading Series",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series ft. Sanna Wani Em Dial ",
+            "name": "Tree Reading Series ft. Terese Mason Pierre & Tatiana Johnson-Boria",
+            "org": "Tree Reading Series",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series ft. Inam Kang Taylor Byas ",
+            "name": "Tree Reading Series ft. Sanna Wani & Em Dial",
+            "org": "Tree Reading Series",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "TreeReadingSeries.Tree Reading Series Natasha Ramoutar Marianne Chan ",
+            "name": "Tree Reading Series ft. Inam Kang & Taylor Byas",
+            "org": "Tree Reading Series",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "name": "Tree Reading Series: Natasha Ramoutar & Marianne Chan",
+            "org": "Tree Reading Series",
             "imports": [
-                  "Lieberman Moti",
-                  "Prevost Adele Elise",
-                  "Martonfi Ilona"
+                  "Wint Brandon"
             ]
       },
       {
-            "name": "WordsandMusic.Words Music Online this Sunday ",
+            "name": "Words & Music Online this Sunday",
+            "org": "Words and Music",
             "imports": [
                   "Ferrier Ian",
                   "Camlot Jason"
             ]
       },
       {
-            "name": "WordsandMusic.Words Music Online for the C r oolest Month ",
+            "name": "Words & Music Online for the C(r)oolest Month",
+            "org": "Words and Music",
             "imports": [
                   "Ferrier Ian",
                   "Camlot Jason"
             ]
       },
       {
-            "name": "WordsandMusic.Say Play and Dance at Words Music Online ",
+            "name": "Say Play and Dance at Words & Music Online",
+            "org": "Words and Music",
             "imports": [
                   "Camlot Jason",
                   "Ferrier Ian"
             ]
       },
       {
-            "name": "WordsandMusic.Words Music Solstice Show Sunday online ",
+            "name": "Words & Music Solstice Show Sunday online",
+            "org": "Words and Music",
             "imports": [
                   "Camlot Jason",
                   "Ferrier Ian"
             ]
       },
       {
-            "name": "WordsandMusic.Silvervest Barillaro Par and Mash at W M Show Sunday ",
+            "name": "Silvervest, Barillaro, Par\u00e9 and Mash at W&M Show Sunday",
+            "org": "Words and Music",
             "imports": [
                   "Camlot Jason",
                   "Ferrier Ian"
             ]
       },
       {
-            "name": "WordsandMusic.Summer in September at W M Sunday ",
+            "name": "Summer in September at W&M Sunday",
+            "org": "Words and Music",
             "imports": [
                   "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "Souaid, Scott, Sweet, Anderson and Video Winners Sunday",
+            "org": "Words and Music",
+            "imports": [
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "Black Writers Out Loud Sunday",
+            "org": "Words and Music",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "International Poets and Performers Sunday",
+            "org": "Words and Music",
+            "imports": [
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "Black Writers/Black History",
+            "org": "Words and Music",
+            "imports": [
                   "Ferrier Ian",
-                  "McCrum Rachel"
+                  "Camlot Jason"
             ]
       },
       {
-            "name": "WordsandMusic.International Poets and Performers Sunday ",
-            "imports": [
-                  "Ferrier Ian"
-            ]
-      },
-      {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Martonfi Ilona"
-            ]
-      },
-      {
-            "name": "WordsandMusic.Poets Music Video and Art on Sunday ",
-            "imports": [
-                  "Ferrier Ian"
-            ]
-      },
-      {
-            "name": "WordsandMusic.SpokenWeb Words Music ",
+            "name": "The Light Returns March 21st",
+            "org": "Words and Music",
             "imports": [
                   "Camlot Jason",
                   "Ferrier Ian"
             ]
       },
       {
-            "name": "AtwaterPoetryProject.Atwater Poetry Project Online presents...Oana Avasilichioaei Margaret Christakos ",
+            "name": "Poets, Music, Video and Art on Sunday",
+            "org": "Words and Music",
             "imports": [
-                  "McCrum Rachel"
+                  "Ferrier Ian",
+                  "Ferrier Ian",
+                  "Camlot Jason"
             ]
       },
       {
-            "name": "AtwaterPoetryProject.Atwater Poetry Project Online presents Chantal Gibson ",
+            "name": "SpokenWeb Words & Music",
+            "org": "Words and Music",
             "imports": [
-                  "McCrum Rachel"
+                  "Camlot Jason",
+                  "Ferrier Ian"
             ]
       },
       {
-            "name": "AtwaterPoetryProject.APP Online presents Ben Ladouceur K.B Thors ",
-            "imports": [
-                  "McCrum Rachel"
-            ]
-      },
-      {
-            "name": "AtwaterPoetryProject.APP Online John Barton Molly Peacock ",
-            "imports": [
-                  "McCrum Rachel"
-            ]
-      },
-      {
-            "name": "AtwaterPoetryProject.APP Online...Poem in Your Pocket Day Journ e du po me porter ",
-            "imports": [
-                  "McCrum Rachel"
-            ]
-      },
-      {
-            "name": "VERSeOttawa.VerseFest 2020 Urban Legends ",
+            "name": "VerseFest 2020: Urban Legends",
+            "org": "VERSe Ottawa",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "name": "Poetry Live! An Evening of Open Mic Poetry at Words",
+            "org": "WordsFest London Canada",
             "imports": [
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Martonfi Ilona",
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
-            ]
-      },
-      {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
-            ]
-      },
-      {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Martonfi Ilona",
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
-            ]
-      },
-      {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Martonfi Ilona",
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
-            ]
-      },
-      {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
-            "imports": [
-                  "Martonfi Ilona",
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
-            ]
-      },
-      {
-            "name": "WordsFestLondonCanada.Reimagining Disability ",
+            "name": "Reimagining Disability",
+            "org": "WordsFest London Canada",
             "imports": [
                   "Wint Brandon"
             ]
       },
       {
-            "name": "QuebecWritersFederation.Across the Platform An Open Mic with QWF Arts By The People ",
+            "name": "Active Voice Presents: Christine Fellows & John K. Samson",
+            "org": "WordsFest London Canada",
             "imports": [
-                  "McCrum Rachel"
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "QuebecWritersFederation.Local Reads Book Club Dominoes at the Crossroads ",
+            "name": "Jillian Horton: \"We Are All Perfectly Fine\"",
+            "org": "Words and Music",
             "imports": [
-                  "Yalaoui Malek "
+                  "Camlot Jason",
+                  "Ferrier Ian"
             ]
       },
       {
-            "name": "QuebecWritersFederation.Local Reads Book Club Yasmeen Haddad Loves Joanasi Maqaittik ",
+            "name": "Ivan Coyote: \"Care Of: Correspondence, Connections, and Cures\"",
+            "org": "WordsFest London Canada",
             "imports": [
-                  "Yalaoui Malek "
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "QuebecWritersFederation.Local Reads Book Club Montreal City of Secrets ",
+            "name": "Active Voice Presents: Cherie Dimaline",
+            "org": "WordsFest London Canada",
             "imports": [
-                  "Yalaoui Malek "
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "QuebecWritersFederation.Writing in Challenging Times ",
+            "name": "QueerReads | A Live Virtual Reading with Ivan Coyote",
+            "org": "Glad Day Bookshop",
             "imports": [
-                  "Yalaoui Malek "
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "QuebecWritersFederation.Chronicling the Days Dispatches from a Pandemic Book Launch ",
+            "name": "Here & Now: Queer Italian Canadian readings (April)",
+            "org": "Glad Day Bookshop",
             "imports": [
-                  "McCrum Rachel"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "PlanetEarthPoetry.Planet Earth Poetry Tyler Pennock ",
+            "name": "Book Launch: Christopher DiRaddo\u2019s The Family Way\n",
+            "org": "Librairie Drawn & Quarterly",
             "imports": [
-                  "Pennock Tyler"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "GladDayBookshop.Virtual Toronto Lit Up Bones ",
+            "name": "Ivan Coyote & Sarah MacDougall in Concert\n",
+            "org": "Toronto International Festival of Authors",
             "imports": [
-                  "Pennock Tyler"
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "GladDayBookshop.Smut Peddlers An evening of LGBTQ erotica ",
+            "name": "QueerReads | A Live Virtual Reading with Ivan Coyote\n",
+            "org": "Arsenal Pulp Press",
             "imports": [
-                  "Pennock Tyler"
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "GladDayBookshop.Panel INSTABILITY INSECURITY INSANITY Mental Health and the Writer ",
+            "name": "THE VIOLET HOUR",
+            "org": "Arsenal Pulp Press",
             "imports": [
-                  "Pennock Tyler"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Dominoes at the Crossroads ",
+            "name": "Care Of: Ivan Coyote in Conversation with Susan G. Cole",
+            "org": "Eden Mills Writers' Festival",
             "imports": [
-                  "Yalaoui Malek "
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Yasmeen Haddad Loves Joanasi Maqaittik ",
+            "name": "LitFest: Canada's Original Nonfiction Festival",
+            "org": "LitFest",
             "imports": [
-                  "Yalaoui Malek "
+                  "Wint Brandon"
             ]
       },
       {
-            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Montreal City of Secrets ",
+            "name": "Ian Ferrier and Ella Zeltserman",
+            "org": "The Art Bar Poetry Series",
             "imports": [
-                  "Yalaoui Malek "
+                  "Ferrier Ian"
             ]
       },
       {
-            "name": "LibrairieDrawnQuarterly.Local Reads Book Club Taximan ",
+            "name": "Booknanza! Part Two: Schneider, Heslop & Englert with Clayton and Wint",
+            "org": "Goose Lane Editions",
             "imports": [
-                  "Yalaoui Malek "
+                  "Wint Brandon"
             ]
       },
       {
-            "name": "LibrairieDrawnQuarterly.Local Reads Book Club The Philistine ",
+            "name": "The Violet Hour",
+            "org": "Violet Hour",
             "imports": [
-                  "Yalaoui Malek "
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "ArgoBooks.Argo Zoom Reading Series Verse Prose Song ",
+            "name": "An Orphan World (Violet Hour Book Club) \u2014 Online",
+            "org": "Violet Hour",
             "imports": [
-                  "Martonfi Ilona",
-                  "Lieberman Moti",
-                  "Prevost Adele Elise"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Downtime Ian Rankin ",
+            "name": "Age of Union (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Downtime Catherine Hernandez ",
+            "name": "The Great Believers (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "WordVancouver.Virtual Toronto Lit Up Bones ",
+            "name": "I Hope We Choose Love / The Normal Heart (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Pennock Tyler"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Toronto Lit Up Presents The Cyborg Anthology Virtual Launch ",
+            "name": "What Belongs to You (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Pennock Tyler"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.An Evening With Margaret Atwood ",
+            "name": "The New Testament (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.First Piece of the Puzzle Mark Billingham ",
+            "name": "\u00c9dition 360 - The Violet Hour presented by FIDO",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Waking from the American Dream Richard Ford ",
+            "name": "\u00c9dition 360 - Waltpaper: New York Club Kids presented by FIDO",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Sleepwalking to Catastrophe Emily St. John Mandel ",
+            "name": "Rubyfruit Jungle (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Journeys of Self Discovery Billy Ray Belcourt Tyler Pennock ",
+            "name": "My Cat Yugoslavia (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Pennock Tyler"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Skin Hunger Tyler Pennock ",
+            "name": "Kathleen McCraken and Brandon Wint",
+            "org": "The Art Bar Poetry Series",
             "imports": [
-                  "Pennock Tyler"
+                  "Wint Brandon"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Family Identity Future David A. Robertson Jesse Thistle ",
+            "name": "Montreal Review of Books Summer Launch\n",
+            "org": "Montreal Review of Books",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Keep Your Enemies Close Ian Rankin s A Song for the Dark Times ",
+            "name": "gritLIT Author Talk: Care Of",
+            "org": "gritLIT",
             "imports": [
-                  "Gulliver Roland"
+                  "Coyote Ivan"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Burning Bright Andr Alexis on The Night Piece ",
+            "name": "The City and the Pillar & The Boys in the Band (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
             ]
       },
       {
-            "name": "TorontoInternationalFestivalofAuthors.Alexander McCall Smith How to Raise an Elephant ",
+            "name": "Break in Case of Emergency (Violet Hour Book Club)",
+            "org": "Violet Hour",
             "imports": [
-                  "Gulliver Roland"
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Fun Home (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "A History of My Brief Body / Funny Boy (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Maurice (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "The Violet Hour",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "We Have Always Been Here (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "The Violet Hour",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "December Flywheel",
+            "org": "Flywheel Reading Series",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "Montreal Stories",
+            "org": "gritLIT",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Mysterious Skin (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "THE VIOLET HOUR",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Just Kids (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Poetry for the Moment\n",
+            "org": "The Walrus",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "THE VIOLET HOUR",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "You Will Love What You Have Killed (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "THE VIOLET HOUR",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Real Life (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Jonny Appleseed (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "How Poetry Saved My Life: A Hustler's Memoir (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Swimming in the Dark (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "In the Dream House (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Red X (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Skim (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Violet Hour (Salon du livre 2LGBTQIA+)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Christopher and His Kind (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Detransition, Baby (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "My Father and Myself (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Such a Lonely, Lovely Road (Violet Hour Book Club)",
+            "org": "Violet Hour",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "Tact, Distance, Excavation: An Evening with Jason Camlot, Avleen K. Mokha, and Kim Trainor",
+            "org": "Poetry Matters",
+            "imports": [
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "Celebrating 20 Years of Stories: The Literary Cabaret - Part 2",
+            "org": "Whistler Writers Festival",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Tree Reading Series ft Natalie Wee & Chimwemwe Undi\n",
+            "org": "Tree Reading Series",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "Tree Reading Series ft. Manahil Bandukwala & Junie Desil\n",
+            "org": "Tree Reading Series",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "Tree Reading Series ft. Amy Leblanc & John Paul Martinez\n",
+            "org": "Tree Reading Series",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "Tree Reading Series ft Chuqiao Yang & Lark Omura\n",
+            "org": "Tree Reading Series",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "Tree Reading Series Ft. David Ly & Sarah Maria Medina\n",
+            "org": "Tree Reading Series",
+            "imports": [
+                  "Wint Brandon"
+            ]
+      },
+      {
+            "name": "Ivan Coyote & Zalika Reid-Benta: In Conversation\n",
+            "org": "WordsFest London Canada",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Active Voice Presents: Ruby Singh\n",
+            "org": "WordsFest London Canada",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Active Voice Presents: Hill Kourkoutis\n",
+            "org": "WordsFest London Canada",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Active Voice Presents: Zoe Whittall\n",
+            "org": "WordsFest London Canada",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Active Voice Presents: Angela Sterritt\n",
+            "org": "WordsFest London Canada",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "GGBooks Finalists in Conversation: Writing the Self, with Ivan Coyote & Larry Audlaluk\n",
+            "org": "Toronto International Festival of Authors",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Body of Correspondence: Finding Connections Through Letters",
+            "org": "The New Quarterly",
+            "imports": [
+                  "Coyote Ivan"
+            ]
+      },
+      {
+            "name": "Book Launch: Jason Camlot, Vlarf and John Emil Vincent, Bitter in the Belly",
+            "org": "ArgoBooks",
+            "imports": [
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "READING : Wet Ink, New Books [Naked Heart Festival]\n",
+            "org": "Glad Day Bookshop",
+            "imports": [
+                  "DiRaddo Christopher"
+            ]
+      },
+      {
+            "name": "To speak, write, perform and play\n",
+            "org": "Words and Music",
+            "imports": [
+                  "Ferrier Ian",
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "Fresh Pages at Words & Music Sunday\n",
+            "org": "Words and Music",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "Last Nights of Summer at Words & Music Sunday\n",
+            "org": "Words and Music",
+            "imports": [
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "Words & Music LIVE at Caf\u00e9 Resonance\n",
+            "org": "Words and Music",
+            "imports": [
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "Flamenco Words, Music and Dance LIVE at Resonance\n",
+            "org": "Words and Music",
+            "imports": [
+                  "Ferrier Ian",
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "Living the Plague at Words & Music Monday\n",
+            "org": "Words and Music",
+            "imports": [
+                  "Camlot Jason",
+                  "Ferrier Ian"
+            ]
+      },
+      {
+            "name": "DC Virtual Launch 10|25, 3 - 4:30 pm\n",
+            "org": "DC Books",
+            "imports": [
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "DC Books Spring Launch\n",
+            "org": "DC Books",
+            "imports": [
+                  "Camlot Jason"
+            ]
+      },
+      {
+            "name": "Zoom into Poetry between two Provinces",
+            "org": "Dogwood Rose",
+            "imports": [
+                  "Wint Brandon"
             ]
       }
 ]

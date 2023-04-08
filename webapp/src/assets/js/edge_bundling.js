@@ -1,3 +1,6 @@
+const EDGE_BOUNDING_SVG_WIDTH = 1500,
+      EDGE_BOUNDING_SVG_HEIGHT = 1600,
+      EDGE_BOUNDING_SVG_DIAMETER = 700;
 try {
 
       //This function retrieves the json data from the src/assets/js/Topten.json
@@ -6,10 +9,13 @@ try {
 
       function get_edge_bund_json(json, onClick) {
             var edgebundling_json = [];
-            console.log("json", json)
             edgebundling_json = json;
-            var diameter = 700,
-                  radius = diameter / 2,
+
+            // change frameWidth and frameHeight to change the frame size of the SVG chart file.
+            var
+                  focusCenterX = EDGE_BOUNDING_SVG_WIDTH / 2,
+                  focusCenterY = EDGE_BOUNDING_SVG_HEIGHT / 2,
+                  radius = EDGE_BOUNDING_SVG_DIAMETER / 2,
                   innerRadius = radius - 120;
 
             var cluster = d3.cluster()
@@ -21,19 +27,15 @@ try {
                   .angle(function (d) { return d.x / 180 * Math.PI; });
 
             var svg = d3.select(".container").append("svg")
-                  .attr("width", diameter)
-                  .attr("height", diameter)
+                  .attr("width", EDGE_BOUNDING_SVG_WIDTH)
+                  .attr("height", EDGE_BOUNDING_SVG_HEIGHT)
                   .append("g")
-                  .attr("transform", "translate(" + radius + "," + radius + ")");
+                  .attr("transform", "translate(" + focusCenterX + "," + focusCenterY + ")");
 
             var link = svg.append("g").selectAll(".link"),
                   node = svg.append("g").selectAll(".node");
 
-
-
             count = 0;
-            // d3.json("Topten.json", function (error, classes) {
-            //       if (error) throw error;
             var classes = edgebundling_json;
             var root = packageHierarchy(classes)
                   .sum(function (d) { return d.size; });
@@ -45,10 +47,7 @@ try {
                   .enter().append("path")
                   .each(function (d) { d.source = d[0], d.target = d[d.length - 1]; })
                   .attr("class", "link")
-                  .attr("d", line)
-                  .on('click', function (d) {
-                        // alert('mouseover');
-                  });
+                  .attr("d", line);
             creators = [];
             Events = [];
             for (let index = 0; index < root.leaves().length; index++) {
@@ -75,18 +74,18 @@ try {
                   .attr("dy", "0.31em")
                   .attr("transform", function (d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
                   .attr("text-anchor", function (d) { return d.x < 180 ? "start" : "end"; })
-                  .text(function (d) { console.log(d.data.key); return d.data.key; })
+                  .text(function (d) { return d.data.key; })
 
                   .on("mouseover", mouseovered)
                   .on("mouseout", mouseouted)
-                  .on("click", nodeclicked)
+                  .on("click", nodeclicked);
 
-
-            // });
             function nodeclicked(d) {
                   event.stopPropagation();
                   event.preventDefault();
-                  onClick(d.data["name"]);
+                  console.log("d", d);
+                  if (d.data)
+                        onClick(d.data["key"], d.data?.parent?.key);
             }
             function mouseovered(d) {
                   node
@@ -119,24 +118,25 @@ try {
             function packageHierarchy(classes) {
                   var map = {};
 
-                  function find(name, data) {
-                        var node = map[name], i;
+                  function find(name, org, data) {
+                        var node = map[name];
                         if (!node) {
-                              node = map[name] = data || { name: name, children: [] };
-                              if (name.length) {
-                                    node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
+                              node = map[name] = data || { name, children: [] };
+                              if (name) {
+                                    node.parent = find(org);
+                                    // two way relation
                                     node.parent.children.push(node);
-                                    node.key = name.substring(i + 1);
+                                    node.key = name;
                               }
                         }
                         return node;
                   }
 
                   classes.forEach(function (d) {
-                        find(d.name, d);
+                        find(d.name, d.org, d);
                   });
 
-                  return d3.hierarchy(map[""]);
+                  return d3.hierarchy(map[undefined]);
             }
 
             // Return a list of imports for the given array of nodes.
