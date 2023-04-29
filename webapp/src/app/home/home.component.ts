@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
 }
 
 function showCrtl($scope: { showCon: (con: any) => void; clickOn: any; }){
-  console.log("showcon")
   $scope.showCon=function(con){
       $scope.clickOn=con;
   }

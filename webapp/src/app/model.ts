@@ -10,5 +10,5 @@ export enum FilterType {
   IsRecordingAvailable = "is_video_available",
   Date = "Dates.date",
   Language = "Item_Description.language",
-  HostingPlatform = "Location.notes"
+  HostingPlatform = "Location.hosting_platform"
 }

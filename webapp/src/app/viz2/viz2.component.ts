@@ -26,7 +26,6 @@ export class Viz2Component implements OnInit {
           });
         },
         error => {
-          console.log(error);
         }
       );
   }

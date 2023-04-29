@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PathConstants } from '../constants';
 import { FilterType } from '../model';
@@ -56,20 +56,17 @@ export class Viz3Component implements OnInit {
                 Calljsfile(this.eventArray, this.json_array, onClick);
               },
               error => {
-                console.log(error);
               }
             );
           //  send_json_to_map_js_file(csvToRowArray);
         },
         error => {
-          console.log(error);
         }
       );
   }
 
   onClick(place: any): void {
-    console.log("place", place)
-    this.router.navigate([PathConstants.Dashboard], { queryParams: { q: place.city } })
+    this.router.navigate([PathConstants.Dashboard], { queryParams: { filter: place.city, type: FilterType.Place } });
   }
 }
 

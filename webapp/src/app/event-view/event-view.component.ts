@@ -39,7 +39,6 @@ export class EventViewComponent implements OnInit {
       let entryId = params.get('entryId');
       if (entryId != null) {
         this.service.getEntry(entryId).then((entry) => {
-          console.log("entry", entry);
           this.loading = false;
           this.entry = entry;
           this.onLoaded();

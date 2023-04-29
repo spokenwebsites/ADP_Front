@@ -19,32 +19,19 @@ export class ListsHostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.swallowEntryService.getAttributes([
-      FilterType.HostingPlatform
+      FilterType.HostingPlatform,
     ]).then((msHits: SearchResponse<SwallowEntry>) => {
       for (let hit of msHits.hits) {
-        if (!hit.Location) {
-          continue;
-        }
-        for (let location of hit.Location) {
-          // const re = new RegExp('.*Online platform.*"(.*?)"');
-          // const matches = re.exec(location.notes);
-          // if (matches && matches.length > 1 ) {
-          let startingOfPlatforms = location.notes.indexOf(":");
-          let platforms = location.notes.substring(startingOfPlatforms + 1).trim();
-          if (platforms) {
-            const re = /\s*\"([^"]+)"/g;
-            // console.log("notes", location.notes);
-            let matches;
-            do {
-              matches = re.exec(platforms);
-              if (matches && matches.length > 1) {
-                let match = matches[1].trim();
-                if (match.length) {
-                  // console.log("matches", matches[1]);
-                  this.listOfAttributes[match] = true;
+        if (hit.Location && hit.Location.length > 0) {
+          for (let location of hit.Location) {
+            if (location.hosting_platform && location.hosting_platform.length) {
+              for (let platform of location.hosting_platform) {
+                const hostingPlatform = String(platform).trim();
+                if (hostingPlatform.length > 0) {
+                  this.listOfAttributes[hostingPlatform] = true;
                 }
               }
-            } while (matches);
+            }
           }
         }
       }

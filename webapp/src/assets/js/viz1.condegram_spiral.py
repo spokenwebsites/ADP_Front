@@ -51,7 +51,7 @@ class CondeGram:
         out_file.close()
 
         # save events with error
-        err_file = open("webapp/src/assets/%d.logs.json" %
+        err_file = open("webapp/src/assets/js/%d.logs.json" %
                         datetime.now().timestamp(), "w")
         # dumps json into the file.
         json.dump(error_swallows, err_file, indent=6)

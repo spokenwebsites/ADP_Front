@@ -30,7 +30,7 @@ def createcsvwithcoordinates():
   geolocator = Nominatim(user_agent="Nominatim")
   #Firstly a draft file is created with city,homelat,homelon,homecontinent,state
   with open(draftCSV, 'w', encoding='UTF8', newline='') as f:
-    header = ['city','homelat','homelon','homecontinent','state']
+    header = ['city','homelat','homelon','homecontinent','state', 'n']
     writer = csv.writer(f)
     writer.writerow(header)
     for i in range(len(deserialised_json)):
@@ -61,7 +61,7 @@ def createcsvwithcoordinates():
                                 country = address.get('country', '')
                                 code = address.get('country_code')
                                 if city is not empty and state is not empty and country is not empty:
-                                    row = (city,lat,long,country,state)
+                                    row = (city,lat,long,country,state,deserialised_json[i]['swallow_id'])
                                     writer.writerow(row)
       except:
         pass

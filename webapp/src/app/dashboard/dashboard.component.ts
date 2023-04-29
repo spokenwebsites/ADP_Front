@@ -71,7 +71,6 @@ export class DashboardComponent implements OnInit {
         FilterType.Recordings
       ]).then((msHits: SearchResponse<SwallowEntry>) => {
         this.hits = msHits.hits;
-        console.log("msHits", msHits);
         this.facetDistribution = {
           [FilterType.Organization]: this.withFormControl(FilterType.Organization, msHits.facetDistribution),
           [FilterType.TypeOfEvent]: this.preprocess(this.withFormControl(FilterType.TypeOfEvent, msHits.facetDistribution)),

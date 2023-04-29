@@ -4,6 +4,7 @@ from utils import valid
 from logger import Logger
 from fileutil import FileUtil
 
+swallow_id = 'swallow_id'
 swallow_id_col = 'n'
 
 class SwallowMerger():
@@ -11,16 +12,21 @@ class SwallowMerger():
         self.main_obj = FileUtil.load_json(mainfile)
         print("# of elements: %s"%(len(self.main_obj)))
         self.new_df = FileUtil.load_csv(childfile)
+        print(self.new_df.head(5))
         self.logger = logger
         
     def build(self):
         for entry in self.main_obj:
-            if swallow_id_col not in entry:
-                self.logger.write("%s doesn't have %s"%(json.dumps(entry), swallow_id_col))
+            if swallow_id not in entry:
+                self.logger.write("%s doesn't have %s"%(entry[swallow_id], swallow_id))
                 continue
-            current_entry_df = self.new_df[self.new_df[swallow_id_col] == int(entry[swallow_id_col])]
+            current_entry_df = self.new_df[self.new_df[swallow_id_col] == float(entry[swallow_id])]
+            # print(current_entry_df.values)
             if 'Location' not in entry:
-                self.logger.write("%s doesn't have location"%entry[swallow_id_col])
+                self.logger.write("%s entry doesn't have location at JSON file"%entry[swallow_id])
+                continue
+            if len(current_entry_df.values) == 0:
+                self.logger.write("%s entry doesn't have parsed location at CSV file"%entry[swallow_id])
                 continue
             for location in entry['Location']:
                 for city, homelat, homelon, homecontinent, state, _ in current_entry_df.values:

@@ -13,21 +13,29 @@
 # Run Swallow Tool for swallow dataset processing
 > `cd ADP_FRONT/swallow-tool/`
 
-### Merge export2510.json and cities.csv using swallowmerger.py
-> python3 merger.py -m export2774.json -c cities.csv -o collection.json
+### Merge export.json and cities.csv using swallowmerger.py
+> python3 merger.py -m export.json -c Draft.csv -o new_collection.json
 
 ### Process entries to include 'is_video_available' information
-> python3 processor.py -m export2774.json -o collection.json
+> python3 processor.py -m export.json -o new_collection.json
 ### Run pipeline to do the followings:
-- Merge export2510.json and cities.csv using swallowmerger.py
+- Merge export.json and cities.csv using swallowmerger.py
 - Process entries to include 'is_video_available' information
-> python3 main.py -m collection.json -c final.csv -o new_collection.json
+> python3 main.py -m export.json -c Draft.csv -o new_collection.json
 
 # How to import exported data to Meilisearch on your local
-```curl \
+```
+curl \
   -X POST 'http://localhost:7700/indexes/Entries/documents?primaryKey=swallow_id' \
   -H 'Content-Type: application/json' \
-  --data-binary @collection.json```
+  --data-binary @new_collection.json
+```
+
+# Delete existing dataset
+```
+curl \
+  -X DELETE 'http://localhost:7700/indexes/Entries'
+```
 
 # [PATCH] Set filtereable attributes at http://localhost:7700/indexes/Entries/settings
 ```

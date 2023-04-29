@@ -21,7 +21,6 @@ export class Viz1Component implements OnInit {
           get_condegram_json(data, onClick);
         },
         error => {
-          console.log(error);
         }
       );
   }
@@ -44,7 +43,7 @@ export class Viz1Component implements OnInit {
 
   onClick(dateStr: any): void {
     let date = new Date(dateStr);
-    let month = String(date.getMonth()).padStart(2, '0');
+    let month = String(date.getMonth() + 1).padStart(2, '0');
     let day = String(date.getDate()).padStart(2, '0');
     let d = `${date.getFullYear()}-${month}-${day}`;
     this.router.navigate([PathConstants.Dashboard], { queryParams: { filter: d, type: FilterType.Date }, relativeTo: this.route });

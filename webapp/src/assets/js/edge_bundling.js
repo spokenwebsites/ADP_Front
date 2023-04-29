@@ -83,7 +83,6 @@ try {
             function nodeclicked(d) {
                   event.stopPropagation();
                   event.preventDefault();
-                  console.log("d", d);
                   if (d.data)
                         onClick(d.data["key"], d.data?.parent?.key);
             }
@@ -163,5 +162,4 @@ try {
 }
 
 catch (error) {
-      console.log(error)
 }

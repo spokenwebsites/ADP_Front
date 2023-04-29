@@ -45,6 +45,7 @@ export interface location {
     address: string,
     latitude: string,
     longitude: string,
+    hosting_platform: string,
 }
 export interface contributor {
 
