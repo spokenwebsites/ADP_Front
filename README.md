@@ -14,7 +14,9 @@ $ scp -r username@alt.spokenweb.ca:~/www/adp path/to/local/dir
 ```
 $ cd ADP_Front/webapp
 $ npm install  
-$ ng build   
+$ ng build
+When building on the production server, run
+$ ng build --prod 
 ```
 ## How to edit/bulk publish entries on strapi
 - Strapi is temporarily accessible at [https://strapi-adp.spokenweb.ca/admin](https://strapi-adp.spokenweb.ca/admin)
