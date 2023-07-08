@@ -59,6 +59,11 @@ export class EventCardComponent implements OnInit {
     }
   }
 
+  getPersistentURL(): string {
+    const url = this.entry?.Institution_and_Collection?.persistent_URL;
+    return url ? url.trim() : '';
+  }
+
   onClickMore(): void {
     this.router.navigate([PathConstants.Details, this.entry?.swallow_id])
   }

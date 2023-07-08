@@ -40,7 +40,7 @@
                         ""}}{{entry?.Dates && entry.Dates.length > 0 ? entry.Dates[0]!.date : ""}}</div>
                     <div class="organizationtitle">
 
-                        <a href="{{entry?.Institution_and_Collection?.persistent_URL}}" target="_blank"
+                        <a [href]="getPersistentURL()" target="_blank"
                             class="link-3">{{entry?.collection?.source_collection}}</a>
                     </div>
                 </div>
