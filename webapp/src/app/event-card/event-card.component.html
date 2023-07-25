@@ -8,10 +8,12 @@
                         data-w-id="72b90187-2f81-0d1c-9102-764ff8d845b0" alt="" class="card-select-icon">
                 </div>
             </div> -->
-            <div class="event-card-vid-img-container">
-                <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
-                    [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image" />
-            </div>
+          <div class="event-card-vid-img-container"><app-loading *ngIf="isLoading"></app-loading>
+            <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
+                 [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image"
+                 (load)="isLoading = false"
+                 (error)="isLoading = false"/>
+          </div>
 
             <div class="event-card-top-text-div">
                 <div class="event-icons-div">
@@ -32,7 +34,7 @@
                     </div>
                 </div>
                 <div class="eventtitle ellipsis">
-                    <span class="link-2">{{entry?.Item_Description?.title}}</span>
+                    <span (click)="onClickMore()" routerLinkActive="active" class="link-2">{{entry?.Item_Description?.title}}</span>
                 </div>
                 <div class="event-date-title">
                     <div class="datetitle">{{entry?.Location && entry.Location.length > 0 ? entry.Location[0]!.venue + "

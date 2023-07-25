@@ -20,6 +20,7 @@ export class EventCardComponent implements OnInit {
   genre: string = "";
   LanguageIconType = LanguageIconType;
   languageIconType: any = LanguageIconType.Null;
+  isLoading = true;
 
   constructor(private router: Router, public parser: ParserService) { }
 
