@@ -24,6 +24,8 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { InterviewService } from './services/interview-service/interview.service';
 import { SwallowEntryService } from './services/swallow-entry/swallow-entry.service';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import this line
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatProgressSpinnerModule 
   ],
   providers: [
     SwallowEntryService,
