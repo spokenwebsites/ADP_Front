@@ -20,7 +20,7 @@ declare function send_json_to_map_js_file(json: any): any;
 
 export class Viz3Component implements OnInit {
 
-
+  isLoading = true;
 
   ngOnInit(): void {
     this.loadJsFile("assets/js/d3-geo-projection.v2.min.js")
@@ -54,6 +54,7 @@ export class Viz3Component implements OnInit {
                 }
                 const onClick = this.onClick.bind(this);
                 Calljsfile(this.eventArray, this.json_array, onClick);
+                this.isLoading = false;
               },
               error => {
               }

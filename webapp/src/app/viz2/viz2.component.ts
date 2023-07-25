@@ -12,6 +12,9 @@ declare const EDGE_BOUNDING_SVG_DIAMETER: number;
   styleUrls: ['./viz2.component.css']
 })
 export class Viz2Component implements OnInit {
+
+  isLoading = true;
+
   @ViewChild('container') container!: ElementRef;
 
   public events: Array<object> = [];
@@ -24,6 +27,7 @@ export class Viz2Component implements OnInit {
             // try to focus scrollbar on the center of SVG.
             this.container.nativeElement.scrollTo(EDGE_BOUNDING_SVG_DIAMETER / 2, EDGE_BOUNDING_SVG_DIAMETER / 2);
           });
+          this.isLoading = false;
         },
         error => {
         }
