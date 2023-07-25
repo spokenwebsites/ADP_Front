@@ -6,12 +6,12 @@ function get_condegram_json(condegram_json, onClick) {
 
   //Use this to set width,height and start and end of the spiral
   //numspirals- will increase/decrease the spirals
-  var width = 600,
-    height = 600,
+  var width = 700,
+    height = 700,
     start = 0,
     end = 2.25,
     numSpirals = 4
-  margin = { top: 50, bottom: 50, left: 50, right: 50 };
+  margin = { top: 10, bottom: 10, left: 10, right: 10 };
 
   var valuecount = 0;
 
@@ -63,10 +63,16 @@ function get_condegram_json(condegram_json, onClick) {
 
   var parseDate = d3.timeParse("%m-%d-%Y");
 
+
   someData.forEach(d => {
     d.date = parseDate(d.date);
   })
 
+  // Define the cutoff date
+  var cutoffDate = new Date("2022-03-31");
+  var cutoffStartDate = new Date("2020-03-01");
+  someData = someData.filter(d => d.date <= cutoffDate);
+  someData = someData.filter(d => d.date >= cutoffStartDate);
 
   var timeScale = d3.scaleTime()
     .domain(d3.extent(someData, function (d) {
