@@ -16,6 +16,9 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 export class InterviewsComponent implements OnInit {
   organizations: any[] = [];
 
+  isLoading = true;
+
+
   constructor(private interviewService: InterviewService, private router: Router) {
   }
 
@@ -23,7 +26,9 @@ export class InterviewsComponent implements OnInit {
     this.interviewService.getOrganizations().subscribe((organizations: Orgnization[]) => {
       this.organizations = organizations;
     }, (error) => {
-    })
+      console.log("ERROR in initializing InterviewsComponent");
+      this.isLoading = false;
+    }, () => { this.isLoading = false; })
   }
 
   onVisitInterviewPage(attribute: string): void {

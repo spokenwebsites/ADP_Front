@@ -7,7 +7,8 @@
             <h2>Interviews with Organizers of Pandemic Literary Events</h2>
             <p class="filter-buttons-container">
               <a *ngFor="let organization of organizations" (click)="onVisitInterviewPage(organization.id)"
-                class="button-filter w-button">{{organization.label}}</a>
+                 class="button-filter w-button">{{organization.label}}</a>
+              <app-loading *ngIf="isLoading"></app-loading>
             </p>
           </div>
         </div>

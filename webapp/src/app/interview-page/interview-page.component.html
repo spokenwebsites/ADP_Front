@@ -1,44 +1,43 @@
-<div *ngIf="!isLoading; else loading">
-    <div *ngIf="content && content.Item_Description; else notFound" class="interview-page">
-        <div class="back-btn"><button class="button" (click)="onBack()"><</button></div>
-        <div>
-            <div class="title">
-                {{content.Item_Description.title}}
-            </div>
-            <div class="metadata">
-                <div class="organization">
-                    <span class="bold">Organization:</span>
-                    <span>{{content.classification[0].label}}</span>
-                </div>
-                <div class="date">
-                    <span class="bold">Date:</span>
-                    <span>{{content.Item_Description.date}}</span>
-                </div>
-                <div class="interviewee">
-                    <span class="bold">Interviewee:</span>
-                    <span>{{content.Item_Description.interviewee}}</span>
-                </div>
-                <div>
-                    <span class="bold">Interviewer:</span>
-                    <span>{{content.Item_Description.interviewer}}</span>
-                </div>
-            </div>
+  <div *ngIf="content && content.Item_Description; else notFound" class="interview-page">
+  <app-loading *ngIf="isLoading"></app-loading>
+  <div class="back-btn"><button class="button" (click)="onBack()"><</button></div>
+  <div>
+    <div class="title">
+      {{content.Item_Description.title}}
+    </div>
+    <div class="metadata">
+      <div class="organization">
+        <span class="bold">Organization:</span>
+        <span>{{content.classification[0].label}}</span>
+      </div>
+      <div class="date">
+        <span class="bold">Date:</span>
+        <span>{{content.Item_Description.date}}</span>
+      </div>
+      <div class="interviewee">
+        <span class="bold">Interviewee:</span>
+        <span>{{content.Item_Description.interviewee}}</span>
+      </div>
+      <div>
+        <span class="bold">Interviewer:</span>
+        <span>{{content.Item_Description.interviewer}}</span>
+      </div>
+    </div>
 
-            <div [innerHTML]="content.Item_Description.text"></div>
-            <div class="citation">
-                <p><strong><span class="bold">How to Cite This Article:</span></strong></p>
-                <div [innerHTML]="content.Item_Description.citation"></div>
-            </div>
-        </div>
+    <div [innerHTML]="content.Item_Description.text"></div>
+    <div class="citation">
+      <p><strong><span class="bold">How to Cite This Article:</span></strong></p>
+      <div [innerHTML]="content.Item_Description.citation"></div>
     </div>
-    <ng-template #notFound>
-        <div class="interview-page not-found">
-            Interview not found!
-        </div>
-    </ng-template>
+  </div>
 </div>
-<ng-template #loading>
-    <div class="interview-page loading">
-        Loading
+  <ng-template #notFound>
+    <div class="interview-page not-found">
+      Interview not found!
     </div>
+  </ng-template>
+<ng-template #loading>
+  <div class="interview-page loading">
+    Loading
+  </div>
 </ng-template>
