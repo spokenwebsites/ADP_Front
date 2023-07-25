@@ -9,14 +9,14 @@
       </div>
       <div class="div-block-4 data-vizualisation">
         <div class="div-buttons-visualization">
-          <a href="#" (click)="showDiv.viz1 = !showDiv.viz1;showDiv.viz2 = false;showDiv.viz3 = false"
-            class="button orange_border timeline w-button">Timeline</a>
-          <a href="#" (click)="showDiv.viz2 = !showDiv.viz2;showDiv.viz1 = false;showDiv.viz3 = false"
-            class="button orange_border relationship w-button">Connections</a>
-          <a href="#" (click)="showDiv.viz3 = !showDiv.viz3;showDiv.viz2 = false;showDiv.viz1 = false"
-            class="button orange_border w-button">Places</a>
+          <a href="#" (click)="showViz1()"
+             class="button orange_border timeline w-button">Timeline</a>
+          <a href="#" (click)="showViz2()"
+             class="button orange_border relationship w-button">Connections</a>
+          <a href="#" (click)="showViz3()"
+             class="button orange_border w-button places">Places</a>
         </div>
-        <a href="#" class="link-block-5 w-inline-block">
+        
           <div ng-show="clickOn=='dataviz1'" class="dataviz">
             <div *ngIf="showDiv.viz1" ng-show="clickOn=='dataviz2'" class="relationships-dataviz">
               <app-viz1></app-viz1>
@@ -28,7 +28,7 @@
               <app-viz3></app-viz3>
             </div>
           </div>
-        </a>
+    
       </div>
     </div>
   </div>
