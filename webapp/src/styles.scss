@@ -151,7 +151,7 @@ select {
 .spiral_text {
   text-anchor: start;
   font: 10px "avenir next";
-  fill: grey;
+  fill: #d0d0d0;
 }
 
 .tr_th_class {
@@ -398,4 +398,13 @@ svg {
 .interview-page .weblink {
   font-size: 15px;
   color: #1155CC;
+}
+
+.viz-annotation {
+    font-family: Lato,sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px 40px;
+    text-align:center;
 }

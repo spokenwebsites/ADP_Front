@@ -25,6 +25,7 @@ import { InterviewService } from './services/interview-service/interview.service
 import { SwallowEntryService } from './services/swallow-entry/swallow-entry.service';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import this line
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; /
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MatProgressSpinnerModule 
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [
     SwallowEntryService,

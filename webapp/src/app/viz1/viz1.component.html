@@ -1,7 +1,19 @@
 <!-- Add the loader component -->
-<app-loading *ngIf="isLoading"></app-loading>
-<div style="background-color:#333333">
-  <a href="#" class="link-block-5 w-inline-block">
-    <div id="chart" class="chart_condegram"></div>
-   </a>
-</div>
+<mat-card class="example-card">
+  <mat-card-header>
+  </mat-card-header>
+  <mat-card-content>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div style="background-color:#333333; text-align:center;">
+      <a href="#" class="link-block-5 w-inline-block">
+        <div id="chart" class="chart_condegram"></div>
+      </a>
+      <p class="viz-annotation">
+        Visualization of a timeline (March 2020 to March 2022) on a spiral highlighting how many events took place on each date. Navigate to event metadata from the visualization by clicking on dates.
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+

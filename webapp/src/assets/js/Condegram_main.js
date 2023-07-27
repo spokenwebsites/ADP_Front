@@ -184,7 +184,7 @@ function get_condegram_json(condegram_json, onClick) {
 
       tooltip.select('.date').html("Date: <b>" + d.date.toDateString() + "</b>");
       //tooltip.select('.value').html("Value: <b>" + Math.round(d.value*100)/100 + "<b>");
-      tooltip.select('.value').html("Value: <b>" + d["value"] + "<b>");
+      tooltip.select('.value').html("Events: <b>" + d["value"] + "<b>");
 
 
       d3.select(this)

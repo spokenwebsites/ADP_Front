@@ -66,12 +66,16 @@
   font-size: large;
 }*/
 
-.container{
+.container {
   background-color: #333333;
   overflow: visible;
   width: 800px !important;
   height: 800px;
   overflow: scroll;
+  padding-left: 40px;
+  /* Hide default scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 } 
 
 /* classes used for the nodes */
@@ -94,4 +98,24 @@ opacity: 0.7;
 .events:hover{
   opacity:1;
   fill: #fcd788
+}
+
+
+  /* For webkit-based browsers (Chrome, Safari, etc.) */
+.container::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  height: 10px; /* Height of the scrollbar for the horizontal scrollbar */
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: #bebebe; /* Background color of the scrollbar track */
+}
+  .container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the scrollbar thumb */
+  }
+
+  /* Optionally, you can style the scrollbar corner */
+.container::-webkit-scrollbar-corner {
+  background-color: #bebebe;
 }

@@ -1,3 +1,19 @@
-<app-loading *ngIf="isLoading"></app-loading>
-<a href="#" class="link-block-5 w-inline-block">
-  <div class="container" #container></div></a>
+<mat-card class="example-card">
+  <mat-card-header>
+  </mat-card-header>
+  <mat-card-content>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div style="background-color:#333333; padding:20px 40px;">
+
+      <a href="#" class="link-block-5 w-inline-block">
+        <div class="container" #container></div>
+      </a>
+
+
+      <p class="viz-annotation">
+        Visualization of the network of authors and events they participated in.  The visualization uses edge bundling by event organizer for additional effect.  Due to the size of the dataset, only the top five contributors with the most connections to events are shown. Navigate to event metadata from the visualization by clicking on names of contributors or events.
+      </p>
+    </div>
+  </mat-card-content>
+</mat-card>
+
