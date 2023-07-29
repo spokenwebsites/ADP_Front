@@ -51,7 +51,7 @@
                         <h6 class="heading-6">Event&#x27;s Details</h6>
                         <h1 class="heading-4">{{entry?.Item_Description!.title}}</h1>
                         <h6 class="description">Description</h6>
-                        <p class="text-filter">
+                        <p class="text-filter" style="white-space: pre-wrap;">
                             <span *ngIf="entry?.Content">{{entry.Content.contents}}</span>
                         </p>
                         <mat-expansion-panel class="metadata-menu" (opened)="expansionPanelState.people = true"
