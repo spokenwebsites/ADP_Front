@@ -11,6 +11,7 @@ import { InterviewService } from '../services/interview-service/interview.servic
 export class InterviewPageComponent implements OnInit {
   content: any = {};
   isLoading: boolean = true;
+  errorLoading: boolean = false;
 
   constructor(private route: ActivatedRoute,
     private interviewService: InterviewService) {
@@ -29,10 +30,12 @@ export class InterviewPageComponent implements OnInit {
           this.isLoading = false;
         }, (error) => {
           this.isLoading = false;
+          this.errorLoading = true;
         });
       }
     }, (err) => {
       this.isLoading = false;
+      this.errorLoading = true;
     })
   }
 

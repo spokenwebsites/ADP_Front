@@ -33,11 +33,13 @@
 </div>
   <ng-template #notFound>
     <div class="interview-page not-found">
-      Interview not found!
+      <app-loading *ngIf="isLoading"></app-loading>
+      <div *ngIf="errorLoading">Interview data not found.</div>
     </div>
   </ng-template>
 <ng-template #loading>
   <div class="interview-page loading">
-    Loading
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div *ngIf="errorLoading">Interview data not found.</div>
   </div>
 </ng-template>
