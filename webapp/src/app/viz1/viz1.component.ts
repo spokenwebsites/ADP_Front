@@ -14,6 +14,7 @@ declare function get_condegram_json(json: any, onCLick: Function): any;
 export class Viz1Component implements OnInit {
 
   isLoading = true;
+  loadError = false;
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
@@ -28,6 +29,7 @@ export class Viz1Component implements OnInit {
           this.isLoading = false;
         },
         error => {
+          this.loadError = true;
         }
       );
 

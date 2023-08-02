@@ -14,6 +14,7 @@ declare const EDGE_BOUNDING_SVG_DIAMETER: number;
 export class Viz2Component implements OnInit {
 
   isLoading = true;
+  loadError = false;
 
   @ViewChild('container') container!: ElementRef;
 
@@ -30,6 +31,7 @@ export class Viz2Component implements OnInit {
           this.isLoading = false;
         },
         error => {
+          this.loadError = true;
         }
       );
   }

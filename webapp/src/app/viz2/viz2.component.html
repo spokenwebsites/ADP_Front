@@ -3,6 +3,8 @@
   </mat-card-header>
   <mat-card-content>
     <app-loading *ngIf="isLoading"></app-loading>
+    <div *ngIf="loadError">Error loading data file, please try reloading.</div>
+
     <div style="background-color:#333333; padding:20px 40px;">
 
       <a href="#" class="link-block-5 w-inline-block">
