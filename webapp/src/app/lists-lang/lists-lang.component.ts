@@ -14,6 +14,9 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 export class ListsLangComponent implements OnInit {
   listOfAttributes: any[] = [];
 
+  isLoading = true;
+  loadError = false;
+
   constructor(private swallowEntryService: SwallowEntryService, private router: Router) {
   }
 
@@ -26,9 +29,11 @@ export class ListsLangComponent implements OnInit {
           this.listOfAttributes.push(attribute);
         }
       }
+      this.isLoading = false;
     }).catch((err) => {
       // TODO: show errors?
       this.listOfAttributes = [];
+      this.loadError = true;
     });
   }
 

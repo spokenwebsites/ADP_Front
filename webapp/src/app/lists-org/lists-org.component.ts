@@ -14,6 +14,9 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 export class ListsOrgComponent implements OnInit {
   listOfAttributes: any[] = [];
 
+  isLoading = true;
+  loadError = false;
+
   constructor(private swallowEntryService: SwallowEntryService, private router: Router) {
   }
 
@@ -32,9 +35,11 @@ export class ListsOrgComponent implements OnInit {
 
         this.listOfAttributes = listOfAttributes.sort((a: any, b: any)=> a.key.localeCompare(b.key));
       }
+      this.isLoading = false;
     }).catch((err) => {
       // TODO: show errors?
       this.listOfAttributes = [];
+      this.loadError = true;
     });
   }
 

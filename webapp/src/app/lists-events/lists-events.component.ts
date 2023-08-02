@@ -15,6 +15,9 @@ export class ListsEventsComponent implements OnInit {
   // listOfAttributes: { [key: string]: boolean } = {};
   listOfAttributes: string[] = [];
 
+  isLoading = true;
+  loadError = false;
+
   constructor(private swallowEntryService: SwallowEntryService, private router: Router) {
   }
 
@@ -31,9 +34,11 @@ export class ListsEventsComponent implements OnInit {
           this.listOfAttributes.push(attribute);
         }
       }
+      this.isLoading = false;
     }).catch((err) => {
       // TODO: show errors?
       this.listOfAttributes = [];
+      this.loadError = true;
     });
   }
 

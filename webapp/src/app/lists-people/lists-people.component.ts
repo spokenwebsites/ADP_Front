@@ -16,6 +16,9 @@ export class ListsPeopleComponent implements OnInit {
   categories: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   selectedCategory: string;
 
+  isLoading = true;
+  errorLoading = false;
+
   constructor(private swallowEntryService: SwallowEntryService, private router: Router) {
     this.selectedCategory = this.categories[0];
   }
@@ -37,9 +40,11 @@ export class ListsPeopleComponent implements OnInit {
           this.listOfAttributes[attribute[0].toUpperCase()].push(mAttr);
         }
       }
+      this.isLoading = false;
     }).catch((err) => {
       // TODO: show errors?
       this.listOfAttributes = [];
+      this.errorLoading = true;
     });
   }
 

@@ -18,6 +18,9 @@ export class ListsDateComponent implements OnInit {
   selectedMonth!: string;
   listOfYears: number[] = [];
 
+  isLoading = true;
+  loadError = false;
+
   MonthNames: string[] = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
@@ -66,9 +69,11 @@ export class ListsDateComponent implements OnInit {
           }
         }
       }
+      this.isLoading = false;
     }).catch((err) => {
       // TODO: show errors?
       this.listOfAttributes = [];
+      this.loadError = true;
     });
   }
 

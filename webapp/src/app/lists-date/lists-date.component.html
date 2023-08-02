@@ -10,13 +10,15 @@
         <div class="col lg-6">
           <div data-w-id="b8ae716f-6f33-9645-e6f8-7d753b1c1fc3" class="margin-top margin-bottom">
             <h2>Date</h2>
+            <app-loading *ngIf="isLoading"></app-loading>
+            <div *ngIf="loadError">Error loading data, please try reloading.</div>
             <p class="text-filter">Filter by:</p>
             <div class="div-year" *ngFor="let attribute of listOfAttributes | keyvalue">
               <h3 class="heading-13">{{attribute.key}}</h3>
               <div class="filter-buttons-container">
                 <div *ngFor="let month of MonthNames">
                   <a *ngIf="attribute.value[month]" (click)="onSelectMonth(attribute.key, month)"
-                    class="button-filter w-button">{{month}}</a>
+                     class="button-filter w-button">{{month}}</a>
                 </div>
               </div>
             </div>
@@ -31,11 +33,11 @@
               </ul>
               <!-- </div> -->
               <!-- <div class="w-col w-col-4">
-               
-              </div>
-              <div class="w-col w-col-4">
-                
-              </div> -->
+
+    </div>
+    <div class="w-col w-col-4">
+
+    </div> -->
             </div>
           </div>
         </div>

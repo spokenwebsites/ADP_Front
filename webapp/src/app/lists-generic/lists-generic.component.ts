@@ -12,6 +12,10 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
   styleUrls: ['./lists-generic.component.scss']
 })
 export class ListsGenericComponent implements OnInit {
+
+  isLoading = true;
+  loadError = false;
+
   listOfAttributes: string[] = [];
   typeOfListsPage: FilterType = FilterType.NULL;
   FilterType = FilterType;
@@ -84,9 +88,11 @@ export class ListsGenericComponent implements OnInit {
             this.listOfAttributes.map(attr => attr.toLowerCase()).sort()
           }
         }
+        this.isLoading = false;
       }).catch((err) => {
         // TODO: show errors?
         this.listOfAttributes = [];
+        this.loadError = true;
       });
     }
   }

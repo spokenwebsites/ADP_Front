@@ -13,7 +13,8 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 })
 export class ListsHostsComponent implements OnInit {
   listOfAttributes: { [key: string]: boolean } = {};
-
+  isLoading = true;
+  loadError = false;
   constructor(private swallowEntryService: SwallowEntryService, private router: Router) {
   }
 
@@ -35,9 +36,11 @@ export class ListsHostsComponent implements OnInit {
           }
         }
       }
+      this.isLoading = false;
     }).catch((err) => {
       // TODO: show errors?
       this.listOfAttributes = {};
+      this.loadError = true;
     });
   }
 
