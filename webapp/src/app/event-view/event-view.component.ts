@@ -12,6 +12,7 @@ import { SwallowEntry } from '../services/swallow-json-parser/swallow-entry';
 })
 export class EventViewComponent implements OnInit {
   loading: boolean = false;
+  errorLoading: boolean = false;
   entry!: SwallowEntry;
   recordingAvailable: boolean = false;
   recordingURL!: URL;
@@ -44,6 +45,7 @@ export class EventViewComponent implements OnInit {
           this.onLoaded();
         }).catch((err) => {
           this.loading = false;
+          this.errorLoading = true;
         })
       }
     });

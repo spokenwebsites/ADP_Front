@@ -1,7 +1,8 @@
 <div class="container" *ngIf="entry; else noEntry">
     <div class="main-section-div">
         <div class="wrapper">
-            <div class="list-container">
+         <app-loading *ngIf="loading"></app-loading>    
+	<div class="list-container">
                 <div class="col lg-6 left">
                     <img *ngIf="entry?.Material_Description && entry.Material_Description.length > 0"
                         [src]="'https://swallow.library.concordia.ca/Uploads/'+entry.Material_Description[0]!.image"
@@ -336,5 +337,6 @@
     </div>
 </div>
 <ng-template #noEntry>
-    No Entry found!
+  <app-loading *ngIf="loading"></app-loading>
+  <div *ngIf="errorLoading">Error in retrieval of event metadata.</div>
 </ng-template>
