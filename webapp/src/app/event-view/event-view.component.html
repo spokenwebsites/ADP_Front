@@ -1,4 +1,4 @@
-<div class="container" *ngIf="entry; else noEntry">
+<div class="container" *ngIf="entry">
     <div class="main-section-div">
         <div class="wrapper">
          <app-loading *ngIf="loading"></app-loading>    
@@ -13,41 +13,44 @@
                     <div class="event-details-socialmedia">
                       <div *ngIf="sourceCollectionDescription?.Twitter || sourceCollectionDescription?.Facebook">
                         <div class="social-media-icons-contianer">
-                            <h6 class="heading-9">Find this event on social media:</h6>
-                            <a *ngIf="sourceCollectionDescription?.Twitter" [href]="sourceCollectionDescription.Twitter"
-                                target="_blank" class="organizer-social-media w-inline-block"><img
-                                    src="/assets/images/Twitter_orange.svg" width="40" height="40" alt=""
-                                    class="social-media-icon"></a>
-                            <a *ngIf="sourceCollectionDescription?.Facebook"
-                                [href]="sourceCollectionDescription.Facebook" target="_blank"
-                                class="organizer-social-media w-inline-block"><img
-                                    src="/assets/images/Facebook_orange.svg" width="40" height="40"
-                                    id="https-m.facebook.com-events-377045833698221" alt=""
-                                    class="social-media-icon"></a>
+                          <h6 class="heading-9">Find this event on social media:</h6>
+                          <a *ngIf="sourceCollectionDescription?.Twitter" [href]="sourceCollectionDescription.Twitter"
+                             target="_blank" class="organizer-social-media w-inline-block">
+                            <img src="/assets/images/Twitter_orange.svg" width="40" height="40" alt=""
+                                 class="social-media-icon">
+                          </a>
+                          <a *ngIf="sourceCollectionDescription?.Facebook"
+                             [href]="sourceCollectionDescription.Facebook" target="_blank"
+                             class="organizer-social-media w-inline-block">
+                            <img src="/assets/images/Facebook_orange.svg" width="40" height="40"
+                                 id="https-m.facebook.com-events-377045833698221" alt=""
+                                 class="social-media-icon">
+                          </a>
                         </div>
-                        </div>
-                        <a *ngIf="getPersistentURL(); else noWebsite"
-                            [href]="getPersistentURL()" target="_blank"
-                            class="link-block-7 w-inline-block">
-                            <div class="organization-div"><img src="/assets/images/web_click_orange.svg" loading="lazy"
-                                    width="40" height="40" alt="" class="social-media-icon">
-                                <h6 class="heading-8">{{entry?.collection?.source_collection}}</h6>
-                            </div>
+                      </div>
+                      <div *ngIf="getPersistentURL();">
+                        <a 
+                           [href]="getPersistentURL()" target="_blank"
+                           class="link-block-7 w-inline-block">
+                          <div class="organization-div">
+                            <img src="/assets/images/web_click_orange.svg" loading="lazy"
+                                 width="40" height="40" alt="" class="social-media-icon">
+                            <h6 class="heading-8">{{entry?.collection?.source_collection}}</h6>
+                          </div>
                         </a>
-
-                        <ng-template #noWebsite>
-                            <div class="organization-div">
-                                <h6 class="heading-8">{{entry?.collection?.source_collection}}</h6>
-                            </div>
-                        </ng-template>
-                    </div>
-                    <div class="event-map">
+                      </div>
+                      <div *ngIf="!getPersistentURL()">
+                        <h6 class="heading-8">{{entry?.collection?.source_collection}}</h6>
+                      </div>
+          
+                      </div>
+                      <div class="event-map">
                         <div class="w-embed w-iframe">
-                            <iframe [src]="parser.getMapLink(entry.Location)" width="400" height="300" style="border:0;"
-                                allowfullscreen="" loading="lazy"></iframe>
+                          <iframe [src]="parser.getMapLink(entry.Location)" width="400" height="300" style="border:0;"
+                                  allowfullscreen="" loading="lazy"></iframe>
                         </div>
+                      </div>
                     </div>
-                </div>
                 <div class="col lg-1 hidden-lg-down"></div>
                 <div class="col lg-6">
                     <div data-w-id="b8ae716f-6f33-9645-e6f8-7d753b1c1fc3" class="margin-top margin-bottom">
@@ -338,7 +341,11 @@
         </div>
     </div>
 </div>
-<ng-template #noEntry>
-  <app-loading *ngIf="loading"></app-loading>
-  <div *ngIf="errorLoading">Error in retrieval of event metadata.</div>
-</ng-template>
+<div class="container" *ngIf="!entry">
+  <div class="main-section-div">
+    <div class="wrapper">
+      <app-loading *ngIf="loading"></app-loading>
+      <div *ngIf="errorLoading">Error in retrieval of event metadata.</div>
+      </div>
+    </div>
+    </div>
