@@ -34,7 +34,8 @@
   <ng-template #notFound>
     <div class="interview-page not-found">
       <app-loading *ngIf="isLoading"></app-loading>
-      <div *ngIf="errorLoading">Interview data not found.</div>
+      <div *ngIf="errorLoading">Error while retrieving interview data.</div>
+      <div *ngIf="!isLoading">Interview data not found for this organization.</div>
     </div>
   </ng-template>
 <ng-template #loading>
