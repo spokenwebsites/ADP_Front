@@ -102,6 +102,11 @@ export class EventViewComponent implements OnInit {
     }
   }
 
+  getPersistentURL(): string {
+    const url = this.entry?.Institution_and_Collection?.persistent_URL;
+    return url ? url.trim() : '';
+  }
+
   getLocations(): string {
     const locations: any[] = [];
     for (let location of this.entry.Location) {

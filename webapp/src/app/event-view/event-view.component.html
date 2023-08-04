@@ -11,8 +11,9 @@
                         <a [href]="recordingURL" target="_blank">{{recordingURL}}</a>
                     </div>
                     <div class="event-details-socialmedia">
-                        <h6 class="heading-9">Find this event on social media:</h6>
+                      <div *ngIf="sourceCollectionDescription?.Twitter || sourceCollectionDescription?.Facebook">
                         <div class="social-media-icons-contianer">
+                            <h6 class="heading-9">Find this event on social media:</h6>
                             <a *ngIf="sourceCollectionDescription?.Twitter" [href]="sourceCollectionDescription.Twitter"
                                 target="_blank" class="organizer-social-media w-inline-block"><img
                                     src="/assets/images/Twitter_orange.svg" width="40" height="40" alt=""
@@ -24,8 +25,9 @@
                                     id="https-m.facebook.com-events-377045833698221" alt=""
                                     class="social-media-icon"></a>
                         </div>
-                        <a *ngIf="sourceCollectionDescription && sourceCollectionDescription['Organization Website']; else noWebsite"
-                            [href]="sourceCollectionDescription['Organization Website']" target="_blank"
+                        </div>
+                        <a *ngIf="getPersistentURL(); else noWebsite"
+                            [href]="getPersistentURL()" target="_blank"
                             class="link-block-7 w-inline-block">
                             <div class="organization-div"><img src="/assets/images/web_click_orange.svg" loading="lazy"
                                     width="40" height="40" alt="" class="social-media-icon">
