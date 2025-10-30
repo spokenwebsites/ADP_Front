@@ -37,7 +37,8 @@ curl \
   -X DELETE 'http://localhost:7700/indexes/Entries'
 ```
 
-# [PATCH] Set filtereable attributes at http://localhost:7700/indexes/Entries/settings
+# Set up the faceting in meilisearch
+Define which fields are facetable/filterable:
 ```
 {
     "filterableAttributes": [
@@ -53,14 +54,19 @@ curl \
     ]
 }
 ```
-The command for that is:
+The curl command for that is:
 ```
 curl -X PATCH 'http://localhost:7700/indexes/Entries/settings' -H 'Content-Type: application/json' --data-binary '{"filterableAttributes":["Item_Description.genre","Creators.name","Location.address","Dates.date","collection.source_collection","Item_Description.language","Location.notes","Location.city","Digital_File_Description.content_type"]}'
 ```
 
-# [PATCH] Increase pagination limit at http://localhost:7700/indexes/Entries/settings/pagination
+# Increase the total amount of hits, as the interface needs to provide total counts
+The curl command for that is:
 ```
-{
-    "maxTotalHits": 4000
-}
+curl -X PATCH 'http://localhost:7700/indexes/Entries/settings/pagination' -H 'Content-Type: application/json' --data-binary '{"maxTotalHits":5000}'
+```
+
+# Increase the total amount of hits per facet, as the interface needs to provide total counts (defaults to 100 only)
+The curl command for that is:
+```
+curl -X PATCH 'http://localhost:7700/indexes/Entries/settings/faceting' -H 'Content-Type: application/json' --data-binary '{"maxValuesPerFacet":10000}'
 ```
