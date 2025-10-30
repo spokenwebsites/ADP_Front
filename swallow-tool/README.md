@@ -48,9 +48,14 @@ curl \
       "collection.source_collection",
       "Item_Description.language",
       "Location.notes",
-      "Location.city"
+      "Location.city",
+      "Digital_File_Description.content_type"
     ]
 }
+```
+The command for that is:
+```
+curl -X PATCH 'http://localhost:7700/indexes/Entries/settings' -H 'Content-Type: application/json' --data-binary '{"filterableAttributes":["Item_Description.genre","Creators.name","Location.address","Dates.date","collection.source_collection","Item_Description.language","Location.notes","Location.city","Digital_File_Description.content_type"]}'
 ```
 
 # [PATCH] Increase pagination limit at http://localhost:7700/indexes/Entries/settings/pagination
