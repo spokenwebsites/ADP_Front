@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   adp_frontend:
     build:
@@ -6,26 +8,46 @@ services:
     container_name: adp_frontend
     ports:
       - "8080:80"
-#    networks:
-#      - adp_net
+    networks:
+      - adp_net
+    depends_on:
+      - meilisearch
 
-#  meilisearch:
-#    image: getmeili/meilisearch:v1.11
-#    container_name: meilisearch
-#    ports:
-#      - "7700:7700"
-#    environment:
-#      MEILI_ENV: "production"
-#      MEILI_MASTER_KEY: "supersecret"
-#      MEILI_NO_ANALYTICS: "true"
-#    volumes:
-#      - meili_data:/meili_data
-#    networks:
-#      - adp_net
-#    restart: unless-stopped
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: meilisearch
+    ports:
+      - "7700:7700"
+    environment:
+      MEILI_ENV: "production"
+      MEILI_MASTER_KEY: "supersecretkey1234567890"
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - meili_data:/meili_data
+    networks:
+      - adp_net
+    restart: unless-stopped
 
-#volumes:
-#  meili_data:
+  etl:
+    build:
+      context: ./etl
+      dockerfile: Dockerfile
+    container_name: etl
+    networks:
+      - adp_net
+    volumes:
+      - ./etl:/app
+    environment:
+      - MEILI_HOST=http://meilisearch:7700
+      - MEILI_API_KEY=supersecretkey1234567890
+    depends_on:
+      - meilisearch
+    tty: true
+    stdin_open: true
+    command: ["/bin/bash"]
 
-#networks:
-#  adp_net:
+volumes:
+  meili_data:
+
+networks:
+  adp_net:
