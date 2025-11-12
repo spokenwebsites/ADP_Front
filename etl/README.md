@@ -1,3 +1,17 @@
+# Step 1. Fetching raw json data from Swallow
+The script fetch.py [https://github.com/spokenwebsites/ADP_Front/blob/main/etl/fetch.py] is used to fetch ADP data from Swallow.
+Run this script from within the ETL container in Docker.
+It will download and by default place the json into this file: bypartnerinstitutions.json.
+
+```python fetch.py```
+
+When successful, it will say: JSON data saved to 'bypartnerinstitution.json' successfully.
+
+The data file (bypartnerinstitutions.json) is included in this repo as well, so do this step only if the raw data has changed.
+
+
+
+
 # Prerequisites
 ### Before using this swallow-tool or running py scripts at webapp/src/assets/js
 > `cd ADP_FRONT/`
