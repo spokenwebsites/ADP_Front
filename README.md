@@ -16,7 +16,7 @@
   - docker compose up -d
 
   - This should give you the ADP interface running locally in the container here: http://localhost:8080/
-  - Note: currently, this connects to the live data set hosted in meilisearch
+  - Note: you will need to populate the meilisearch index this connects to using the scripts and data in ETL container.
 
 ## How to build Angular frontend locally from Server
 - Use SCP to download the contents of the folder: 
