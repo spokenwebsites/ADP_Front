@@ -10,7 +10,7 @@ When successful, it will say: JSON data saved to 'bypartnerinstitution.json' suc
 The data file (bypartnerinstitutions.json) is included in this repo as well, so do this step only if the raw data has changed.
 
 # Step 2. Run geocoding scripts to enrich the dataset with normalized city/place names.
-The script viz3.geolocations.py [https://github.com/spokenwebsites/ADP_Front/blob/main/etl/viz3.geolocations.py] peforms geocoding to enrich the dataset with place/city names.  It enriches the dataset, producing a new JSON file with city names included for each record that it could find.  By default, it takes the bypartnerinstitution.json file and produces the file bypartnerinstitution.withCities.json
+The script viz3.geolocations.py [https://github.com/spokenwebsites/ADP_Front/blob/main/etl/viz3.geolocations.py] peforms geocoding to enrich the dataset with place/city names.  Run this script from within the ETL container in Docker. It enriches the dataset, producing a new JSON file with city names included for each record that it could find.  By default, it takes the bypartnerinstitution.json file and produces the file bypartnerinstitution.withCities.json
 
 These city/place names are also used by the "Places" visualization on the home page by generating the final.csv file need/used by the ADP front end.  This final.csv file needs to be moved into this folder: [https://github.com/spokenwebsites/ADP_Front/tree/main/webapp/src/assets/js]. The file is already there in the repo in its correct place, but you will need to re-copy it there if it changes.
 
@@ -22,7 +22,7 @@ Run this script from the ETL container, like this:
 
 # Step 3. Run processor.py script to enrich the dataset with hosting_platform and video_availability
 
-This script takes by default the bypartnerinstitution.withCities.json file, and extracts/enriches the data with hosting_platform and is_video_available fields (based on existing data). 
+Run the processor.py script from within the ETL container in Docker. This script takes by default the bypartnerinstitution.withCities.json file, and extracts/enriches the data with hosting_platform and is_video_available fields (based on existing data). 
 
 ```python processor.py```
 
