@@ -20,8 +20,6 @@ Run this script from the ETL container, like this:
 
 ```python viz3.geolocations.py```
 
-The scrip also produces an error log (errorlog-date.json), flagging any swallowIDs where the dates are empty or problematic/incomplete.
-
 # Step 3. Run processor.py script to enrich the dataset with hosting_platform and video_availability
 
 Run the processor.py script from within the ETL container in Docker. This script takes by default the bypartnerinstitution.withCities.json file, and extracts/enriches the data with hosting_platform and is_video_available fields (based on existing data). 
@@ -37,6 +35,7 @@ Run the viz1.condegram_spiral.py script from within the ETL container in Docker.
 
 ```python viz1.condegram_spiral.py```
 
+The script also produces an error log (errorlog-date.json), flagging any swallowIDs where the dates are empty or problematic/incomplete.
 
 # How to import exported data to Meilisearch on your localhost
 ```
