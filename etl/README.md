@@ -20,6 +20,8 @@ Run this script from the ETL container, like this:
 
 ```python viz3.geolocations.py```
 
+Note that this script can take a while to complete, for this ADP dataset, approximately an hour on typical laptop.
+
 # Step 3. Run processor.py script to enrich the dataset with hosting_platform and video_availability
 
 Run the processor.py script from within the ETL container in Docker. This script takes by default the bypartnerinstitution.withCities.json file, and extracts/enriches the data with hosting_platform and is_video_available fields (based on existing data). 
