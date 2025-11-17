@@ -45,6 +45,19 @@ Run the viz2.edge_bundling.py script from within the ETL container in Docker.  I
 
 ```python viz2.edge_bundling.py```
 
+# Step 6. Run script to move the generated homepage visualization data files into build folder
+
+Run the move_and_rebuild.py script from the host's etl folder. It copies by generated data files for the visualizations (Topten.json, Spiralcondegram_final.json, final.csv) into this folder: [https://github.com/spokenwebsites/ADP_Front/tree/main/webapp/src/assets/js] and then runs the docker rebuild commands to refresh the containers with this latest data.  You can also manually move these data files from the ETL folder (as it is also a volume) to /webapp/src/assets/js/ folder and then run the two commands for docker:
+
+```
+docker compose -f ../docker-compose.yaml build --no-cache adp_frontend
+docker compose -f ../docker-compose.yaml up -d adp_frontend
+```
+
+You only need to do Step 6 if you reprocessed or regenerated the data (step 2, 4 or 5). 
+
+```python move_and_rebuild.py```
+
 # How to import exported data to Meilisearch on your localhost
 ```
 curl \
