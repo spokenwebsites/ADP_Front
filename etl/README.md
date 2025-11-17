@@ -39,6 +39,12 @@ Run the viz1.condegram_spiral.py script from within the ETL container in Docker.
 
 The script also produces an error log (errorlog-date.json), flagging any swallowIDs where the dates are empty or problematic/incomplete.
 
+# Step 5. Run script to generate the data file used for the Connections visualization on the homepage
+
+Run the viz2.edge_bundling.py script from within the ETL container in Docker.  It takes by default, the raw data file from Swallow (bypartnerinstitutions.json) and produces Topten.json used by the connections visulization, so it needs to be moved into this folder: [https://github.com/spokenwebsites/ADP_Front/tree/main/webapp/src/assets/js]. The file is already there in the repo in its correct place, but you will need to re-copy it there if it changes.
+
+```python viz2.edge_bundling.py```
+
 # How to import exported data to Meilisearch on your localhost
 ```
 curl \
