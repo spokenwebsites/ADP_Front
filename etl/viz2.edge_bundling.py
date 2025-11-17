@@ -4,6 +4,7 @@ import re
 import operator
 import itertools
 import sys
+import os
 
 dict_creators_name = []
 
@@ -11,9 +12,15 @@ class edge_bundling:
     """
     To read the JSON file from swallow, saved in the same folder
     """
+    default_file = "bypartnerinstitution.json"
+    file_path = input(f"Please provide the path to the JSON file [{default_file}]: ").strip()
+    if not file_path:
+        file_path = default_file
 
-    file_path = str(input("Please provide the path to the JSON file: "))
-    print(f"[{datetime.now()}] Loading JSON file from {file_path} ...")
+    if not os.path.exists(file_path):
+        raise SystemExit(f"❌ File not found: {file_path}")
+
+    print(f"📥 Loading JSON data from: {file_path}")
 
     with open(file_path, 'r', encoding="utf-8") as json_file:
         deserialised_json = json.load(json_file)

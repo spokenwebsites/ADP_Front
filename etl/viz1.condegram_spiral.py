@@ -2,6 +2,7 @@
 import json
 from types import new_class
 from datetime import datetime
+import os
 
 
 class CondeGram:
@@ -9,9 +10,19 @@ class CondeGram:
         """
         To read the JSON file from swallow, saved in the same folder
         """
-        file_path = str(input("Please provide the path to the JSON file: "))
+        default_file = "bypartnerinstitution.json"
+        file_path = input(f"Please provide the path to the JSON file [{default_file}]: ").strip()
+        if not file_path:
+            file_path = default_file
+
+        if not os.path.exists(file_path):
+            print(f"❌ File not found: {file_path}")
+            return
+
+        print(f"📥 Loading JSON data from: {file_path}")
         json_file = open(file_path, 'r', encoding="utf-8")
         data = json_file.read()
+
         """
     JSON is loaded into a variable deserialised_json
     """
