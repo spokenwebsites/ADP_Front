@@ -132,7 +132,8 @@ function Calljsfile(mapcsv, test_json, onClick) {
         .style("background", "#03bafc")
         .style("border", "0px")
         .style("border-radius", "8px")
-        .style("z-index", "10")
+        .style("z-index", "9999")
+        .style("opacity", "1")
         .style("visibility", "hidden")
         .text("a simple tooltip");
     svg
