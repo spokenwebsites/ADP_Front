@@ -1,0 +1,96 @@
+city,homelat,homelon,homecontinent,state,n
+Montreal,45.49253,-73.58068,Canada,QC,409
+Ottawa,45.4211060,-75.6903080,Canada,ON,168
+Toronto,43.666170,-79.400360,Canada,ON,858
+Vancouver,49.269860,-123.134220,Canada,BC,252
+Westmount,45.488682,-73.584259,Canada,QC,95
+Windsor,42.325140,-82.943060,Canada,ON,32
+Calgary,51.04457,-114.069241,Canada,AB,183
+Moncton,46.088630,-64.778500,Canada,NB,30
+London,42.98429,-81.24606,Canada,ON,49
+Victoria,48.425930,-123.364320,Canada,BC,168
+Halifax,44.646020,-63.573690,Canada,NS,62
+Parksville,49.332280,-124.493850,Canada,BC,21
+Kingston,44.22146,-76.51031,Canada,ON,61
+Thunder Bay,48.37159,-89.27975,Canada,ON,30
+Neyaashiinigmiing,44.88571,-81.08085,Canada,ON,2
+Princeville,46.52262,-61.05652,Canada,QC,9
+Regina,50.4558491,-104.6244141,Canada,SK,66
+Richmond,49.20200,-123.12623,Canada,BC,4
+Edmonton,53.52171,-113.51237,Canada,AB,87
+Winnipeg,49.8686,-97.1869,Canada,MB,230
+Greater Sudbury,46.49267,-80.99895,Canada,ON,6
+Guelph,43.57734,-80.14599,Canada,ON,38
+Hamilton,43.26372,-79.86583,Canada,ON,121
+Moose Jaw,50.39227,-105.53472,Canada,SK,66
+Scugog,44.10506,-78.94449,Canada,ON,1
+Fredericton,45.95466,-66.64828,Canada,NB,42
+Saint John,45.27321,-66.06472,Canada,NB,8
+Gagetown Parish,45.78352,-66.14370,Canada,NB,1
+Antigonish,45.61677,-62.00142,Canada,NS,1
+Sussex,45.72376,-65.51042,Canada,NB,1
+Pictou,45.7401,-63.0297,Canada,NS,1
+Sydney,46.13560,-60.19342,Canada,NS,1
+Okotoks,50.71229,-113.98496,Canada,AB,6
+Hornby Island,49.53321,-124.66571,Canada,BC,1
+St. Albert,53.63291,-113.62745,Canada,AB,24
+Wolfville,45.0958,-64.3473,Canada,NS,4
+Banff,51.17239,-115.56209,Canada,AB,7
+West End,49.28254,-123.10794,Canada,BC,4
+Hampstead,45.48888,-73.63647,Canada,QC,67
+Saskatoon,52.11394,-106.50530,Canada,SK,122
+Sechelt,49.61578,-124.05059,Canada,BC,1
+LaHave,44.29446,-64.35805,Canada,NS,18
+Lac-Brome,45.21741,-72.51001,Canada,QC,12
+La Ronge,55.10864,-105.28508,Canada,SK,1
+Swift Current,50.28696,-107.79366,Canada,SK,2
+Big River,53.8323,-107.0357,Canada,SK,1
+Shaunavon,49.2623,-107.8183,Canada,SK,1
+Rosetown,51.5548,-107.9913,Canada,SK,1
+Lampman,49.3827,-102.7580,Canada,SK,1
+Indian Head,50.5337,-103.6702,Canada,SK,1
+Bridgetown,44.84168,-65.29065,Canada,NS,2
+Langford,48.5016,-123.5198,Canada,BC,2
+Whitehorse,60.72450,-135.05270,Canada,YT,7
+Sherbrooke,45.3609,-71.8515,Canada,QC,28
+Gibbons,53.95222,-113.10704,Canada,AB,1
+Carstairs,51.55603,-114.10405,Canada,AB,1
+Canmore,51.08915,-115.35097,Canada,AB,1
+Camrose,53.02206,-112.82140,Canada,AB,1
+Sumas,49.03491,-122.33607,US,BC,2
+Steinbach,49.55169,-96.68692,Canada,MB,2
+Hallock,49.016,-96.773,US,MN,1
+Waterloo,43.4695,-80.5442,Canada,ON,34
+Whistler,50.11878,-122.94770,Canada,BC,23
+Gatineau,45.4839,-75.6816,Canada,QC,20
+Stony Plain,53.52513,-114.00892,Canada,AB,1
+Salmo,49.19465,-117.27900,Canada,BC,2
+Dryden,49.78327,-92.83659,Canada,ON,5
+Montréal-Ouest,45.4527,-73.6443,Canada,QC,2
+Meaford,44.60667,-80.59144,Canada,,5
+Gibsons,49.4004,-123.5084,Canada,BC,1
+Courtenay,49.6892,-124.9963?z=12,Canada,BC,104
+Yellowknife,62.45180,-114.36606,Canada,NT,8
+Baddeck,46.10350,-60.74562,Canada,NS,6
+Whycocomagh 2,45.972042,-61.132343,Canada,NS,1
+Margaree Forks,46.3288,-61.1202,Canada,NS,1
+Cheticamp,46.6307,-61.0051,Canada,NS,1
+Mont-Royal,45.53273,-73.62036,Canada,QC,1
+La Pêche,45.6325955,-75.9315661,Canada,QC,4
+Woody Point,49.5031,-57.9171,Canada,,5
+Nelson,49.49538,-117.29353,Canada,BC,7
+North Saanich,48.57578,-123.44800,Canada,BC,3
+Salmon Arm,50.70217,-119.28131,Canada,BC,1
+Lethbridge,49.7019,-112.8588,Canada,AB,61
+Quebec,46.81277,-71.21087,Canada,QC,46
+Timmins,48.4799,-81.3218,Canada,ON,3
+Burnaby,49.2767,-122.9236,Canada,BC,10
+Côte-Saint-Luc,45.47760,-73.66458,Canada,QC,1
+L'Ancienne-Lorette,46.85443,-71.35938,Canada,QC,27
+Charlottetown,46.23525,-63.12398,Canada,PE,19
+Cornwall,46.3485,-63.2943,Canada,PE,1
+Summerside,46.39385,-63.79056,Canada,PE,1
+Surrey,49.19064,-122.84939,Canada,BC,22
+Scarborough,43.67844,-79.29947,Canada,ON,10
+Nanaimo,49.1709,-123.9326,Canada,BC,24
+Markham,43.8761,-79.2993,Canada,ON,18

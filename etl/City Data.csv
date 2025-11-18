@@ -1,0 +1,96 @@
+SwallowID,city,lat,lon,country,state,count
+Montreal,Montreal,45.49253,-73.58068,CA,,409
+Ottawa,Ottawa,45.4211060,-75.6903080,CA,,168
+Toronto,Toronto,43.666170,-79.400360,CA,,858
+Vancouver,Vancouver,49.269860,-123.134220,CA,,252
+Westmount,Westmount,45.488682,-73.584259,CA,,95
+Windsor,Windsor,42.325140,-82.943060,CA,,32
+Calgary,Calgary,51.04457,-114.069241,CA,,183
+Moncton,Moncton,46.088630,-64.778500,CA,,30
+London,London,42.98429,-81.24606,CA,,49
+Victoria,Victoria,48.425930,-123.364320,CA,,168
+Halifax,Halifax,44.646020,-63.573690,CA,,62
+Parksville,Parksville,49.332280,-124.493850,CA,,21
+Kingston,Kingston,44.22146,-76.51031,CA,,61
+Thunder Bay,Thunder Bay,48.37159,-89.27975,CA,,30
+Neyaashiinigmiing,Neyaashiinigmiing,44.88571,-81.08085,CA,,2
+Princeville,Princeville,46.52262,-61.05652,CA,,9
+Regina,Regina,50.4558491,-104.6244141,CA,,66
+Richmond,Richmond,49.20200,-123.12623,CA,,4
+Edmonton,Edmonton,53.52171,-113.51237,CA,,87
+Winnipeg,Winnipeg,49.8686,-97.1869,CA,,230
+Greater Sudbury,Greater Sudbury,46.49267,-80.99895,CA,,6
+Guelph,Guelph,43.57734,-80.14599,CA,,38
+Hamilton,Hamilton,43.26372,-79.86583,CA,,121
+Moose Jaw,Moose Jaw,50.39227,-105.53472,CA,,66
+Scugog,Scugog,44.10506,-78.94449,CA,,1
+Fredericton,Fredericton,45.95466,-66.64828,CA,,42
+Saint John,Saint John,45.27321,-66.06472,CA,,8
+Gagetown Parish,Gagetown Parish,45.78352,-66.14370,CA,,1
+Antigonish,Antigonish,45.61677,-62.00142,CA,,1
+Sussex,Sussex,45.72376,-65.51042,CA,,1
+Pictou,Pictou,45.7401,-63.0297,CA,,1
+Sydney,Sydney,46.13560,-60.19342,CA,,1
+Okotoks,Okotoks,50.71229,-113.98496,CA,,6
+Hornby Island,Hornby Island,49.53321,-124.66571,CA,,1
+St. Albert,St. Albert,53.63291,-113.62745,CA,,24
+Wolfville,Wolfville,45.0958,-64.3473,CA,,4
+Banff,Banff,51.17239,-115.56209,CA,,7
+West End,West End,49.28254,-123.10794,CA,,4
+Hampstead,Hampstead,45.48888,-73.63647,CA,,67
+Saskatoon,Saskatoon,52.11394,-106.50530,CA,,122
+Sechelt,Sechelt,49.61578,-124.05059,CA,,1
+LaHave,LaHave,44.29446,-64.35805,CA,,18
+Lac-Brome,Lac-Brome,45.21741,-72.51001,CA,,12
+La Ronge,La Ronge,55.10864,-105.28508,CA,,1
+Swift Current,Swift Current,50.28696,-107.79366,CA,,2
+Big River,Big River,53.8323,-107.0357,CA,,1
+Shaunavon,Shaunavon,49.2623,-107.8183,CA,,1
+Rosetown,Rosetown,51.5548,-107.9913,CA,,1
+Lampman,Lampman,49.3827,-102.7580,CA,,1
+Indian Head,Indian Head,50.5337,-103.6702,CA,,1
+Bridgetown,Bridgetown,44.84168,-65.29065,CA,,2
+Langford,Langford,48.5016,-123.5198,CA,,2
+Whitehorse,Whitehorse,60.72450,-135.05270,CA,,7
+Sherbrooke,Sherbrooke,45.3609,-71.8515,CA,,28
+Gibbons,Gibbons,53.95222,-113.10704,CA,,1
+Carstairs,Carstairs,51.55603,-114.10405,CA,,1
+Canmore,Canmore,51.08915,-115.35097,CA,,1
+Camrose,Camrose,53.02206,-112.82140,CA,,1
+Sumas,Sumas,49.03491,-122.33607,US,,2
+Steinbach,Steinbach,49.55169,-96.68692,CA,,2
+Hallock,Hallock,49.016,-96.773,US,,1
+Waterloo,Waterloo,43.4695,-80.5442,CA,,34
+Whistler,Whistler,50.11878,-122.94770,CA,,23
+Gatineau,Gatineau,45.4839,-75.6816,CA,,20
+Stony Plain,Stony Plain,53.52513,-114.00892,CA,,1
+Salmo,Salmo,49.19465,-117.27900,CA,,2
+Dryden,Dryden,49.78327,-92.83659,CA,,5
+Montréal-Ouest,Montréal-Ouest,45.4527,-73.6443,CA,,2
+Meaford,Meaford,44.60667,-80.59144,CA,,5
+Gibsons,Gibsons,49.4004,-123.5084,CA,,1
+Courtenay,Courtenay,49.6892,-124.9963?z=12,CA,,104
+Yellowknife,Yellowknife,62.45180,-114.36606,CA,,8
+Baddeck,Baddeck,46.10350,-60.74562,CA,,6
+Whycocomagh 2,Whycocomagh 2,45.972042,-61.132343,CA,,1
+Margaree Forks,Margaree Forks,46.3288,-61.1202,CA,,1
+Cheticamp,Cheticamp,46.6307,-61.0051,CA,,1
+Mont-Royal,Mont-Royal,45.53273,-73.62036,CA,,1
+La Pêche,La Pêche,45.6325955,-75.9315661,CA,,4
+Woody Point,Woody Point,49.5031,-57.9171,CA,,5
+Nelson,Nelson,49.49538,-117.29353,CA,,7
+North Saanich,North Saanich,48.57578,-123.44800,CA,,3
+Salmon Arm,Salmon Arm,50.70217,-119.28131,CA,,1
+Lethbridge,Lethbridge,49.7019,-112.8588,CA,,61
+Quebec,Quebec,46.81277,-71.21087,CA,,46
+Timmins,Timmins,48.4799,-81.3218,CA,,3
+Burnaby,Burnaby,49.2767,-122.9236,CA,,10
+Côte-Saint-Luc,Côte-Saint-Luc,45.47760,-73.66458,CA,,1
+L'Ancienne-Lorette,L'Ancienne-Lorette,46.85443,-71.35938,CA,,27
+Charlottetown,Charlottetown,46.23525,-63.12398,CA,,19
+Cornwall,Cornwall,46.3485,-63.2943,CA,,1
+Summerside,Summerside,46.39385,-63.79056,CA,,1
+Surrey,Surrey,49.19064,-122.84939,CA,,22
+Scarborough,Scarborough,43.67844,-79.29947,CA,,10
+Nanaimo,Nanaimo,49.1709,-123.9326,CA,,24
+Markham,Markham,43.8761,-79.2993,CA,,18
