@@ -58,21 +58,33 @@ You only need to do Step 6 if you reprocessed or regenerated the data (step 2, 4
 
 ```python move_and_rebuild.py```
 
-# How to import exported data to Meilisearch on your localhost
-```
-curl \
-  -X POST 'http://localhost:7700/indexes/Entries/documents?primaryKey=swallow_id' \
-  -H 'Content-Type: application/json' \
-  --data-binary @new_collection.json
-```
+# Step 7. Set up and load data into meilisearch
 
-# Delete existing dataset
+Run the meili_api_calls.py script from within the ETL container in Docker.  It takes by default, the bypartnerinstitution.withCities.withHostingVideoAvailability.json data file (result of step 3) and imports it as "Entries" index into meilisearch in the docker network.  You could also switch over the variable BASE_URL in the script from meilisearch to localhost:
+
+BASE_URL = "http://localhost:7700/indexes/Entries"
+
+and run these api calls from the host. 
+
+```python meili_api_calls.py```
+
+You can also do these steps manually, from the ETL container or the host. The commands are the following (add header Bearer {MASTER_KEY} to the requests):
+
+## Delete existing dataset
 ```
 curl \
   -X DELETE 'http://localhost:7700/indexes/Entries'
 ```
 
-# Set up the faceting in meilisearch
+## Import exported data to Meilisearch on your localhost
+```
+curl \
+  -X POST 'http://localhost:7700/indexes/Entries/documents?primaryKey=swallow_id' \
+  -H 'Content-Type: application/json' \
+  --data-binary @bypartnerinstitution.withCities.withHostingVideoAvailability.json
+```
+
+## Set up the faceting in meilisearch
 Define which fields are facetable/filterable:
 ```
 {
@@ -94,13 +106,13 @@ The curl command for that is:
 curl -X PATCH 'http://localhost:7700/indexes/Entries/settings' -H 'Content-Type: application/json' --data-binary '{"filterableAttributes":["Item_Description.genre","Creators.name","Location.address","Dates.date","collection.source_collection","Item_Description.language","Location.notes","Location.city","Digital_File_Description.content_type"]}'
 ```
 
-# Increase the total amount of hits, as the interface needs to provide total counts
+## Increase the total amount of hits, as the interface needs to provide total counts
 The curl command for that is:
 ```
 curl -X PATCH 'http://localhost:7700/indexes/Entries/settings/pagination' -H 'Content-Type: application/json' --data-binary '{"maxTotalHits":5000}'
 ```
 
-# Increase the total amount of hits per facet, as the interface needs to provide total counts (defaults to 100 only)
+## Increase the total amount of hits per facet, as the interface needs to provide total counts (defaults to 100 only)
 The curl command for that is:
 ```
 curl -X PATCH 'http://localhost:7700/indexes/Entries/settings/faceting' -H 'Content-Type: application/json' --data-binary '{"maxValuesPerFacet":10000}'
