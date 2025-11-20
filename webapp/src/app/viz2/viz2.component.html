@@ -13,8 +13,12 @@
 
 
       <p class="viz-annotation">
-        Visualization of the network of authors and events they participated in.  The visualization uses edge bundling by event organizer for additional effect.  Due to the size of the dataset, only the top five contributors with the most connections to events are shown. Navigate to event metadata from the visualization by clicking on names of contributors or events.
-      </p>
+Visualization of the network formed by the top 10 contributors ranked by the number of events in which they appear (selected from an expanded top-N pool, N=13 in this dataset), together with the events in which at least two of these contributors co-appear. Edges are bundled by event organizer. Navigate to event metadata by clicking contributor or event names. The following contributors fall within the expanded top-N pool but do not co-appear with any of the top 10 contributors and are therefore 
+not shown: 
+<a href="/dashboard?q=Toews,%20John" style="color: rgb(251, 101, 4) !important; text-decoration: none;">Toews, John</a>,
+<a href="/dashboard?q=Elmir,%20Sergio" style="color: rgb(251, 101, 4) !important; text-decoration: none;">Elmir, Sergio</a>,
+<a href="/dashboard?q=Curtis,%20Nathalie" style="color: rgb(251, 101, 4) !important; text-decoration: none;">Curtis, Nathalie</a>.   
+ </p>
     </div>
   </mat-card-content>
 </mat-card>
