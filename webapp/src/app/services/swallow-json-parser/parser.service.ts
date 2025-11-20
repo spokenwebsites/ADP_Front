@@ -36,7 +36,7 @@ export class ParserService {
   getMapLink(locations: location[]): (SafeResourceUrl | string) {
     if (locations?.length > 0) {
       return this.sanitizer.bypassSecurityTrustResourceUrl(
-        `https://maps.google.com/maps?q=${locations[0].latitude},${Number(locations[0].longitude)}&hl=es&z=14&amp&output=embed`
+        `https://maps.google.com/maps?q=${locations[0].latitude},${Number(locations[0].longitude)}&z=14&amp&output=embed`
       );
     }
     return "";
