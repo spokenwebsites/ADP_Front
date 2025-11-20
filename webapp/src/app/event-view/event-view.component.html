@@ -44,7 +44,7 @@
                       </div>
           
                       </div>
-                      <div class="event-map">
+                      <div class="event-map" *ngIf="hasCoordinates(entry)">
                         <div class="w-embed w-iframe">
                           <iframe [src]="parser.getMapLink(entry.Location)" width="400" height="300" style="border:0;"
                                   allowfullscreen="" loading="lazy"></iframe>
@@ -184,80 +184,66 @@
                             </div>
                         </mat-expansion-panel>
 
-                        <mat-expansion-panel class="metadata-menu" (opened)="expansionPanelState.location = true"
-                            (closed)="expansionPanelState.location = false"
-                            *ngIf="entry.Location && entry.Location.length && entry.Location[0].address"
-                            hideToggle="true">
-                            <mat-expansion-panel-header class="metadata-accordion-wrapper">
-                                <div class="accordion-item">
-                                    <div class="accordion-metadata-heading">
-                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
-                                                loading="lazy" alt="" class="image-9"></div>
-                                        <div class="text-metadata">
-                                            <h4 class="heading-5">Location</h4>
-                                        </div>
-                                    </div>
+                        <mat-expansion-panel
+  class="metadata-menu"
+  (opened)="expansionPanelState.location = true"
+  (closed)="expansionPanelState.location = false"
+  *ngIf="entry.Location && entry.Location.length"
+  hideToggle="true">
 
-                                    <div class="plus-icon-metadata">
-                                        <mat-panel-description>
-                                            <img src="/assets/images/Plus_orange.svg" loading="lazy" alt=""
-                                                class="image-8" [ngClass]="expansionPanelState.location ? 'opened' : ''" />
-                                        </mat-panel-description>
-                                    </div>
-                                </div>
-                            </mat-expansion-panel-header>
+  <mat-expansion-panel-header class="metadata-accordion-wrapper">
+    <div class="accordion-item">
+      <div class="accordion-metadata-heading">
+        <div class="icon-metadata">
+          <img src="/assets/images/Data-icon-orange.svg" loading="lazy" alt="" class="image-9" />
+        </div>
+        <div class="text-metadata">
+          <h4 class="heading-5">Location</h4>
+        </div>
+      </div>
+      <div class="plus-icon-metadata">
+        <mat-panel-description>
+          <img src="/assets/images/Plus_orange.svg"
+               loading="lazy" alt=""
+               class="image-8"
+               [ngClass]="expansionPanelState.location ? 'opened' : ''" />
+        </mat-panel-description>
+      </div>
+    </div>
+  </mat-expansion-panel-header>
 
-                            <div matExpansionPanelContent class="metadata-accordion-content">
-                                <div class="metadata-item-line">
-                                    <div class="metadata-columns w-row">
-                                        <div class="metadata-field w-col w-col-4">
-                                            <div class="metadata-field-text">Location:</div>
-                                        </div>
-                                        <div class="metadata-field-content w-col w-col-8">
-                                            <div class="metadata-field-content-text">
-                                                {{entry.Location[0].address}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-expansion-panel>
+  <div matExpansionPanelContent class="metadata-accordion-content">
 
-                        <mat-expansion-panel class="metadata-menu" (opened)="expansionPanelState.platforms = true"
-                            (closed)="expansionPanelState.platforms = false" *ngIf="platforms" hideToggle="true">
-                            <mat-expansion-panel-header class="metadata-accordion-wrapper">
-                                <div class="accordion-item">
-                                    <div class="accordion-metadata-heading">
-                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
-                                                loading="lazy" alt="" class="image-9"></div>
-                                        <div class="text-metadata">
-                                            <h4 class="heading-5">Online Platform</h4>
-                                        </div>
-                                    </div>
+    <!-- Each location in its own row -->
+    <div class="metadata-item-line" *ngFor="let loc of getPhysicalLocations()">
+      <div class="metadata-columns w-row">
+        <div class="metadata-field w-col w-col-4">
+          <div class="metadata-field-text">Location:</div>
+        </div>
+        <div class="metadata-field-content w-col w-col-8">
+          <div class="metadata-field-content-text">{{ loc }}</div>
+        </div>
+      </div>
+    </div>
 
-                                    <div class="plus-icon-metadata">
-                                        <mat-panel-description>
-                                            <img src="/assets/images/Plus_orange.svg" loading="lazy" alt=""
-                                                class="image-8" [ngClass]="expansionPanelState.platforms ? 'opened' : ''" />
-                                        </mat-panel-description>
-                                    </div>
-                                </div>
-                            </mat-expansion-panel-header>
+    <!-- Online Platforms (only once, separate row) -->
+    <div class="metadata-item-line" *ngIf="getOnlinePlatforms()">
+      <div class="metadata-columns w-row">
+        <div class="metadata-field w-col w-col-4">
+          <div class="metadata-field-text">
+            Online Platform{{ getOnlinePlatforms().includes(' and ') ? 's' : '' }}:
+          </div>
+        </div>
+        <div class="metadata-field-content w-col w-col-8">
+          <div class="metadata-field-content-text">{{ getOnlinePlatforms() }}</div>
+        </div>
+      </div>
+    </div>
 
-                            <div matExpansionPanelContent class="metadata-accordion-content">
-                                <div class="metadata-item-line">
-                                    <div class="metadata-columns w-row">
-                                        <div class="metadata-field w-col w-col-4">
-                                            <div class="metadata-field-text">Platform:</div>
-                                        </div>
-                                        <div class="metadata-field-content w-col w-col-8">
-                                            <div class="metadata-field-content-text">{{platforms}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-expansion-panel>
+  </div>
+</mat-expansion-panel>
+
+
 
                         <mat-expansion-panel class="metadata-menu" (opened)="expansionPanelState.relatedImages = true"
                             (closed)="expansionPanelState.relatedImages = false"
@@ -298,43 +284,51 @@
                             </div>
                         </mat-expansion-panel>
 
-                        <mat-expansion-panel class="metadata-menu" (opened)="expansionPanelState.relatedWorks = true"
-                            (closed)="expansionPanelState.relatedWorks = false" *ngIf="entry.Related_Works" hideToggle="true">
-                            <mat-expansion-panel-header class="metadata-accordion-wrapper">
-                                <div class="accordion-item">
-                                    <div class="accordion-metadata-heading">
-                                        <div class="icon-metadata"><img src="/assets/images/Data-icon-orange.svg"
-                                                loading="lazy" alt="" class="image-9"></div>
-                                        <div class="text-metadata">
-                                            <h4 class="heading-5">Related Works</h4>
-                                        </div>
-                                    </div>
+                        
+                        
+<mat-expansion-panel class="metadata-menu"
+  (opened)="expansionPanelState.relatedWorks = true"
+  (closed)="expansionPanelState.relatedWorks = false"
+  *ngIf="entry.Related_Works && entry.Related_Works.length"
+  hideToggle="true">
 
-                                    <div class="plus-icon-metadata">
-                                        <mat-panel-description>
-                                            <img src="/assets/images/Plus_orange.svg" loading="lazy" alt=""
-                                                class="image-8" [ngClass]="expansionPanelState.relatedWorks ? 'opened' : ''" />
-                                        </mat-panel-description>
-                                    </div>
-                                </div>
-                            </mat-expansion-panel-header>
+  <mat-expansion-panel-header class="metadata-accordion-wrapper">
+    <div class="accordion-item">
+      <div class="accordion-metadata-heading">
+        <div class="icon-metadata">
+          <img src="/assets/images/Data-icon-orange.svg" loading="lazy" alt="" class="image-9" />
+        </div>
+        <div class="text-metadata">
+          <h4 class="heading-5">Related Works</h4>
+        </div>
+      </div>
+      <div class="plus-icon-metadata">
+        <mat-panel-description>
+          <img src="/assets/images/Plus_orange.svg"
+               loading="lazy" alt=""
+               class="image-8"
+               [ngClass]="expansionPanelState.relatedWorks ? 'opened' : ''" />
+        </mat-panel-description>
+      </div>
+    </div>
+  </mat-expansion-panel-header>
 
-                            <div matExpansionPanelContent class="metadata-accordion-content">
-                                <div class="metadata-item-line">
-                                    <div class="metadata-columns w-row">
-                                        <div class="metadata-field w-col w-col-4">
-                                            <div class="metadata-field-text">URL:</div>
-                                        </div>
-                                        <div class="metadata-field-content w-col w-col-8">
-                                            <div class="metadata-field-content-text"
-                                                *ngFor="let relatedwork of entry.Related_Works">
-                                                {{"citation: " +relatedwork.citation}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-expansion-panel>
+  <div matExpansionPanelContent class="metadata-accordion-content">
+    <!-- Each citation as its own line -->
+    <div class="metadata-item-line" *ngFor="let work of entry.Related_Works">
+      <div class="metadata-columns w-row">
+        <div class="metadata-field w-col w-col-4">
+          <div class="metadata-field-text">citation:</div>
+        </div>
+        <div class="metadata-field-content w-col w-col-8">
+          <div class="metadata-field-content-text">{{ work.citation }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-expansion-panel>
+
+
                     </div>
                 </div>
             </div>

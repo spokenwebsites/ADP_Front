@@ -60,7 +60,7 @@ export class EventViewComponent implements OnInit {
         break;
       }
     }
-    this.platforms = this.getLocations();
+    this.platforms = this.getOnlinePlatforms();
     // parse source_collection_description to extract twitter and facebook details.
 
     try {
@@ -107,34 +107,77 @@ export class EventViewComponent implements OnInit {
     return url ? url.trim() : '';
   }
 
-  getLocations(): string {
-    const locations: any[] = [];
-    for (let location of this.entry.Location) {
-      let startingOfPlatforms = location.notes.indexOf(":");
-      let platforms = location.notes.substring(startingOfPlatforms + 1).trim();
-      if (platforms) {
-        const re = /\s*\"([^"]+)"/g;
-        let matches;
-        do {
-          matches = re.exec(platforms);
-          if (matches && matches.length > 1) {
-            let match = matches[1].trim();
-            if (match.length) {
-              locations.push(match);
-            }
-          }
-        } while (matches);
-      }
+getPhysicalLocations(): string[] {
+  const locations: string[] = [];
+
+  for (const loc of this.entry.Location || []) {
+    if (!loc) continue;
+
+    const city = loc.city?.trim();
+    const address = loc.address?.trim();
+
+    // Skip completely empty or URL-only addresses
+    if (!address && !city) continue;
+    if (address && /^https?:\/\//i.test(address)) continue;
+
+    // Always show address first; add city in parentheses if present
+    let combined = '';
+    if (address && city) {
+      combined = `${address} (city: ${city})`;
+    } else if (address) {
+      combined = address;
+    } else if (city) {
+      combined = `(city: ${city})`;
     }
-    if (locations.length) {
-      let location: string = locations[0];
-      for (let i = 1; i < locations.length; i++) {
-        location += ", " + locations[i];
-      }
-      return location;
+
+    if (combined && !locations.includes(combined)) {
+      locations.push(combined);
     }
-    return "";
   }
+
+  return locations;
+}
+
+
+getOnlinePlatforms(): string {
+  const platforms: string[] = [];
+
+  for (const loc of this.entry.Location || []) {
+    const notes = loc.notes?.trim();
+    if (!notes) continue;
+
+    // Only handle entries that mention "Online platform"
+    if (notes.toLowerCase().includes('online platform')) {
+      // Take text after the first colon, if any
+      const parts = notes.split(':');
+      const value = parts.length > 1 ? parts.slice(1).join(':').trim() : notes;
+
+      // Remove all double quotes and leading/trailing spaces
+      const cleaned = value.replace(/"/g, '').trim();
+
+      // ✅ Skip useless entries like "Online platform" with no value
+      if (!cleaned || cleaned.toLowerCase() === 'online platform') continue;
+
+      if (cleaned) platforms.push(cleaned);
+    }
+  }
+
+  // Remove duplicates
+  const unique = Array.from(new Set(platforms));
+
+  // Combine into one readable line
+  return unique.join(' | ');
+}
+
+hasCoordinates(entry: any): boolean {
+  if (!entry || !entry.Location) return false;
+
+  // Ensure at least one location has valid coordinates
+  return entry.Location.some((loc: any) =>
+    loc.latitude && loc.longitude &&
+    loc.latitude.trim() !== '' && loc.longitude.trim() !== ''
+  );
+}
 
   onOpenVideoURL(): void {
     window.open(this.recordingURL.toString(), "_blank");

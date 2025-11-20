@@ -36,8 +36,8 @@ export class EventCardComponent implements OnInit {
     }
     this.calculateDuration();
     this.genre = this.getGenre();
-    const languages = this.entry?.Item_Description?.language.toLowerCase().trim().split(",");
-    if (languages) {
+    const languageValue = this.entry?.Item_Description?.language || '';
+    const languages = languageValue.toLowerCase().trim().split(','); if (languages) {
       for (let i = 0; i < languages.length; i++) {
         languages[i] = languages[i].trim();
         if (languages[i] == LanguageIconType.English) {
