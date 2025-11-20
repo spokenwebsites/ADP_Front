@@ -31,32 +31,36 @@ export class DashboardComponent implements OnInit {
     private swallowEntryService: SwallowEntryService,
     private router: Router) { }
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      // extract query from the URL
-      this.query = params.q || "";
-      // Add Filterable Attributes
-      if (params.org) {
-        this.filterAttributes[FilterType.Organization] = {
-          [params.org]: true
-        };
-      } else {
-        this.filter = params.filter || "";
-        this.filterType = params.type || FilterType.NULL;
+ngOnInit(): void {
+  this.route.queryParams.subscribe((params) => {
+    this.query = params.q?.trim() || "";
 
-        if (this.filterType) {
-          this.filterAttributes[this.filterType] = {
-            [this.filter]: true
-          };
-        }
+    // Reset filters
+    this.filterAttributes = {};
+
+    if (params.org) {
+      this.filterAttributes[FilterType.Organization] = {
+        [params.org.trim()]: true
+      };
+    } else {
+      this.filter = (params.filter || "").trim();
+      this.filterType = (params.type || "").trim();
+
+      // Only add valid filters
+      if (this.filter && this.filterType) {
+        this.filterAttributes[this.filterType] = {
+          [this.filter]: true
+        };
       }
-      this.onPageChange(0);
-    },
-      (err) => {
-        // TODO: show errors?
-        this.isLoading = false;
-      })
-  }
+    }
+
+    this.onPageChange(0);
+  },
+  (err) => {
+    this.isLoading = false;
+  });
+}
+
 
   onPageChange(page: any): void {
     this.isLoading = true;
