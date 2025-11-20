@@ -6,6 +6,7 @@ import { SwallowEntry } from '../swallow-json-parser/swallow-entry';
 
 const client = new MeiliSearch({
   host: environment.searchUrl,
+  apiKey: environment.MEILI_KEY,
 })
 
 @Injectable({
