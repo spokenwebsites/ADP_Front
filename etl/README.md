@@ -53,7 +53,7 @@ This script also produces the following:
 - creators_index.csv : a list of all the creator/contributor names
 - blank_creators.csv : lists of records that contain blank spaces for some creators
 - gephi_nodes.csv : node list for the whole dataset that can be imported into Gephi.
-- gephi_edges.csv : edge list for teh whole dataset that can be imported into Gephi along with the nodes for a complete network.
+- gephi_edges.csv : edge list for the whole dataset that can be imported into Gephi along with the nodes for a complete network.
 
 # Step 6. Run script to move the generated homepage visualization data files into build folder
 
