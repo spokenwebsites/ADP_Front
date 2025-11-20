@@ -45,6 +45,16 @@ Run the viz2.edge_bundling.py script from within the ETL container in Docker.  I
 
 ```python viz2.edge_bundling.py```
 
+This script also produces the following:
+
+- isolated_top_creators.csv : these are the creators that are filtered out of the visualization because they are not co-contributors with others in the set.
+- Topten.json : this is the main data file used by the "connections" visualization on the homepage.
+- FullNetwork.json : this is the complete dataset in the same format as the Topten.json
+- creators_index.csv : a list of all the creator/contributor names
+- blank_creators.csv : lists of records that contain blank spaces for some creators
+- gephi_nodes.csv : node list for the whole dataset that can be imported into Gephi.
+- gephi_edges.csv : edge list for teh whole dataset that can be imported into Gephi along with the nodes for a complete network.
+
 # Step 6. Run script to move the generated homepage visualization data files into build folder
 
 Run the move_and_rebuild.py script from the host's etl folder. It copies by generated data files for the visualizations (Topten.json, Spiralcondegram_final.json, final.csv) into this folder: [https://github.com/spokenwebsites/ADP_Front/tree/main/webapp/src/assets/js] and then runs the docker rebuild commands to refresh the containers with this latest data.  You can also manually move these data files from the ETL folder (as it is also a volume) to /webapp/src/assets/js/ folder and then run the two commands for docker:
