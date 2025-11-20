@@ -7,6 +7,7 @@ Runs on the HOST — copies a file between build directories and triggers a Dock
 import os
 import shutil
 import subprocess
+import sys
 
 # --- Configuration ---
 DOCKER_COMPOSE_PATH = "../docker-compose.yaml"          # adjust if in another directory
@@ -24,7 +25,7 @@ def copy_file(source_file: str, dest_file: str):
 
     dest_dir = os.path.dirname(dest_file)
     if not os.path.exists(dest_dir):
-        sys.exit(f"❌ Target directory does not exist: {dest_dir}")
+        sys.exit(f"❌ Target directory does not exist: {dest_dir}. Remember that this script needs to run from the host, not from inside docker.")
 
     shutil.copy2(source_file, dest_file)
     print(f"✅ Copied {source_file} → {dest_file}")
