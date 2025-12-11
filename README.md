@@ -3,7 +3,7 @@
 ## User Experience Design
 - Currently available at: https://adp.spokenweb.ca
 - UX process: https://sites.google.com/view/archiveofthedigitalpresent/home 
-- Webflow prototype: https://adp-v12.webflow.io/
+- Webflow prototype: https://adp-v12.webflow.io/ (no longer available)
 
 ## Docker container
 - A Dockerfile / docker-compose / nginx.conf file allows you to build this inside a Docker container.
