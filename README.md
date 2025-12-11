@@ -18,3 +18,5 @@
   - This should give you the ADP interface running locally in the container here: http://localhost:8080/
   - Note: you will need to populate the meilisearch index this connects to using the scripts and data in ETL container.
   - See: README in the ETL folder https://github.com/spokenwebsites/ADP_Front/tree/main/etl#readme
+ 
+- The built angular site ends up in /usr/share/nginx/html folder in the adp_frontend container
